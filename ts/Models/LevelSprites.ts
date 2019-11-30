@@ -1,5 +1,5 @@
 import { Point } from "pixi.js";
-export interface ILevelSprites {
+export class LevelSprites {
     file: string;
     index: number;
     width: number;

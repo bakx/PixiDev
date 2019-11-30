@@ -1,14 +1,14 @@
-import * as Collections from 'typescript-collections';
+import { Dictionary } from 'typescript-collections';
 
-export class AnimatedSprites {
+export class AnimatedSprite {
     id: string;
     animationKeys: string[];
-    animations: Collections.Dictionary<string, object>;
+    animations: Dictionary<string, object>;
 
     constructor(id: string) {
         this.id = id;
         this.animationKeys = [];
-        this.animations = new Collections.Dictionary<string, object>();
+        this.animations = new Dictionary<string, object>();
     }
 
     /** Add an animation key */

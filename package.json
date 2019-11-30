@@ -1,0 +1,33 @@
+{
+  "name": "local2.opcua.site",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "tsc && webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakx/PixiGameDev.git"
+  },
+  "author": "Gideon Bakx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bakx/PixiGameDev/issues"
+  },
+  "homepage": "https://github.com/bakx/PixiGameDev#readme",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^12.12.14",
+    "fs": "0.0.1-security",
+    "pixi.js": "^5.2.0",
+    "typescript-collections": "^1.3.3"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

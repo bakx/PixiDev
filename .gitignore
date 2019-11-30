@@ -1,0 +1,8 @@
+gfx/Characters/Samurai/frames.zip
+gfx/Characters/Samurai/frames/samurai.ftpp
+node_modules
+.vs/*
+src/*
+dist/*
+publish/*
+ignore/*

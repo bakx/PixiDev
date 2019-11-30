@@ -1,7 +1,8 @@
 import { Ticker } from "pixi.js";
-import { Background } from "./Backgrounds";
-import { Levels } from "./levels"
-import { calculateAspectRatioFit } from './Functions'
+import { Functions } from "./Functions";
+import { loadLevels } from "./Levels";
+import { Levels } from "./Models/Level";
+import { LevelData } from "./Models/LevelData";
 
 export class Game {
 
@@ -11,10 +12,10 @@ export class Game {
 
   preLoaded: boolean;
   gameLoaded: boolean;
-  levels: Background[];
+  levels: Levels;
   characters: [];
 
-  currentLevel: Background;
+  currentLevel: LevelData;
   currentLevelIndex: number;
 
   constructor(width?: number, height?: number) {
@@ -23,13 +24,11 @@ export class Game {
   }
 
   /** Initialize the default game parameters */
-  initialize() {
+  async initialize() {
 
     this.designWidth = this.designWidth || 1920;
     this.designHeight = this.designHeight || 1080;
     this.currentLevelIndex = 0;
-
-    debugger;
 
     this.app = new PIXI.Application({
       width: this.designWidth,
@@ -45,45 +44,68 @@ export class Game {
     // Adapt to current view
     this.resizeView();
 
-    // //! This is wrong, should assign Level class where Backgrounds is just part of a Level.
-    this.levels = Levels.loadLevels(this.app);
+    // Load level data
+    this.levels = loadLevels(this.app);
+
+    // Set current level
+    this.currentLevel = this.levels.data[this.currentLevelIndex];
   }
 
   showCurrentLevel() {
-    this.currentLevel = this.levels[game.currentLevelIndex];
-    this.currentLevel.show();
+    this.currentLevel.background.show();
   }
 
   update() {
-    this.currentLevel.update();
+    this.currentLevel.background.update();
   }
 
   resizeView() {
 
-    var ratio = calculateAspectRatioFit(this.designWidth, this.designHeight, window.innerWidth, window.innerHeight);
-    let w = ratio.width;
-    let h = ratio.height;
+    var ratio = Functions.calculateAspectRatioFit(this.designWidth, this.designHeight, window.innerWidth, window.innerHeight);
+    let w = ratio.x;
+    let h = ratio.y;
 
     this.app.renderer.view.style.width = w + "px";
     this.app.renderer.view.style.height = h + "px";
   }
 }
 
-var game = new Game();
-game.initialize();
-game.showCurrentLevel();
+// Global to game engine
+var game : Game;
 
-var mainTicker = new Ticker();
-mainTicker.add(() => {
-  game.update();
+// Start the game engine when the dom is loaded
+window.addEventListener('load', function () {
+  startGame();
 });
-mainTicker.start();
 
-
+// Resize the screen when the window is resized
 window.onresize = function () {
-  game.resizeView();
+  if (game !== null) {
+    game.resizeView();
+  }
 };
 
+async function startGame() {
+  // Create new game object
+  game = new Game();
 
+  // Initialize game settings
+  await game.initialize();
 
-//let animatedSprites = new AnimatedSprites("f");
+  // Load level
+  game.showCurrentLevel();
+
+  // Basic ticker to update game variables
+  var mainTicker = new Ticker();
+  mainTicker.add((data) => {
+
+    //mainTicker.FPS  
+    
+    // Execute calls
+    game.update();
+
+  });
+  mainTicker.start();
+
+  // todo
+}
