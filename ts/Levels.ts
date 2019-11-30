@@ -3,10 +3,9 @@ import { Background } from "./Models/Background";
 import { Levels } from "./Models/Level";
 import { LevelData } from "./Models/LevelData";
 
-export function loadLevels(app: any): Levels {
-
+export function loadLevels(app: PIXI.Application): Levels {
     let levels: Levels = new Levels();
-    let levelData: any;
+    let levelData: Levels;
 
     Functions.loadJSON('config/levels.json', function (data: string) {
         levelData = JSON.parse(data);
@@ -17,7 +16,7 @@ export function loadLevels(app: any): Levels {
     }
 
     for (let i = 0; i < levelData.levels.length; i++) {
-        let details : any = levelData.levels[i];
+        let details: any = levelData.levels[i];
 
         // Set background for level
         let level = new LevelData();
@@ -42,7 +41,7 @@ export function loadLevels(app: any): Levels {
         level.background.init();
 
         // Add to collection
-        levels.data.push(level);
+        levels.levels.push(level);
     }
 
     return levels;

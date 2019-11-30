@@ -3,10 +3,11 @@ import { Functions } from "./Functions";
 import { loadLevels } from "./Levels";
 import { Levels } from "./Models/Level";
 import { LevelData } from "./Models/LevelData";
+import { DrawText } from "./DrawText";
 
 export class Game {
 
-  app: any;
+  app: PIXI.Application;
   designWidth: number;
   designHeight: number;
 
@@ -17,6 +18,9 @@ export class Game {
 
   currentLevel: LevelData;
   currentLevelIndex: number;
+
+  fpsCounter: DrawText;
+  debugHelper: DrawText;
 
   constructor(width?: number, height?: number) {
     if (width) this.designWidth = width;
@@ -48,7 +52,13 @@ export class Game {
     this.levels = loadLevels(this.app);
 
     // Set current level
-    this.currentLevel = this.levels.data[this.currentLevelIndex];
+    this.currentLevel = this.levels.levels[this.currentLevelIndex];
+
+    // Create FPS counter
+    this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
+
+    // Create Debug text
+    this.debugHelper = new DrawText(this.app.stage, '', 10, 50);
   }
 
   showCurrentLevel() {
@@ -60,18 +70,24 @@ export class Game {
   }
 
   resizeView() {
-
+    // Calculate ratio to keep everything in sync with the design width & height
     var ratio = Functions.calculateAspectRatioFit(this.designWidth, this.designHeight, window.innerWidth, window.innerHeight);
-    let w = ratio.x;
-    let h = ratio.y;
+    let w : Number = Math.round(ratio.x);
+    let h : Number = Math.round(ratio.y);
 
+    // Diagnostics
+    if (this.debugHelper) {
+      this.debugHelper.Text = `w:${w}, h:${h}, wiw:${window.innerWidth}, wih${window.innerHeight}`;
+    }
+
+    // Resize view
     this.app.renderer.view.style.width = w + "px";
     this.app.renderer.view.style.height = h + "px";
   }
 }
 
 // Global to game engine
-var game : Game;
+var game: Game;
 
 // Start the game engine when the dom is loaded
 window.addEventListener('load', function () {
@@ -99,8 +115,9 @@ async function startGame() {
   var mainTicker = new Ticker();
   mainTicker.add((data) => {
 
-    //mainTicker.FPS  
-    
+    // Update FPS counter
+    game.fpsCounter.Text = `FPS: ${Math.round(mainTicker.FPS)}`;
+
     // Execute calls
     game.update();
 
