@@ -15,12 +15,12 @@ export class DrawText {
     set Text(text: string) {
         this.pixiText.text = text;
     }
-    
-    /** Set X location of text object */    
+
+    /** Set X location of text object */
     set X(x: number) {
         this.pixiText.x = x;
     }
-        
+
     /** Set Y location of text object */
     set Y(y: number) {
         this.pixiText.y = y;

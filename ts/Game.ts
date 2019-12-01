@@ -1,9 +1,8 @@
 import { Ticker } from "pixi.js";
-import { Functions } from "./Functions";
-import { loadLevels } from "./Levels";
+import { DrawText } from "./Models/DrawText";
+import { loadLevels } from "./Functions";
 import { Levels } from "./Models/Level";
 import { LevelData } from "./Models/LevelData";
-import { DrawText } from "./DrawText";
 
 export class Game {
 
@@ -14,7 +13,6 @@ export class Game {
   preLoaded: boolean;
   gameLoaded: boolean;
   levels: Levels;
-  characters: [];
 
   currentLevel: LevelData;
   currentLevelIndex: number;
@@ -29,18 +27,14 @@ export class Game {
 
   /** Initialize the default game parameters */
   async initialize() {
-
     this.designWidth = this.designWidth || 1920;
     this.designHeight = this.designHeight || 1080;
     this.currentLevelIndex = 0;
 
     this.app = new PIXI.Application({
       width: this.designWidth,
-      height: this.designHeight
+      height: this.designHeight,
     });
-
-    // Resize the view
-    this.app.renderer.resize(this.designWidth, this.designHeight);
 
     // Add the view to the body
     document.body.appendChild(this.app.view);
@@ -58,7 +52,7 @@ export class Game {
     this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
 
     // Create Debug text
-    this.debugHelper = new DrawText(this.app.stage, '', 10, 50);
+    this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
   }
 
   showCurrentLevel() {
@@ -70,19 +64,19 @@ export class Game {
   }
 
   resizeView() {
-    // Calculate ratio to keep everything in sync with the design width & height
-    var ratio = Functions.calculateAspectRatioFit(this.designWidth, this.designHeight, window.innerWidth, window.innerHeight);
-    let w : Number = Math.round(ratio.x);
-    let h : Number = Math.round(ratio.y);
+    let width = window.innerWidth || document.body.clientWidth;
+    let height = window.innerHeight || document.body.clientHeight;
 
-    // Diagnostics
-    if (this.debugHelper) {
-      this.debugHelper.Text = `w:${w}, h:${h}, wiw:${window.innerWidth}, wih${window.innerHeight}`;
-    }
+    let ratio = height / this.designHeight;
 
-    // Resize view
-    this.app.renderer.view.style.width = w + "px";
-    this.app.renderer.view.style.height = h + "px";
+    let view = this.app.renderer.view;
+    view.style.height = this.designHeight * ratio + "px";
+
+    var newWidth = (width / ratio);
+
+    view.style.width = width + "px";
+
+    this.app.renderer.resize(newWidth, this.designHeight);
   }
 }
 
@@ -96,6 +90,12 @@ window.addEventListener('load', function () {
 
 // Resize the screen when the window is resized
 window.onresize = function () {
+  if (game !== null) {
+    game.resizeView();
+  }
+};
+
+window.onorientationchange = function () {
   if (game !== null) {
     game.resizeView();
   }

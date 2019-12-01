@@ -1,12 +1,15 @@
+import { BackgroundUpdate } from "./BackgroundUpdate";
+import { Point } from "pixi.js";
+
 export class Background {
     private name: string;
-    private backgroundArray: any[];
-    private backgroundPositionOnUpdate: any[]
+    private backgroundArray: PIXI.TilingSprite[];
+    private backgroundUpdates: BackgroundUpdate[];
 
     constructor(name: string) {
         this.name = name;
         this.backgroundArray = [];
-        this.backgroundPositionOnUpdate = [];
+        this.backgroundUpdates = [];
     }
 
     /** Get the name of the background */
@@ -15,10 +18,11 @@ export class Background {
     }
 
     /** Add background to the stage */
-    add(stage: any, image: string, width: number, height: number) {
+    add(stage: PIXI.Container, image: string, width: number, height: number) {
         let texture = PIXI.Texture.from(image);
         let tileSprite = new PIXI.TilingSprite(texture, width, height);
         this.backgroundArray.push(tileSprite);
+
         stage.addChild(tileSprite);
     }
 
@@ -27,25 +31,25 @@ export class Background {
         this.hide();
     }
 
-    /** */
-    setUpdate(index: number, x: number, y: number) {
-        this.backgroundPositionOnUpdate.push({
-            index: index,
-            x: x,
-            y: y
-        });
+    /** Add position update for individual layers */
+    addUpdate(index: number, x: number, y: number) {
+        let backgroundUpdate = new BackgroundUpdate();
+        backgroundUpdate.index = index;
+        backgroundUpdate.point = new Point(x, y);
+
+        this.backgroundUpdates.push(backgroundUpdate);
     }
 
-    /** */
+    /** Update the position of all layers */
     update() {
-        for (let i = 0; i < this.backgroundPositionOnUpdate.length; i++) {
-            let item = this.backgroundPositionOnUpdate[i];
-            this.backgroundArray[item.index].tilePosition.x -= item.x;
-            this.backgroundArray[item.index].tilePosition.y -= item.y;
+        for (let i = 0; i < this.backgroundUpdates.length; i++) {
+            let item = this.backgroundUpdates[i];
+            this.backgroundArray[item.index].tilePosition.x -= item.point.x;
+            this.backgroundArray[item.index].tilePosition.y -= item.point.y;
         }
     }
 
-    /** */
+    /** Hides all layers */
     hide() {
         for (let i = 0; i < this.backgroundArray.length; i++) {
             let item = this.backgroundArray[i];
@@ -53,7 +57,7 @@ export class Background {
         }
     }
 
-    /** */
+    /** Shows all layers */
     show() {
         for (let i = 0; i < this.backgroundArray.length; i++) {
             let item = this.backgroundArray[i];
