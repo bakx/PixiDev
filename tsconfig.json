@@ -6,11 +6,12 @@
         "outDir": "src",
         "alwaysStrict": true,
         "forceConsistentCasingInFileNames": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "incremental": true
     },
     "include": [
         "ts/*",
-        "ts/**/*", "src/index.ts"
+        "ts/**/*"
     ],
     "exclude": [
         "node_modules/*",

@@ -1,8 +1,6 @@
 import { Point } from "pixi.js";
-import { Levels } from "./Models/Level";
-import { LevelData } from "./Models/LevelData";
+import { Levels, LevelData, LevelSprites } from "./Models/Level";
 import { Background } from "./Models/Background";
-import { LevelSprites } from "./Models/LevelSprites";
 
 /** */
 export function loadTextures(sourceTemplateStart: number, sourceTemplateEnd: number, padding: number, start: number, end: number): PIXI.Texture[] {

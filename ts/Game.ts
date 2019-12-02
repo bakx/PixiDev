@@ -1,8 +1,7 @@
 import { Ticker } from "pixi.js";
 import { DrawText } from "./Models/DrawText";
 import { loadLevels } from "./Functions";
-import { Levels } from "./Models/Level";
-import { LevelData } from "./Models/LevelData";
+import { Levels, LevelData } from "./Models/Level";
 
 export class Game {
 

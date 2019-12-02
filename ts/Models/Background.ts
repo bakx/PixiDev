@@ -1,4 +1,3 @@
-import { BackgroundUpdate } from "./BackgroundUpdate";
 import { Point } from "pixi.js";
 
 export class Background {
@@ -64,4 +63,9 @@ export class Background {
             item.visible = true;
         }
     }
+}
+
+export class BackgroundUpdate {
+    index: number;
+    point: PIXI.Point;
 }
