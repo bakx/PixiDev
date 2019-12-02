@@ -1,0 +1,13 @@
+{
+    "characters": [
+        {
+            "name": "samurai.json",
+            "sprite": "samurai.json",
+            "animationSpeed": 0.2,
+            "position": {
+                "x": 200,
+                "y": 200
+            }
+        }
+    ]
+}

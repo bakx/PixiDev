@@ -1,6 +1,10 @@
 import { Point } from "pixi.js";
 import { AnimationSprite } from "./AnimatedSprite";
 
+export class Characters {
+    characters: Character[] = [];
+}
+
 export class Character {
     private id: string;
     private name: string;
@@ -43,6 +47,11 @@ export class Character {
         this.position.y = y;
     }
 
+    //TEMP
+    addStage() {
+        this.stage.addChild(this.animation);
+    }
+
     /** Set the animation for the character */
     setAnimation(key: string, autoPlay: boolean = true, loop: boolean = true) {
         // Stop existing play
@@ -51,6 +60,9 @@ export class Character {
                 this.animation.stop();
             }
         }
+
+        // Update animation key
+        this.animationKey = key;
 
         // Assign new animation
         this.animation = this.animationSource.getAnimation(this.animationKey);
@@ -64,11 +76,16 @@ export class Character {
         this.animation.loop = loop;
     }
 
-    update(stage: PIXI.Container) {
+    setAnimationSource(source: any) {
+        this.animationSource = source;
+    }
+
+    update() {
+
     }
 }
 
 export enum CharacterPlayState {
-    IsON,
-    OFF
+    TO,
+    DO
 }

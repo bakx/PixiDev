@@ -1,8 +1,9 @@
 import { Levels, LevelData } from "./Models/Level";
 import { AnimationSprites } from "./Models/AnimatedSprite";
 import { DrawText } from "./Models/DrawText";
-import { loadLevels, loadAnimationSprites } from "./Functions";
+import { loadLevels, loadAnimationSprites, loadCharacters } from "./Functions";
 import { Ticker } from "pixi.js";
+import { Characters } from "./Models/Character";
 
 export class Game {
 
@@ -15,6 +16,7 @@ export class Game {
 
   levels: Levels;
   animationSprites: AnimationSprites;
+  characters: Characters[];
 
   currentLevel: LevelData;
   currentLevelIndex: number;
@@ -64,18 +66,35 @@ export class Game {
   }
 
   /** Callback function for the loading of animated sprites */
-  setAnimationSprites(caller : Game, data: AnimationSprites) {
-    caller.animationSprites = data;
+  setAnimationSprites(game: Game, data: AnimationSprites) {
+    // Assign animation sprites to the game object
+    game.animationSprites = data;
+
+    // 
+    loadCharacters(game.app, game.animationSprites);
   }
 
+  /** */
   showCurrentLevel() {
     this.currentLevel.background.show();
   }
 
+  /** Starts the game loop */
+  start() {
+    this.app.start();
+  }
+
+  /** Stops the game loop */
+  stop() {
+    this.app.stop();
+  }
+
+  /** Main game loop that updates all entities */
   update() {
     this.currentLevel.background.update();
   }
 
+  /** Resizes the viewport & renderer to match the screen */
   resizeView() {
     let width = window.innerWidth || document.body.clientWidth;
     let height = window.innerHeight || document.body.clientHeight;
@@ -123,9 +142,6 @@ async function startGame() {
 
   // Load level
   game.showCurrentLevel();
-
-  // Load characters
-
 
   // Basic ticker to update game variables
   var mainTicker = new Ticker();

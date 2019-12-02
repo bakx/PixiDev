@@ -3,6 +3,8 @@ import { LevelsConfiguration } from "./Models/Configuration/LevelsConfiguration"
 import { Background } from "./Models/Background";
 import { AnimationSprites, AnimationSprite } from "./Models/AnimatedSprite";
 import { AnimationSpritesConfiguration, AnimationSpriteConfiguration } from "./Models/Configuration/AnimationSpritesConfiguration";
+import { CharactersConfiguration, CharacterConfiguration } from "./Models/Configuration/CharactersConfiguration";
+import { Characters, Character } from "./Models/Character";
 
 /** */
 export function loadTextures(sourceTemplateStart: number, sourceTemplateEnd: number, padding: number, start: number, end: number): PIXI.Texture[] {
@@ -34,8 +36,6 @@ export function loadJSON(file: string, callback: CallableFunction) {
   };
   xobj.send(null);
 }
-
-
 
 /** Loads the levels configuration file and parses it to a Levels object */
 export function loadLevels(app: PIXI.Application): Levels {
@@ -115,14 +115,14 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
   }
 
   /** Callback that processes the loaded resources and adds them to the animatedSprites object */
-  loader.load((loader : any, resources: any) => {
+  loader.load((loader: any, resources: any) => {
 
     for (let i = 0; i < animationFiles.length; i++) {
       let details: string = animationFiles[i];
       let sheet = resources[details].spritesheet;
 
       //
-      let animationSprite : AnimationSprite = new AnimationSprite("TODO");
+      let animationSprite: AnimationSprite = new AnimationSprite(sheet.data.meta.name);
 
       // Grab animations from sheet
       for (let j = 0; j < sheet.data.meta.animations.length; j++) {
@@ -162,7 +162,50 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
     throw new Error(err);
   });
 
-  loader.onComplete.add((loader: any, resources : any) => {
+  loader.onComplete.add((loader: any, resources: any) => {
     callback(caller, animationSprites);
   });
+}
+
+/** Loads the characters */
+export function loadCharacters(app: PIXI.Application, animationSprites: AnimationSprites): Characters {
+  let characters: Characters = new Characters();
+  let characterData: CharactersConfiguration;
+
+  let animationFiles: string[] = [];
+
+  loadJSON('config/characters.json', function (data: string) {
+    characterData = JSON.parse(data) as CharactersConfiguration;
+  });
+
+  if (characterData == null) {
+    throw new Error('Unable to load character data.');
+  }
+
+  for (let i = 0; i < characterData.characters.length; i++) {
+    let details: CharacterConfiguration = characterData.characters[i];
+
+    let animationSource;
+
+    // TODO
+    for (let j = 0; j < animationSprites.sprites.length; j++) {
+      if (details.name == animationSprites.sprites[j].id) {
+        animationSource = animationSprites.sprites[j];
+        break;
+      }
+    }
+
+    if (animationSource == null) {
+      throw new Error(`Unable to load ${details.name}`);
+    }
+
+    let character = new Character(app.stage, "0", "0");
+    character.setAnimationSource(animationSource);
+    character.setAnimation("2_WALK");
+    character.addStage();
+
+    debugger;
+  }
+
+  return characters;
 }
