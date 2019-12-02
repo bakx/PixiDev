@@ -1,7 +1,8 @@
-import { Ticker } from "pixi.js";
-import { DrawText } from "./Models/DrawText";
-import { loadLevels } from "./Functions";
 import { Levels, LevelData } from "./Models/Level";
+import { AnimationSprites } from "./Models/AnimatedSprite";
+import { DrawText } from "./Models/DrawText";
+import { loadLevels, loadAnimationSprites } from "./Functions";
+import { Ticker } from "pixi.js";
 
 export class Game {
 
@@ -11,7 +12,9 @@ export class Game {
 
   preLoaded: boolean;
   gameLoaded: boolean;
+
   levels: Levels;
+  animationSprites: AnimationSprites;
 
   currentLevel: LevelData;
   currentLevelIndex: number;
@@ -44,6 +47,12 @@ export class Game {
     // Load level data
     this.levels = loadLevels(this.app);
 
+    // Initialize the AnimationSprites object
+    this.animationSprites = new AnimationSprites();
+
+    // Load animated sprites
+    loadAnimationSprites(this, this.setAnimationSprites);
+
     // Set current level
     this.currentLevel = this.levels.levels[this.currentLevelIndex];
 
@@ -52,6 +61,11 @@ export class Game {
 
     // Create Debug text
     this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
+  }
+
+  /** Callback function for the loading of animated sprites */
+  setAnimationSprites(caller : Game, data: AnimationSprites) {
+    caller.animationSprites = data;
   }
 
   showCurrentLevel() {
@@ -109,6 +123,9 @@ async function startGame() {
 
   // Load level
   game.showCurrentLevel();
+
+  // Load characters
+
 
   // Basic ticker to update game variables
   var mainTicker = new Ticker();

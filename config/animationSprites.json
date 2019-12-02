@@ -1,0 +1,42 @@
+{
+    "sprites": [
+        {
+            "name": "samurai.json",
+            "file": "gfx/Characters/Samurai/samurai.json",
+            "animationSpeed": 0.2,
+            "states": {
+                "name": "Not used yet",
+                "data": [
+                    {
+                        "not": "",
+                        "used": 0,
+                        "yet": null
+                    }
+                ]
+            },
+            "entities": [
+                {}
+            ]
+        },
+        {
+            "name": "samurai2.json",
+            "file": "gfx/Characters/Samurai/samurai2.json",
+            "animationSpeed": 0.2,
+            "states": {
+                "name": "Not used yet",
+                "data": [
+                    {
+                        "not": "",
+                        "used": 0,
+                        "yet": null
+                    }
+                ]
+            },
+            "entities": [
+                {}
+            ]
+        }
+    ]
+}
+
+

@@ -5,6 +5,6 @@
             "isAsync": true,
             "cmd": "tsc --build ${workspaceRoot}\\tsconfig.json",
             "event": "onFileChange",
-        }        
+        },
     ]
 }

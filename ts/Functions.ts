@@ -1,6 +1,8 @@
-import { Point } from "pixi.js";
 import { Levels, LevelData, LevelSprites } from "./Models/Level";
+import { LevelsConfiguration } from "./Models/Configuration/LevelsConfiguration";
 import { Background } from "./Models/Background";
+import { AnimationSprites, AnimationSprite } from "./Models/AnimatedSprite";
+import { AnimationSpritesConfiguration, AnimationSpriteConfiguration } from "./Models/Configuration/AnimationSpritesConfiguration";
 
 /** */
 export function loadTextures(sourceTemplateStart: number, sourceTemplateEnd: number, padding: number, start: number, end: number): PIXI.Texture[] {
@@ -14,14 +16,6 @@ export function loadTextures(sourceTemplateStart: number, sourceTemplateEnd: num
 
   return textures;
 }
-
-/** Calculates aspect ratio for resizing purposes */
-export function getAspectRatio(srcWidth: number, srcHeight: number, maxWidth: number, maxHeight: number): Point {
-  var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
-
-  return new Point(srcWidth * ratio, srcHeight * ratio);
-}
-
 /**
  * Loads a local .json file and returns the contents of the file
  * to the callback function.
@@ -41,13 +35,12 @@ export function loadJSON(file: string, callback: CallableFunction) {
   xobj.send(null);
 }
 
-export function sleep(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
+
+/** Loads the levels configuration file and parses it to a Levels object */
 export function loadLevels(app: PIXI.Application): Levels {
   let levels: Levels = new Levels();
-  let levelData: Levels;
+  let levelData: LevelsConfiguration;
 
   loadJSON('config/levels.json', function (data: string) {
     levelData = JSON.parse(data);
@@ -88,4 +81,88 @@ export function loadLevels(app: PIXI.Application): Levels {
   }
 
   return levels;
+}
+
+/** Loads the animated sprites configuration file and parses it to a AnimationSprites object */
+export function loadAnimationSprites(caller: object, callback: CallableFunction): void {
+  let animationSprites: AnimationSprites = new AnimationSprites();
+  let animationData: AnimationSpritesConfiguration;
+
+  let animationFiles: string[] = [];
+
+  loadJSON('config/animationSprites.json', function (data: string) {
+    animationData = JSON.parse(data) as AnimationSpritesConfiguration;
+  });
+
+  if (animationData == null) {
+    throw new Error('Unable to load animation data.');
+  }
+
+  // Create Pixi loader
+  const loader = new PIXI.Loader();
+
+  for (let i = 0; i < animationData.sprites.length; i++) {
+    let details: AnimationSpriteConfiguration = animationData.sprites[i];
+
+    // Diagnostics
+    console.info(`Loading ${details.name} ${details.file}`);
+
+    // Keep track of all resources
+    animationFiles.push(details.name);
+
+    // Load data
+    loader.add(details.name, details.file);
+  }
+
+  /** Callback that processes the loaded resources and adds them to the animatedSprites object */
+  loader.load((loader : any, resources: any) => {
+
+    for (let i = 0; i < animationFiles.length; i++) {
+      let details: string = animationFiles[i];
+      let sheet = resources[details].spritesheet;
+
+      //
+      let animationSprite : AnimationSprite = new AnimationSprite("TODO");
+
+      // Grab animations from sheet
+      for (let j = 0; j < sheet.data.meta.animations.length; j++) {
+        let animationKey = sheet.data.meta.animations[j];
+
+        // Find all matching animation parts
+        let framesIndex = [];
+        for (let sheetKey in sheet._frameKeys) {
+          if (
+            sheet._frameKeys[sheetKey].startsWith(animationKey) &&
+            sheet._frameKeys[sheetKey].length == animationKey.length + 8
+          ) {
+            framesIndex.push(sheet._frameKeys[sheetKey]);
+          }
+        }
+
+        // Grab all frames that match the animation parts
+        let frames = [];
+        for (let frameKey in framesIndex) {
+          frames.push(PIXI.Texture.from(framesIndex[frameKey]));
+        }
+
+        // Add the animation key
+        animationSprite.addKey(animationKey);
+
+        // Create the animated sprites
+        let animatedSprites = new PIXI.AnimatedSprite(frames);
+        animationSprite.addAnimation(animationKey, animatedSprites);
+      }
+
+      // Add the AnimationSprite to the AnimationSprites object
+      animationSprites.sprites.push(animationSprite);
+    }
+  });
+
+  loader.onError.add((err: string) => {
+    throw new Error(err);
+  });
+
+  loader.onComplete.add((loader: any, resources : any) => {
+    callback(caller, animationSprites);
+  });
 }

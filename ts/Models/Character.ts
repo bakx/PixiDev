@@ -1,11 +1,11 @@
 import { Point } from "pixi.js";
-import { AnimatedSprite } from "./AnimatedSprite";
+import { AnimationSprite } from "./AnimatedSprite";
 
 export class Character {
     private id: string;
     private name: string;
     private stage: PIXI.Container;
-    private animationSource: AnimatedSprite;
+    private animationSource: AnimationSprite;
     private animationKey: string;
     private animation: PIXI.AnimatedSprite;
     keys: string[]; // Delete?

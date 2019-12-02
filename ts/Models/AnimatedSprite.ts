@@ -1,6 +1,10 @@
 import { Dictionary } from 'typescript-collections';
 
-export class AnimatedSprite {
+export class AnimationSprites {
+    sprites: AnimationSprite[] = [];
+}
+
+export class AnimationSprite {
     id: string;
     animationKeys: string[];
     animations: Dictionary<string, PIXI.AnimatedSprite>;
