@@ -1,7 +1,11 @@
 import { Point } from "pixi.js";
 
+export class Backgrounds {
+    data: Background[] = [];
+}
+
 export class Background {
-    private name: string;
+    name: string;
     private backgroundArray: PIXI.TilingSprite[];
     private backgroundUpdates: BackgroundUpdate[];
 
@@ -9,11 +13,6 @@ export class Background {
         this.name = name;
         this.backgroundArray = [];
         this.backgroundUpdates = [];
-    }
-
-    /** Get the name of the background */
-    getName() {
-        return this.name;
     }
 
     /** Add background to the stage */

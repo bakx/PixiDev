@@ -1,8 +1,9 @@
 import { Levels, LevelData } from "./Models/Level";
 import { AnimationSprites } from "./Models/AnimatedSprite";
 import { DrawText } from "./Models/DrawText";
-import { loadLevels, loadAnimationSprites, loadCharacters } from "./Functions";
-import { Characters } from "./Models/Character";
+import { loadLevels, loadAnimationSprites, loadCharacters, loadBackgrounds } from "./Functions";
+import { Characters, Character } from "./Models/Character";
+import { Backgrounds } from "./Models/Background";
 
 export class Game {
 
@@ -12,6 +13,7 @@ export class Game {
 
   gameState: GameState = GameState.LOADING;
 
+  backgrounds: Backgrounds;
   levels: Levels;
   animationSprites: AnimationSprites;
   characters: Characters;
@@ -58,7 +60,7 @@ export class Game {
     this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
 
     // Start loading resources
-    this.gameLoader(GameLoadingState.LEVELS);
+    this.gameLoader(GameLoadingState.BACKGROUNDS);
   }
 
   /** Callback function for the loading of animated sprites */
@@ -72,14 +74,15 @@ export class Game {
 
   gameLoader(state: GameLoadingState) {
 
-    // Level related
-    if (state === GameLoadingState.LEVELS) {
-      // Load level data
-      this.levels = loadLevels(this.app);
+    // Load backgrounds
+    if (state === GameLoadingState.BACKGROUNDS) {
+      // Load characters
+      this.backgrounds = loadBackgrounds(this.app);
 
       // Move to next stage
       state = GameLoadingState.ANIMATIONSPRITES;
     }
+
 
     // Load animation sprites
     if (state === GameLoadingState.ANIMATIONSPRITES) {
@@ -90,7 +93,16 @@ export class Game {
     // Load animation sprites
     if (state === GameLoadingState.CHARACTERS) {
       // Load characters
-      this.characters = loadCharacters(this.app, this.animationSprites);
+      this.characters = loadCharacters(this.app, this);
+
+      // Move to next stage
+      state = GameLoadingState.LEVELS;
+    }
+
+    // Level related
+    if (state === GameLoadingState.LEVELS) {
+      // Load level data
+      this.levels = loadLevels(this.app, this);
 
       // Move to next stage
       state = GameLoadingState.LOADLEVEL;
@@ -99,7 +111,7 @@ export class Game {
     // Load level
     if (state === GameLoadingState.LOADLEVEL) {
       // Set current level
-      this.currentLevel = this.levels.levels[this.currentLevelIndex];
+      this.currentLevel = this.levels.data[this.currentLevelIndex];
 
       // Load level
       this.showCurrentLevel();
@@ -118,6 +130,12 @@ export class Game {
   /** */
   showCurrentLevel() {
     this.currentLevel.background.show();
+
+    //! TEMPORARY
+    for (let i = 0; i < this.characters.characters.length; i++) {
+      let char: Character = this.characters.characters[i];
+      char.addStage();
+    }
   }
 
   /** Starts the game loop */
@@ -164,9 +182,10 @@ export class Game {
 }
 
 export enum GameLoadingState {
-  LEVELS,
+  BACKGROUNDS,
   ANIMATIONSPRITES,
   CHARACTERS,
+  LEVELS,
   LOADLEVEL,
   DONE
 }

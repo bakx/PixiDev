@@ -12,19 +12,12 @@ export class Character {
     private animationSource: AnimationSprite;
     private animationKey: string;
     private animation: PIXI.AnimatedSprite;
-    keys: string[]; // Delete?
     private position: Point;
 
     constructor(stage: PIXI.Container, id: string, name: string) {
         this.stage = stage;
         this.id = id;
         this.name = name;
-    }
-
-    /** Add animation key */
-    //! Delete?
-    addKey(key: string) {
-        this.keys.push(key);
     }
 
     /** Get X position of character */
@@ -76,12 +69,12 @@ export class Character {
         this.animation.loop = loop;
     }
 
-    setAnimationSource(source: any) {
+    /** Sets the source of the animation */
+    setAnimationSource(source: AnimationSprite) {
         this.animationSource = source;
     }
 
     update() {
-
     }
 }
 
