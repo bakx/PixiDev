@@ -6,7 +6,7 @@ import { AnimationSpritesConfiguration, AnimationSpriteConfiguration } from "./M
 import { CharactersConfiguration, CharacterConfiguration } from "./Models/Configuration/CharactersConfiguration";
 import { Characters, Character } from "./Models/Character";
 
-/** */
+/** Loads the textures configuration file and parses it to a PIXI.Texture[] object */
 export function loadTextures(sourceTemplateStart: number, sourceTemplateEnd: number, padding: number, start: number, end: number): PIXI.Texture[] {
   let textures: PIXI.Texture[] = [];
   for (let i = start; i < end; i++) {
@@ -158,10 +158,12 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
     }
   });
 
+  /** Fatal error while loading resources */
   loader.onError.add((err: string) => {
     throw new Error(err);
   });
 
+  /** When loading is complete, perform callback to inform dependent parts */
   loader.onComplete.add((loader: any, resources: any) => {
     callback(caller, animationSprites);
   });
@@ -199,12 +201,13 @@ export function loadCharacters(app: PIXI.Application, animationSprites: Animatio
       throw new Error(`Unable to load ${details.name}`);
     }
 
-    let character = new Character(app.stage, "0", "0");
+    // Create the character data
+    let character = new Character(app.stage, characters.characters.length.toString(), details.name);
     character.setAnimationSource(animationSource);
-    character.setAnimation("2_WALK");
-    character.addStage();
+    character.setAnimation(details.defaultAnimationKey);
 
-    debugger;
+    // Add to collection
+    characters.characters.push(character);
   }
 
   return characters;

@@ -3,10 +3,21 @@
         {
             "name": "samurai.json",
             "sprite": "samurai.json",
+            "defaultAnimationKey": "1_IDLE",
             "animationSpeed": 0.2,
             "position": {
                 "x": 200,
                 "y": 200
+            }
+        },
+        {
+            "name": "samurai2.json",
+            "sprite": "samurai2.json",
+            "defaultAnimationKey": "11_IDLE",
+            "animationSpeed": 0.2,
+            "position": {
+                "x": 200,
+                "y": 400
             }
         }
     ]

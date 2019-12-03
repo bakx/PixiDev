@@ -5,5 +5,6 @@ export class CharactersConfiguration {
 export class CharacterConfiguration {
     "name": string;
     "sprite": string;
+    "defaultAnimationKey" : string;
     "position": PIXI.Point;
 }

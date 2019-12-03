@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://local2.opcua.site",
+            "url": "http://local.gamedev.bakx.ca",
             "webRoot": "${workspaceFolder}"
         }
     ]
