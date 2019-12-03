@@ -239,16 +239,6 @@
                     }
                 },
                 {
-                    "file": "gfx/Backgrounds/City2/back_land_3.png",
-                    "index": 4,
-                    "width": null,
-                    "height": null,
-                    "update": {
-                        "x": 0.75,
-                        "y": 0
-                    }
-                },
-                {
                     "file": "gfx/Backgrounds/City2/land.png",
                     "index": 5,
                     "width": null,
@@ -314,16 +304,6 @@
                     }
                 },
                 {
-                    "file": "gfx/Backgrounds/City3/back_land_3.png",
-                    "index": 4,
-                    "width": null,
-                    "height": null,
-                    "update": {
-                        "x": 0.75,
-                        "y": 0
-                    }
-                },
-                {
                     "file": "gfx/Backgrounds/City3/land.png",
                     "index": 5,
                     "width": null,
@@ -365,16 +345,6 @@
                     "height": null,
                     "update": {
                         "x": 0.25,
-                        "y": 0
-                    }
-                },
-                {
-                    "file": "gfx/Backgrounds/City4/cloud_2.png",
-                    "index": 2,
-                    "width": null,
-                    "height": null,
-                    "update": {
-                        "x": 0.5,
                         "y": 0
                     }
                 },
