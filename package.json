@@ -4,8 +4,8 @@
   "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
-    "build": "tsc && webpack --mode development"
+    "dev": "tsc && webpack --mode development",
+    "prod": "tsc && webpack --mode production"
   },
   "repository": {
     "type": "git",

@@ -29,6 +29,66 @@
             "entities": [
                 {}
             ]
+        },
+        {
+            "name": "Level 2",
+            "background": "Fairy3",
+            "characters": [
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 100,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai2.json",
+                    "position": {
+                        "x": 400,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 700,
+                        "y": 625
+                    }
+                }
+            ],
+            "entities": [
+                {}
+            ]
+        },
+        {
+            "name": "Level 3",
+            "background": "Fairy1",
+            "characters": [
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 100,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai2.json",
+                    "position": {
+                        "x": 400,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 700,
+                        "y": 625
+                    }
+                }
+            ],
+            "entities": [
+                {}
+            ]
         }
     ]
 }

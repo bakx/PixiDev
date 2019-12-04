@@ -11,6 +11,7 @@ export class Main {
 
   /** Initializes the game and starts the loop */
   async startGame() {
+
     // Initialize game settings
     await this.game.initialize();
 
@@ -23,6 +24,7 @@ export class Main {
     // Basic ticker to update game variables
     this.mainTicker.add(() => {
       if (this.game.gameState === GameState.RUNNING) {
+
         // Update FPS counter
         this.game.fpsCounter.Text = `FPS: ${Math.round(this.mainTicker.FPS)}`;
 
@@ -51,6 +53,7 @@ window.onresize = function () {
   }
 };
 
+// Resize the screen when the orientation is resized
 window.onorientationchange = function () {
   if (mainGame !== null) {
     mainGame.game.resizeView();

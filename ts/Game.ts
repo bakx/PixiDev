@@ -24,6 +24,8 @@ export class Game {
   fpsCounter: DrawText;
   debugHelper: DrawText;
 
+  gameFrame: number = 0;
+
   constructor(width?: number, height?: number) {
     if (width) this.designWidth = width;
     if (height) this.designHeight = height;
@@ -70,6 +72,7 @@ export class Game {
 
     // Load backgrounds
     if (state === GameLoadingState.BACKGROUNDS) {
+
       // Load characters
       this.backgrounds = loadBackgrounds(this.app);
 
@@ -79,12 +82,14 @@ export class Game {
 
     // Load animation sprites
     if (state === GameLoadingState.ANIMATIONSPRITES) {
+
       // Load animated sprites
       loadAnimationSprites(this, this.setAnimationSprites);
     }
 
     // Load animation sprites
     if (state === GameLoadingState.CHARACTERS) {
+
       // Load characters
       this.characters = loadCharacters(this.app, this);
 
@@ -94,26 +99,16 @@ export class Game {
 
     // Level related
     if (state === GameLoadingState.LEVELS) {
+
       // Load level data
       this.levels = loadLevels(this.app, this);
-
-      // Move to next stage
-      state = GameLoadingState.LOADLEVEL;
-    }
-
-    // Load level
-    if (state === GameLoadingState.LOADLEVEL) {
-      // Set current level
-      this.currentLevel = this.levels.data[this.currentLevelIndex];
-
-      // Load level
-      this.showCurrentLevel();
 
       // Move to next stage
       state = GameLoadingState.OVERLAY;
     }
 
     if (state === GameLoadingState.OVERLAY) {
+
       // Create FPS counter
       this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
 
@@ -126,14 +121,53 @@ export class Game {
 
     // Finished loading
     if (state === GameLoadingState.DONE) {
+this.      loadLevel() ;
+
       // Start game engine
       this.start();
     }
   }
 
   /** */
+  loadLevel() {
+
+
+      // Set current level
+      this.currentLevel = this.levels.data[this.currentLevelIndex];
+
+      // Load level
+      this.showCurrentLevel();
+
+
+  }
+
+  /** */
+  unloadLevel() {
+
+  }
+
+  /** */
   showCurrentLevel() {
     this.currentLevel.background.show();
+  }
+
+  /** */
+  showNextLevel() {
+    // Unload current level
+    this.currentLevel.background.hide();
+
+    // Up index
+    this.currentLevelIndex++;
+
+    if (this.levels.data.length <= this.currentLevelIndex) {
+      this.currentLevelIndex = 0;
+    }
+
+    //
+    this.currentLevel = this.levels.data[this.currentLevelIndex];
+
+    //
+    this.showCurrentLevel();
   }
 
   /** Starts the game loop */
@@ -158,6 +192,13 @@ export class Game {
 
     if (this.gameState === GameState.RUNNING) {
       this.currentLevel.background.update();
+
+      // Change level?
+      if (this.gameFrame % 250 == 0) {
+        this.showNextLevel();
+      }
+
+      this.gameFrame++;
     }
   }
 

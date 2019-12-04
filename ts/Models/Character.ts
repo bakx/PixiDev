@@ -98,6 +98,7 @@ export class Character {
     }
 
     playAnimation(char: Character) {
+        
         // Interactive?
         let key = char.animationSource.animationKeys[Math.floor(Math.random() * char.animationSource.animationKeys.length)];
         char.setAnimation(key, true, true);
