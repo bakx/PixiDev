@@ -1,7 +1,7 @@
 import { Dictionary } from 'typescript-collections';
 
 export class AnimationSprites {
-    sprites: AnimationSprite[] = [];
+    data: Dictionary<string, AnimationSprite> = new Dictionary<string, AnimationSprite>();
 }
 
 export class AnimationSprite {
@@ -34,8 +34,9 @@ export class AnimationSprite {
 
     /** Retrieve a specific animation */
     getAnimation(key: string) {
-        if (this.animations.containsKey(key))
+        if (this.animations.containsKey(key)) {
             return this.animations.getValue(key);
+        }
 
         throw new Error(`Unable to find animation ${key} for ${this.id}`);
     }

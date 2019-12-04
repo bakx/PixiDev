@@ -130,9 +130,9 @@ export class Game {
   loadLevel() {
     if (this.level) {
       // Remove all characters from the stage
-      this.level.characters.forEach(char =>
+      this.level.characters.forEach(char => {
         char.removeStage()
-      );
+      });
 
       // Hide current level
       this.level.background.hide();
@@ -147,10 +147,16 @@ export class Game {
     // Load characters
     this.level = this.levels.data[this.levelIndex];
 
-    // Add all characters to the
-    this.level.characters.forEach(char =>
-      char.addStage()
-    );
+    // Add all characters to the stage
+    this.level.characters.forEach(char => {
+      // Retrieve the start values of the character
+      let orig = this.characters.data.getValue(char.name);
+      char.x = orig.x;
+      char.y = orig.y;
+      
+      // Add to stage
+      char.addStage();
+    });
 
     // Load background
     this.level.background.show();
@@ -176,7 +182,6 @@ export class Game {
 
   /** Main game loop that updates all entities */
   update() {
-
     if (this.gameState === GameState.RUNNING) {
       this.level.background.update();
 

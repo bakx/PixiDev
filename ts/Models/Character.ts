@@ -1,7 +1,8 @@
 import { AnimationSprite } from "./AnimatedSprite";
+import { Dictionary } from 'typescript-collections';
 
 export class Characters {
-    data: Character[] = [];
+    data: Dictionary<string, Character> = new Dictionary<string, Character>();
 }
 
 export class Character {
@@ -25,6 +26,7 @@ export class Character {
 
     /** Set X position of character */
     set x(x: number) {
+        console.debug(`Setting x to ${x} for character ${this.id}`);
         this.animation.x = x;
     }
 
@@ -35,6 +37,7 @@ export class Character {
 
     /** Set Y position of character */
     set y(y: number) {
+        console.debug(`Setting y to ${y} for character ${this.id}`);
         this.animation.y = y;
     }
 
@@ -99,7 +102,7 @@ export class Character {
         }
     }
 
-    playAnimation(char: Character) {        
+    playAnimation(char: Character) {
         // Interactive?
         let key = char.animationSource.animationKeys[Math.floor(Math.random() * char.animationSource.animationKeys.length)];
         char.setAnimation(key, true, true);

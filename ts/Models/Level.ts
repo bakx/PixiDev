@@ -1,7 +1,6 @@
 import { Background } from "./Background";
 import { Character } from "./Character";
 
-
 export class Levels {
     data: LevelData[] = [];
 }

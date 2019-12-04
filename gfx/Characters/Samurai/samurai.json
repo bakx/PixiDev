@@ -850,6 +850,7 @@
       "1_IDLE",
       "6_HURT",
       "4_JUMP",
+      "5_JUMP",
       "7_DIE"
     ],
     "startAnimation": "2_WALK",
