@@ -1,22 +1,30 @@
-import { Ticker } from "pixi.js";
-import { Functions } from "./Functions";
-import { loadLevels } from "./Levels";
-import { Levels } from "./Models/Level";
-import { LevelData } from "./Models/LevelData";
+import { loadAnimationSprites, loadBackgrounds, loadCharacters, loadLevels } from "./Functions";
+import { AnimationSprites } from "./Models/AnimatedSprite";
+import { Backgrounds } from "./Models/Background";
+import { Characters } from "./Models/Character";
+import { DrawText } from "./Models/DrawText";
+import { LevelData, Levels } from "./Models/Level";
 
 export class Game {
 
-  app: any;
+  app: PIXI.Application;
   designWidth: number;
   designHeight: number;
 
-  preLoaded: boolean;
-  gameLoaded: boolean;
+  gameState: GameState = GameState.LOADING;
+
+  backgrounds: Backgrounds;
   levels: Levels;
-  characters: [];
+  animationSprites: AnimationSprites;
+  characters: Characters;
 
   currentLevel: LevelData;
   currentLevelIndex: number;
+
+  fpsCounter: DrawText;
+  debugHelper: DrawText;
+
+  gameFrame: number = 0;
 
   constructor(width?: number, height?: number) {
     if (width) this.designWidth = width;
@@ -25,18 +33,18 @@ export class Game {
 
   /** Initialize the default game parameters */
   async initialize() {
-
     this.designWidth = this.designWidth || 1920;
     this.designHeight = this.designHeight || 1080;
     this.currentLevelIndex = 0;
 
     this.app = new PIXI.Application({
       width: this.designWidth,
-      height: this.designHeight
+      height: this.designHeight,
     });
+  }
 
-    // Resize the view
-    this.app.renderer.resize(this.designWidth, this.designHeight);
+  /** Sets up the game  the default game parameters */
+  async setup() {
 
     // Add the view to the body
     document.body.appendChild(this.app.view);
@@ -44,68 +52,189 @@ export class Game {
     // Adapt to current view
     this.resizeView();
 
-    // Load level data
-    this.levels = loadLevels(this.app);
+    // Initialize the AnimationSprites object
+    this.animationSprites = new AnimationSprites();
 
-    // Set current level
-    this.currentLevel = this.levels.data[this.currentLevelIndex];
+    // Start loading resources
+    this.gameLoader(GameLoadingState.BACKGROUNDS);
   }
 
+  /** Callback function for the loading of animated sprites */
+  setAnimationSprites(game: Game, data: AnimationSprites) {
+    // Assign animation sprites to the game object
+    game.animationSprites = data;
+
+    // Load characters
+    game.gameLoader(GameLoadingState.CHARACTERS);
+  }
+
+  gameLoader(state: GameLoadingState) {
+
+    // Load backgrounds
+    if (state === GameLoadingState.BACKGROUNDS) {
+
+      // Load characters
+      this.backgrounds = loadBackgrounds(this.app);
+
+      // Move to next stage
+      state = GameLoadingState.ANIMATIONSPRITES;
+    }
+
+    // Load animation sprites
+    if (state === GameLoadingState.ANIMATIONSPRITES) {
+
+      // Load animated sprites
+      loadAnimationSprites(this, this.setAnimationSprites);
+    }
+
+    // Load animation sprites
+    if (state === GameLoadingState.CHARACTERS) {
+
+      // Load characters
+      this.characters = loadCharacters(this.app, this);
+
+      // Move to next stage
+      state = GameLoadingState.LEVELS;
+    }
+
+    // Level related
+    if (state === GameLoadingState.LEVELS) {
+
+      // Load level data
+      this.levels = loadLevels(this.app, this);
+
+      // Move to next stage
+      state = GameLoadingState.OVERLAY;
+    }
+
+    if (state === GameLoadingState.OVERLAY) {
+
+      // Create FPS counter
+      this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
+
+      // Create Debug text
+      this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
+
+      // Move to next stage
+      state = GameLoadingState.DONE;
+    }
+
+    // Finished loading
+    if (state === GameLoadingState.DONE) {
+this.      loadLevel() ;
+
+      // Start game engine
+      this.start();
+    }
+  }
+
+  /** */
+  loadLevel() {
+
+
+      // Set current level
+      this.currentLevel = this.levels.data[this.currentLevelIndex];
+
+      // Load level
+      this.showCurrentLevel();
+
+
+  }
+
+  /** */
+  unloadLevel() {
+
+  }
+
+  /** */
   showCurrentLevel() {
     this.currentLevel.background.show();
   }
 
+  /** */
+  showNextLevel() {
+    // Unload current level
+    this.currentLevel.background.hide();
+
+    // Up index
+    this.currentLevelIndex++;
+
+    if (this.levels.data.length <= this.currentLevelIndex) {
+      this.currentLevelIndex = 0;
+    }
+
+    //
+    this.currentLevel = this.levels.data[this.currentLevelIndex];
+
+    //
+    this.showCurrentLevel();
+  }
+
+  /** Starts the game loop */
+  start() {
+    this.gameState = GameState.RUNNING;
+    this.app.start();
+  }
+
+  pause() {
+    this.gameState = GameState.PAUSED;
+    this.app.stop();
+  }
+
+  /** Stops the game loop */
+  stop() {
+    this.gameState = GameState.STOPPED;
+    this.app.stop();
+  }
+
+  /** Main game loop that updates all entities */
   update() {
-    this.currentLevel.background.update();
+
+    if (this.gameState === GameState.RUNNING) {
+      this.currentLevel.background.update();
+
+      // Change level?
+      if (this.gameFrame % 250 == 0) {
+        this.showNextLevel();
+      }
+
+      this.gameFrame++;
+    }
   }
 
+  /** Resizes the viewport & renderer to match the screen */
   resizeView() {
+    let width = window.innerWidth || document.body.clientWidth;
+    let height = window.innerHeight || document.body.clientHeight;
 
-    var ratio = Functions.calculateAspectRatioFit(this.designWidth, this.designHeight, window.innerWidth, window.innerHeight);
-    let w = ratio.x;
-    let h = ratio.y;
+    let ratio = height / this.designHeight;
 
-    this.app.renderer.view.style.width = w + "px";
-    this.app.renderer.view.style.height = h + "px";
+    let view = this.app.renderer.view;
+    view.style.height = this.designHeight * ratio + "px";
+
+    var newWidth = (width / ratio);
+
+    view.style.width = width + "px";
+
+    this.app.renderer.resize(newWidth, this.designHeight);
   }
 }
 
-// Global to game engine
-var game : Game;
-
-// Start the game engine when the dom is loaded
-window.addEventListener('load', function () {
-  startGame();
-});
-
-// Resize the screen when the window is resized
-window.onresize = function () {
-  if (game !== null) {
-    game.resizeView();
-  }
-};
-
-async function startGame() {
-  // Create new game object
-  game = new Game();
-
-  // Initialize game settings
-  await game.initialize();
-
-  // Load level
-  game.showCurrentLevel();
-
-  // Basic ticker to update game variables
-  var mainTicker = new Ticker();
-  mainTicker.add((data) => {
-
-    //mainTicker.FPS  
-    
-    // Execute calls
-    game.update();
-
-  });
-  mainTicker.start();
-
-  // todo
+export enum GameLoadingState {
+  BACKGROUNDS,
+  ANIMATIONSPRITES,
+  CHARACTERS,
+  LEVELS,
+  LOADLEVEL,
+  OVERLAY,
+  DONE
 }
+
+export enum GameState {
+  LOADING,
+  MENU,
+  PAUSED,
+  STOPPED,
+  RUNNING
+}
+

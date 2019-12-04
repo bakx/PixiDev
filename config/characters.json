@@ -1,10 +1,16 @@
-[
-    {
-        "name": "samurai.json",
-        "file": "gfx/Characters/Samurai/samurai.json"
-    },
-    {
-        "name": "samurai2.json",
-        "file": "gfx/Characters/Samurai/samurai2.json"
-    }
-]
+{
+    "data": [
+        {
+            "name": "samurai.json",
+            "sprite": "samurai.json",
+            "defaultAnimationKey": "2_WALK",
+            "defaultAnimationSpeed": 0.14
+        },
+        {
+            "name": "samurai2.json",
+            "sprite": "samurai2.json",
+            "defaultAnimationKey": "22_WALK",
+            "defaultAnimationSpeed": 0.14
+        }
+    ]
+}

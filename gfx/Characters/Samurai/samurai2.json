@@ -842,6 +842,7 @@
     }
   },
   "meta": {
+    "name": "samurai2.json",
     "image": "samurai2.png",
     "animations": [
       "22_WALK",

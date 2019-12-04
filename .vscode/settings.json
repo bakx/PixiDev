@@ -1,0 +1,10 @@
+{
+    "filewatcher.commands": [
+        {
+            "match": "\\.ts*",
+            "isAsync": true,
+            "cmd": "tsc --build ${workspaceRoot}\\tsconfig.json",
+            "event": "onFileChange",
+        },
+    ]
+}

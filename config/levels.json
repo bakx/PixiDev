@@ -1,62 +1,91 @@
 {
-    "levels": [
+    "data": [
         {
             "name": "Level 1",
-            "background": {
-                "name": "Cartoon Forest 1",
-                "sprites": [
-                    {
-                        "file": "gfx/Backgrounds/CartoonForest1/Sky.png",
-                        "index": 0,
-                        "width": null,
-                        "height": null,
-                        "update": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    },
-                    {
-                        "file": "gfx/Backgrounds/CartoonForest1/BG_Decor.png",
-                        "index": 1,
-                        "width": null,
-                        "height": null,
-                        "update": {
-                            "x": 0.25,
-                            "y": 0
-                        }
-                    },
-                    {
-                        "file": "gfx/Backgrounds/CartoonForest1/Middle_Decor.png",
-                        "index": 2,
-                        "width": null,
-                        "height": null,
-                        "update": {
-                            "x": 0.5,
-                            "y": 0
-                        }
-                    },
-                    {
-                        "file": "gfx/Backgrounds/CartoonForest1/Foreground.png",
-                        "index": 3,
-                        "width": null,
-                        "height": null,
-                        "update": {
-                            "x": 0.5,
-                            "y": 0
-                        }
-                    },
-                    {
-                        "file": "gfx/Backgrounds/CartoonForest1/Ground.png",
-                        "index": 4,
-                        "width": null,
-                        "height": null,
-                        "update": {
-                            "x": 0.75,
-                            "y": 0
-                        }
+            "background": "Sky",
+            "characters": [
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 100,
+                        "y": 625
                     }
-                ]
-            },
+                },
+                {
+                    "name": "samurai2.json",
+                    "position": {
+                        "x": 400,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 700,
+                        "y": 625
+                    }
+                }
+            ],
+            "entities": [
+                {}
+            ]
+        },
+        {
+            "name": "Level 2",
+            "background": "Fairy3",
+            "characters": [
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 100,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai2.json",
+                    "position": {
+                        "x": 400,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 700,
+                        "y": 625
+                    }
+                }
+            ],
+            "entities": [
+                {}
+            ]
+        },
+        {
+            "name": "Level 3",
+            "background": "Fairy1",
+            "characters": [
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 100,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai2.json",
+                    "position": {
+                        "x": 400,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 700,
+                        "y": 625
+                    }
+                }
+            ],
             "entities": [
                 {}
             ]
