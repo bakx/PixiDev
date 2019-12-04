@@ -7,25 +7,30 @@ import { LevelData, Levels } from "./Models/Level";
 
 export class Game {
 
+  /** Application specific variables */
   app: PIXI.Application;
   designWidth: number;
   designHeight: number;
 
+  /** State related variables */
   gameState: GameState = GameState.LOADING;
+  gameFrame: number = 0;
 
+  /** Resources */
   backgrounds: Backgrounds;
   levels: Levels;
   animationSprites: AnimationSprites;
   characters: Characters;
 
-  currentLevel: LevelData;
-  currentLevelIndex: number;
+  /** Level data */
+  level: LevelData;
+  levelIndex: number;
 
+  /** Text */
   fpsCounter: DrawText;
   debugHelper: DrawText;
 
-  gameFrame: number = 0;
-
+  /** Game constructor */
   constructor(width?: number, height?: number) {
     if (width) this.designWidth = width;
     if (height) this.designHeight = height;
@@ -35,7 +40,7 @@ export class Game {
   async initialize() {
     this.designWidth = this.designWidth || 1920;
     this.designHeight = this.designHeight || 1080;
-    this.currentLevelIndex = 0;
+    this.levelIndex = 0;
 
     this.app = new PIXI.Application({
       width: this.designWidth,
@@ -45,7 +50,6 @@ export class Game {
 
   /** Sets up the game  the default game parameters */
   async setup() {
-
     // Add the view to the body
     document.body.appendChild(this.app.view);
 
@@ -69,10 +73,8 @@ export class Game {
   }
 
   gameLoader(state: GameLoadingState) {
-
     // Load backgrounds
     if (state === GameLoadingState.BACKGROUNDS) {
-
       // Load characters
       this.backgrounds = loadBackgrounds(this.app);
 
@@ -82,14 +84,12 @@ export class Game {
 
     // Load animation sprites
     if (state === GameLoadingState.ANIMATIONSPRITES) {
-
       // Load animated sprites
       loadAnimationSprites(this, this.setAnimationSprites);
     }
 
     // Load animation sprites
     if (state === GameLoadingState.CHARACTERS) {
-
       // Load characters
       this.characters = loadCharacters(this.app, this);
 
@@ -99,7 +99,6 @@ export class Game {
 
     // Level related
     if (state === GameLoadingState.LEVELS) {
-
       // Load level data
       this.levels = loadLevels(this.app, this);
 
@@ -108,7 +107,6 @@ export class Game {
     }
 
     if (state === GameLoadingState.OVERLAY) {
-
       // Create FPS counter
       this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
 
@@ -121,53 +119,41 @@ export class Game {
 
     // Finished loading
     if (state === GameLoadingState.DONE) {
-this.      loadLevel() ;
+      this.loadLevel();
 
       // Start game engine
       this.start();
     }
   }
 
-  /** */
+  /** Loads all resources related to the `levelIndex`  */
   loadLevel() {
+    if (this.level) {
+      // Remove all characters from the stage
+      this.level.characters.forEach(char =>
+        char.removeStage()
+      );
 
-
-      // Set current level
-      this.currentLevel = this.levels.data[this.currentLevelIndex];
-
-      // Load level
-      this.showCurrentLevel();
-
-
-  }
-
-  /** */
-  unloadLevel() {
-
-  }
-
-  /** */
-  showCurrentLevel() {
-    this.currentLevel.background.show();
-  }
-
-  /** */
-  showNextLevel() {
-    // Unload current level
-    this.currentLevel.background.hide();
-
-    // Up index
-    this.currentLevelIndex++;
-
-    if (this.levels.data.length <= this.currentLevelIndex) {
-      this.currentLevelIndex = 0;
+      // Hide current level
+      this.level.background.hide();
     }
 
-    //
-    this.currentLevel = this.levels.data[this.currentLevelIndex];
+    // Validate that the level exists
+    if (this.levels.data.length - 1 < this.levelIndex) {
+      console.warn(`Level ${this.levelIndex} was not found. Resetting to level 0`);
+      this.levelIndex = 0;
+    }
 
-    //
-    this.showCurrentLevel();
+    // Load characters
+    this.level = this.levels.data[this.levelIndex];
+
+    // Add all characters to the
+    this.level.characters.forEach(char =>
+      char.addStage()
+    );
+
+    // Load background
+    this.level.background.show();
   }
 
   /** Starts the game loop */
@@ -176,6 +162,7 @@ this.      loadLevel() ;
     this.app.start();
   }
 
+  /** Pauses the game loop */
   pause() {
     this.gameState = GameState.PAUSED;
     this.app.stop();
@@ -191,11 +178,12 @@ this.      loadLevel() ;
   update() {
 
     if (this.gameState === GameState.RUNNING) {
-      this.currentLevel.background.update();
+      this.level.background.update();
 
       // Change level?
       if (this.gameFrame % 250 == 0) {
-        this.showNextLevel();
+        this.levelIndex++;
+        this.loadLevel();
       }
 
       this.gameFrame++;

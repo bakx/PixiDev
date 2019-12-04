@@ -2,7 +2,6 @@ import { Ticker } from "pixi.js";
 import { Game, GameState } from "./Game";
 
 export class Main {
-
   // Global to game engine
   game: Game = new Game();
 
@@ -11,7 +10,6 @@ export class Main {
 
   /** Initializes the game and starts the loop */
   async startGame() {
-
     // Initialize game settings
     await this.game.initialize();
 
@@ -37,23 +35,23 @@ export class Main {
   }
 }
 
-// Global to game engine
+/** Global for the game engine */
 var mainGame: Main;
 mainGame = new Main();
 
-// Start the game engine when the dom is loaded
+/** Start the game engine when the dom is loaded */
 window.addEventListener('load', function () {
   mainGame.startGame();
 });
 
-// Resize the screen when the window is resized
+/** Resize the screen when the window is resized */
 window.onresize = function () {
   if (mainGame !== null) {
     mainGame.game.resizeView();
   }
 };
 
-// Resize the screen when the orientation is resized
+/** Resize the screen when the orientation is resized */
 window.onorientationchange = function () {
   if (mainGame !== null) {
     mainGame.game.resizeView();

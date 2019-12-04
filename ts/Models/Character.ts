@@ -45,22 +45,24 @@ export class Character {
 
     /** Set the animation speed of the character */
     set animationSpeed(speed: number) {
+        console.debug(`Setting animation speed to ${speed} for character ${this.id}`);
         this.animation.animationSpeed = speed;
     }
 
-    //TEMP
+    /** Add character to stage */
     addStage() {
+        console.debug(`Adding character ${this.id} to the stage`);
         this.stage.addChild(this.animation);
     }
 
-    //TEMP
+    /** Remove character to stage */
     removeStage() {
+        console.debug(`Removing character ${this.id} to the stage`);
         this.stage.removeChild(this.animation);
     }
 
     /** Set the animation for the character */
     setAnimation(key: string, autoPlay: boolean = true, loop: boolean = true, interactive: boolean = true) {
-
         // Stop existing play
         if (this.animation) {
             if (this.animation.playing) {
@@ -97,8 +99,7 @@ export class Character {
         }
     }
 
-    playAnimation(char: Character) {
-        
+    playAnimation(char: Character) {        
         // Interactive?
         let key = char.animationSource.animationKeys[Math.floor(Math.random() * char.animationSource.animationKeys.length)];
         char.setAnimation(key, true, true);

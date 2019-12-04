@@ -196,6 +196,7 @@ export function loadCharacters(app: PIXI.Application, game: Game): Characters {
       }
     }
 
+    //
     if (animationSource == null) {
       throw new Error(`Unable to load ${config.name}`);
     }
@@ -279,7 +280,6 @@ export function loadLevels(app: PIXI.Application, game: Game): Levels {
       // Set additional character properties
       characterSource.x = levelCharacterConfig.position.x;
       characterSource.y = levelCharacterConfig.position.y;
-      characterSource.addStage();
 
       level.characters.push(characterSource);
     }
