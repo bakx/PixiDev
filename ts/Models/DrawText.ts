@@ -7,7 +7,6 @@ export class DrawText {
         this.pixiText.x = x;
         this.pixiText.y = y;
 
-
         // Add to stage
         stage.addChild(this.pixiText);
     }

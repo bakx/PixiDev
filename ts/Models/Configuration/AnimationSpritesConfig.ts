@@ -1,9 +1,9 @@
-export class AnimationSpritesConfig {
-    "data": AnimationSpriteConfig[];
+export interface AnimationSpritesConfig {
+    data: AnimationSpriteConfig[];
 }
 
-export class AnimationSpriteConfig {
-    "name": string;
-    "file": string;
-    "animationSpeed": number;
+export interface AnimationSpriteConfig {
+    name: string;
+    file: string;
+    animationSpeed: number;
 }

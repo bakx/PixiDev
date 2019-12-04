@@ -1,10 +1,16 @@
-import { Background } from "../Background";
+import { Point } from "pixi.js";
 
-export class LevelsConfig {
-    "data": LevelConfig[];
+export interface LevelsConfig {
+    data: LevelConfig[];
 }
 
-export class LevelConfig {
-    "name": string;
-    "background": Background;
+export interface LevelConfig {
+    name: string;
+    background: string;
+    characters: LevelCharacterConfig[];
+}
+
+export interface LevelCharacterConfig {
+    name: string;
+    position: Point;
 }

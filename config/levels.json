@@ -4,8 +4,27 @@
             "name": "Level 1",
             "background": "Sky",
             "characters": [
-                "samurai.json",
-                "samurai2.json"
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 100,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai2.json",
+                    "position": {
+                        "x": 400,
+                        "y": 625
+                    }
+                },
+                {
+                    "name": "samurai.json",
+                    "position": {
+                        "x": 700,
+                        "y": 625
+                    }
+                }
             ],
             "entities": [
                 {}

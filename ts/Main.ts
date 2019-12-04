@@ -1,14 +1,15 @@
-import { Game } from "./Game";
 import { Ticker } from "pixi.js";
+import { Game, GameState } from "./Game";
 
 export class Main {
 
   // Global to game engine
   game: Game = new Game();
 
-  constructor() {
-  }
+  // Main ticker
+  mainTicker: Ticker = new Ticker();
 
+  /** Initializes the game and starts the loop */
   async startGame() {
     // Initialize game settings
     await this.game.initialize();
@@ -20,18 +21,17 @@ export class Main {
     await this.game.setup();
 
     // Basic ticker to update game variables
-    var mainTicker = new Ticker();
-    mainTicker.add((data) => {
+    this.mainTicker.add(() => {
+      if (this.game.gameState === GameState.RUNNING) {
+        // Update FPS counter
+        this.game.fpsCounter.Text = `FPS: ${Math.round(this.mainTicker.FPS)}`;
 
-      // Update FPS counter
-      this.game.fpsCounter.Text = `FPS: ${Math.round(mainTicker.FPS)}`;
-
-      // Execute calls
-      this.game.update();
-
+        // Execute calls
+        this.game.update();
+      }
     });
 
-    mainTicker.start();
+    this.mainTicker.start();
   }
 }
 

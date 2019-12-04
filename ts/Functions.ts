@@ -5,7 +5,7 @@ import { AnimationSpritesConfig, AnimationSpriteConfig } from "./Models/Configur
 import { Characters, Character } from "./Models/Character";
 import { CharactersConfig, CharacterConfig } from "./Models/Configuration/CharactersConfig";
 import { Levels, LevelData } from "./Models/Level";
-import { LevelsConfig } from "./Models/Configuration/LevelsConfig";
+import { LevelsConfig, LevelConfig, LevelCharacterConfig } from "./Models/Configuration/LevelsConfig";
 import { Game } from "./Game";
 
 /** Loads the textures configuration file and parses it to a PIXI.Texture[] object */
@@ -53,13 +53,13 @@ export function loadBackgrounds(app: PIXI.Application): Backgrounds {
   }
 
   for (let i = 0; i < backgroundData.data.length; i++) {
-    let details: BackgroundConfig = backgroundData.data[i];
+    let config: BackgroundConfig = backgroundData.data[i];
 
     // Prepare background
-    let background: Background = new Background(details.name);
+    let background: Background = new Background(config.name);
 
-    for (let j = 0; j < details.sprites.length; j++) {
-      let sprite = details.sprites[j] as BackgroundSpritesConfig;
+    for (let j = 0; j < config.sprites.length; j++) {
+      let sprite = config.sprites[j] as BackgroundSpritesConfig;
 
       // Add sprite
       background.add(
@@ -103,16 +103,16 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
   const loader = new PIXI.Loader();
 
   for (let i = 0; i < animationData.data.length; i++) {
-    let details: AnimationSpriteConfig = animationData.data[i];
+    let config: AnimationSpriteConfig = animationData.data[i];
 
     // Diagnostics
-    console.info(`Loading ${details.name} ${details.file}`);
+    console.info(`Loading ${config.name} ${config.file}`);
 
     // Keep track of all resources
-    animationFiles.push(details.name);
+    animationFiles.push(config.name);
 
     // Load data
-    loader.add(details.name, details.file);
+    loader.add(config.name, config.file, config);
   }
 
   /** Callback that processes the loaded resources and adds them to the animatedSprites object */
@@ -122,7 +122,7 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
       let details: string = animationFiles[i];
       let sheet = resources[details].spritesheet;
 
-      //
+      // Create animationSprite object
       let animationSprite: AnimationSprite = new AnimationSprite(sheet.data.meta.name);
 
       // Grab animations from sheet
@@ -165,7 +165,7 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
   });
 
   /** When loading is complete, perform callback to inform dependent parts */
-  loader.onComplete.add((loader: any, resources: any) => {
+  loader.onComplete.add(() => {
     callback(caller, animationSprites);
   });
 }
@@ -174,8 +174,6 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
 export function loadCharacters(app: PIXI.Application, game: Game): Characters {
   let characters: Characters = new Characters();
   let characterData: CharactersConfig;
-
-  let animationFiles: string[] = [];
 
   loadJSON('config/characters.json', function (data: string) {
     characterData = JSON.parse(data) as CharactersConfig;
@@ -186,29 +184,30 @@ export function loadCharacters(app: PIXI.Application, game: Game): Characters {
   }
 
   for (let i = 0; i < characterData.data.length; i++) {
-    let details: CharacterConfig = characterData.data[i];
+    let config: CharacterConfig = characterData.data[i];
 
     let animationSource;
 
-    // TODO
+    // TODO  should this be a dictionary?
     for (let j = 0; j < game.animationSprites.sprites.length; j++) {
-      if (details.name == game.animationSprites.sprites[j].id) {
+      if (config.name == game.animationSprites.sprites[j].id) {
         animationSource = game.animationSprites.sprites[j];
         break;
       }
     }
 
     if (animationSource == null) {
-      throw new Error(`Unable to load ${details.name}`);
+      throw new Error(`Unable to load ${config.name}`);
     }
 
     // Create the character data
-    let character = new Character(app.stage, characters.characters.length.toString(), details.name);
+    let character = new Character(app.stage, characters.data.length.toString(), config.name);
     character.setAnimationSource(animationSource);
-    character.setAnimation(details.defaultAnimationKey);
+    character.setAnimation(config.defaultAnimationKey);
+    character.animationSpeed = config.defaultAnimationSpeed;
 
     // Add to collection
-    characters.characters.push(character);
+    characters.data.push(character);
   }
 
   return characters;
@@ -228,7 +227,7 @@ export function loadLevels(app: PIXI.Application, game: Game): Levels {
   }
 
   for (let i = 0; i < levelData.data.length; i++) {
-    let details: any = levelData.data[i];
+    let config: LevelConfig = levelData.data[i];
 
     // Create level object
     let level = new LevelData();
@@ -237,24 +236,53 @@ export function loadLevels(app: PIXI.Application, game: Game): Levels {
     // Set background
     //
 
-    let backgroundSource;
+    let backgroundSource: Background;
 
-    // TODO, there must be a more efficient way for this
+    // TODO, there must be a more efficient way for this  .. Dictionary?
     for (let j = 0; j < game.backgrounds.data.length; j++) {
-      if (details.background == game.backgrounds.data[j].name) {
+      if (config.background == game.backgrounds.data[j].name) {
         backgroundSource = game.backgrounds.data[j];
         break;
       }
     }
 
     if (backgroundSource == null) {
-      throw new Error(`Unable to load background ${details.background} for level ${details.name}`);
+      throw new Error(`Unable to load background ${config.background} for level ${config.name}`);
     }
 
     level.background = backgroundSource;
 
-    // Initialize
+    // Initialize the background
     level.background.init();
+
+    //
+    // Set Characters
+    //
+
+    level.characters = [];
+
+    for (let j = 0; j < config.characters.length; j++) {
+      let levelCharacterConfig: LevelCharacterConfig = config.characters[j];
+      let characterSource: Character;
+
+      for (let k = 0; k < game.characters.data.length; k++) {
+        if (levelCharacterConfig.name == game.characters.data[k].name) {
+          characterSource = game.characters.data[k];
+          break;
+        }
+      }
+
+      if (characterSource == null) {
+        throw new Error(`Unable to load character ${config.background} for level ${config.name}`);
+      }
+
+      // Set additional character properties
+      characterSource.x = levelCharacterConfig.position.x;
+      characterSource.y = levelCharacterConfig.position.y;
+      characterSource.addStage();
+
+      level.characters.push(characterSource);
+    }
 
     // Add to collection
     levels.data.push(level);

@@ -1,9 +1,9 @@
-import { Levels, LevelData } from "./Models/Level";
+import { loadAnimationSprites, loadBackgrounds, loadCharacters, loadLevels } from "./Functions";
 import { AnimationSprites } from "./Models/AnimatedSprite";
-import { DrawText } from "./Models/DrawText";
-import { loadLevels, loadAnimationSprites, loadCharacters, loadBackgrounds } from "./Functions";
-import { Characters, Character } from "./Models/Character";
 import { Backgrounds } from "./Models/Background";
+import { Characters } from "./Models/Character";
+import { DrawText } from "./Models/DrawText";
+import { LevelData, Levels } from "./Models/Level";
 
 export class Game {
 
@@ -53,12 +53,6 @@ export class Game {
     // Initialize the AnimationSprites object
     this.animationSprites = new AnimationSprites();
 
-    // Create FPS counter
-    this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
-
-    // Create Debug text
-    this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
-
     // Start loading resources
     this.gameLoader(GameLoadingState.BACKGROUNDS);
   }
@@ -82,7 +76,6 @@ export class Game {
       // Move to next stage
       state = GameLoadingState.ANIMATIONSPRITES;
     }
-
 
     // Load animation sprites
     if (state === GameLoadingState.ANIMATIONSPRITES) {
@@ -117,6 +110,17 @@ export class Game {
       this.showCurrentLevel();
 
       // Move to next stage
+      state = GameLoadingState.OVERLAY;
+    }
+
+    if (state === GameLoadingState.OVERLAY) {
+      // Create FPS counter
+      this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
+
+      // Create Debug text
+      this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
+
+      // Move to next stage
       state = GameLoadingState.DONE;
     }
 
@@ -130,12 +134,6 @@ export class Game {
   /** */
   showCurrentLevel() {
     this.currentLevel.background.show();
-
-    //! TEMPORARY
-    for (let i = 0; i < this.characters.characters.length; i++) {
-      let char: Character = this.characters.characters[i];
-      char.addStage();
-    }
   }
 
   /** Starts the game loop */
@@ -187,6 +185,7 @@ export enum GameLoadingState {
   CHARACTERS,
   LEVELS,
   LOADLEVEL,
+  OVERLAY,
   DONE
 }
 
