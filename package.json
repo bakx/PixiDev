@@ -1,5 +1,5 @@
 {
-  "name": "local2.opcua.site",
+  "name": "local.gamedev.bakx.ca",
   "version": "1.0.0",
   "main": "dist/main.js",
   "scripts": {
@@ -24,7 +24,6 @@
     "pixi.js": "^5.2.0"
   },
   "devDependencies": {
-    "cloneable-ts": "^1.0.18",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
