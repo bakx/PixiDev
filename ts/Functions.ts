@@ -1,12 +1,12 @@
-import { Backgrounds, Background } from "./Models/Background";
-import { BackgroundsConfig, BackgroundConfig, BackgroundSpritesConfig } from "./Models/Configuration/BackgroundsConfig";
-import { AnimationSprites, AnimationSprite } from "./Models/AnimatedSprite";
-import { AnimationSpritesConfig, AnimationSpriteConfig } from "./Models/Configuration/AnimationSpritesConfig";
-import { Characters, Character } from "./Models/Character";
-import { CharactersConfig, CharacterConfig } from "./Models/Configuration/CharactersConfig";
-import { Levels, LevelData } from "./Models/Level";
-import { LevelsConfig, LevelConfig, LevelCharacterConfig } from "./Models/Configuration/LevelsConfig";
 import { Game } from "./Game";
+import { AnimationSprite, AnimationSprites, AnimationDetails } from "./Models/AnimatedSprite";
+import { Background, Backgrounds } from "./Models/Background";
+import { Character, Characters } from "./Models/Character";
+import { AnimationSpriteConfig, AnimationSpritesConfig } from "./Models/Configuration/AnimationSpritesConfig";
+import { BackgroundConfig, BackgroundsConfig, BackgroundSpritesConfig } from "./Models/Configuration/BackgroundsConfig";
+import { CharacterConfig, CharactersConfig, CharacterAnimationDetailsConfig } from "./Models/Configuration/CharactersConfig";
+import { LevelCharacterConfig, LevelConfig, LevelsConfig } from "./Models/Configuration/LevelsConfig";
+import { LevelData, Levels } from "./Models/Level";
 
 /** Loads the textures configuration file and parses it to a PIXI.Texture[] object */
 export function loadTextures(sourceTemplateStart: number, sourceTemplateEnd: number, padding: number, start: number, end: number): PIXI.Texture[] {
@@ -49,7 +49,7 @@ export function loadBackgrounds(app: PIXI.Application): Backgrounds {
   });
 
   if (backgroundData == null) {
-    throw new Error('Unable to load backgrounds.');
+    throw new Error('Unable to load backgrounds');
   }
 
   for (let i = 0; i < backgroundData.data.length; i++) {
@@ -78,7 +78,7 @@ export function loadBackgrounds(app: PIXI.Application): Backgrounds {
     background.init();
 
     // Add to collection
-    backgrounds.data.push(background);
+    backgrounds.data.set(config.name, background);
   }
 
   return backgrounds;
@@ -155,7 +155,7 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
       }
 
       // Add the AnimationSprite to the AnimationSprites object
-      animationSprites.sprites.push(animationSprite);
+      animationSprites.data.set(sheet.data.meta.name, animationSprite);
     }
   });
 
@@ -180,34 +180,45 @@ export function loadCharacters(app: PIXI.Application, game: Game): Characters {
   });
 
   if (characterData == null) {
-    throw new Error('Unable to load character data.');
+    throw new Error('Unable to load character data');
   }
 
   for (let i = 0; i < characterData.data.length; i++) {
     let config: CharacterConfig = characterData.data[i];
+    let animationSource: AnimationSprite;
 
-    let animationSource;
-
-    // TODO  should this be a dictionary?
-    for (let j = 0; j < game.animationSprites.sprites.length; j++) {
-      if (config.name == game.animationSprites.sprites[j].id) {
-        animationSource = game.animationSprites.sprites[j];
-        break;
-      }
+    // Set animation source
+    if (game.animationSprites.data.has(config.id)) {
+      animationSource = game.animationSprites.data.get(config.id);
     }
-
-    if (animationSource == null) {
-      throw new Error(`Unable to load ${config.name}`);
+    else {
+      throw new Error(`Unable to load animation source ${config.id}`);
     }
 
     // Create the character data
-    let character = new Character(app.stage, characters.data.length.toString(), config.name);
-    character.setAnimationSource(animationSource);
-    character.setAnimation(config.defaultAnimationKey);
-    character.animationSpeed = config.defaultAnimationSpeed;
+    let character = new Character(config.id);
+
+    // Set animation data
+    character.animationSource = animationSource;
+    character.defaultAnimationKey = config.defaultAnimationKey;
+    character.defaultAnimationSpeed = config.defaultAnimationSpeed;
+
+    // Create animation details
+    character.animationDetails = new Map<string, AnimationDetails>();
+
+    // Prepare animation details
+    for (let j = 0; j < config.animationDetails.length; j++) {
+      let animationDetailsData: CharacterAnimationDetailsConfig = config.animationDetails[j];
+      let details: AnimationDetails = new AnimationDetails();
+
+      details.animationSpeed = animationDetailsData.overrides.animationSpeed;
+      details.loop = animationDetailsData.overrides.loop;
+
+      character.animationDetails.set(animationDetailsData.key, details);
+    }
 
     // Add to collection
-    characters.data.push(character);
+    characters.data.set(config.id, character);
   }
 
   return characters;
@@ -223,65 +234,59 @@ export function loadLevels(app: PIXI.Application, game: Game): Levels {
   });
 
   if (levelData == null) {
-    throw new Error('Unable to load levels.');
+    throw new Error('Unable to load levels');
   }
 
   for (let i = 0; i < levelData.data.length; i++) {
     let config: LevelConfig = levelData.data[i];
 
     // Create level object
+
     let level = new LevelData();
+    level.config = config;
 
-    //
     // Set background
-    //
-
-    let backgroundSource: Background;
-
-    // TODO, there must be a more efficient way for this  .. Dictionary?
-    for (let j = 0; j < game.backgrounds.data.length; j++) {
-      if (config.background == game.backgrounds.data[j].name) {
-        backgroundSource = game.backgrounds.data[j];
-        break;
-      }
+    if (game.backgrounds.data.has(config.background)) {
+      level.background = game.backgrounds.data.get(config.background);
+      level.background.init();
     }
-
-    if (backgroundSource == null) {
+    else {
       throw new Error(`Unable to load background ${config.background} for level ${config.name}`);
     }
 
-    level.background = backgroundSource;
-
-    // Initialize the background
-    level.background.init();
-
-    //
-    // Set Characters
-    //
+    // Load Characters
 
     level.characters = [];
 
     for (let j = 0; j < config.characters.length; j++) {
       let levelCharacterConfig: LevelCharacterConfig = config.characters[j];
-      let characterSource: Character;
+      let character: Character;
 
-      for (let k = 0; k < game.characters.data.length; k++) {
-        if (levelCharacterConfig.name == game.characters.data[k].name) {
-          characterSource = game.characters.data[k];
-          break;
-        }
+      if (game.characters.data.has(levelCharacterConfig.sprite)) {
+        let characterSource: Character = game.characters.data.get(levelCharacterConfig.sprite);
+
+        // Clone the original character
+        character = new Character(levelCharacterConfig.id);
+
+        // Set level character properties 
+        character.animationSource = characterSource.animationSource;
+        character.animationDetails = characterSource.animationDetails;
+        character.animationKey = levelCharacterConfig.animationKey;
+        character.animationSpeed = levelCharacterConfig.animationSpeed;        
+        character.position.x = levelCharacterConfig.position.x;
+        character.position.y = levelCharacterConfig.position.y;
+
+        // Set stage
+        character.stage = app.stage;
+
+        // Create the animation
+        character.createAnimation(character.animationKey);
+      }
+      else {
+        throw new Error(`Unable to load character ${levelCharacterConfig.id} for level ${config.name}`);
       }
 
-      if (characterSource == null) {
-        throw new Error(`Unable to load character ${config.background} for level ${config.name}`);
-      }
-
-      // Set additional character properties
-      characterSource.x = levelCharacterConfig.position.x;
-      characterSource.y = levelCharacterConfig.position.y;
-      characterSource.addStage();
-
-      level.characters.push(characterSource);
+      level.characters.push(character);
     }
 
     // Add to collection

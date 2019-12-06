@@ -11,6 +11,7 @@ export class DrawText {
         stage.addChild(this.pixiText);
     }
 
+    /** Set the text of the text object */
     set Text(text: string) {
         this.pixiText.text = text;
     }

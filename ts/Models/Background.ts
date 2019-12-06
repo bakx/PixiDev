@@ -1,7 +1,7 @@
 import { Point } from "pixi.js";
 
 export class Backgrounds {
-    data: Background[] = [];
+    data: Map<string, Background> = new Map<string, Background>();
 }
 
 export class Background {

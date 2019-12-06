@@ -1,6 +1,6 @@
 rmdir /S /Q publish
 mkdir publish
-build.bat
+call build.bat
 xcopy index.html publish
 xcopy favicon.ico publish
 xcopy config "publish/config" /s /i

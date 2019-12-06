@@ -1,16 +1,54 @@
 {
     "data": [
         {
-            "name": "samurai.json",
-            "sprite": "samurai.json",
+            "id": "samurai.json",
             "defaultAnimationKey": "2_WALK",
-            "defaultAnimationSpeed": 0.14
+            "defaultAnimationSpeed": 0.10,
+            "animationDetails": [
+                {
+                    "key": "4_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
+                },
+                {
+                    "key": "5_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
+                },
+                {
+                    "key": "7_DIE",
+                    "overrides": {
+                        "loop": false
+                    }
+                }
+            ]
         },
         {
-            "name": "samurai2.json",
-            "sprite": "samurai2.json",
+            "id": "samurai2.json",
             "defaultAnimationKey": "22_WALK",
-            "defaultAnimationSpeed": 0.14
+            "defaultAnimationSpeed": 0.10,
+            "animationDetails": [
+                {
+                    "key": "44_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
+                },
+                {
+                    "key": "55_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
+                },
+                {
+                    "key": "77_DIE",
+                    "overrides": {
+                        "loop": false
+                    }
+                }
+            ]
         }
     ]
 }
