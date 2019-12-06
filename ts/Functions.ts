@@ -1,12 +1,12 @@
-import { Backgrounds, Background } from "./Models/Background";
-import { BackgroundsConfig, BackgroundConfig, BackgroundSpritesConfig } from "./Models/Configuration/BackgroundsConfig";
-import { AnimationSprites, AnimationSprite } from "./Models/AnimatedSprite";
-import { AnimationSpritesConfig, AnimationSpriteConfig } from "./Models/Configuration/AnimationSpritesConfig";
-import { Characters, Character } from "./Models/Character";
-import { CharactersConfig, CharacterConfig } from "./Models/Configuration/CharactersConfig";
-import { Levels, LevelData } from "./Models/Level";
-import { LevelsConfig, LevelConfig, LevelCharacterConfig } from "./Models/Configuration/LevelsConfig";
 import { Game } from "./Game";
+import { AnimationSprite, AnimationSprites } from "./Models/AnimatedSprite";
+import { Background, Backgrounds } from "./Models/Background";
+import { Character, Characters } from "./Models/Character";
+import { AnimationSpriteConfig, AnimationSpritesConfig } from "./Models/Configuration/AnimationSpritesConfig";
+import { BackgroundConfig, BackgroundsConfig, BackgroundSpritesConfig } from "./Models/Configuration/BackgroundsConfig";
+import { CharacterConfig, CharactersConfig } from "./Models/Configuration/CharactersConfig";
+import { LevelCharacterConfig, LevelConfig, LevelsConfig } from "./Models/Configuration/LevelsConfig";
+import { LevelData, Levels } from "./Models/Level";
 
 /** Loads the textures configuration file and parses it to a PIXI.Texture[] object */
 export function loadTextures(sourceTemplateStart: number, sourceTemplateEnd: number, padding: number, start: number, end: number): PIXI.Texture[] {
@@ -78,7 +78,7 @@ export function loadBackgrounds(app: PIXI.Application): Backgrounds {
     background.init();
 
     // Add to collection
-    backgrounds.data.setValue(config.name, background);
+    backgrounds.data.set(config.name, background);
   }
 
   return backgrounds;
@@ -155,7 +155,7 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
       }
 
       // Add the AnimationSprite to the AnimationSprites object
-      animationSprites.data.setValue(sheet.data.meta.name, animationSprite);
+      animationSprites.data.set(sheet.data.meta.name, animationSprite);
     }
   });
 
@@ -175,6 +175,8 @@ export function loadCharacters(app: PIXI.Application, game: Game): Characters {
   let characters: Characters = new Characters();
   let characterData: CharactersConfig;
 
+  /**
+
   loadJSON('config/characters.json', function (data: string) {
     characterData = JSON.parse(data) as CharactersConfig;
   });
@@ -188,22 +190,23 @@ export function loadCharacters(app: PIXI.Application, game: Game): Characters {
     let animationSource: AnimationSprite;
 
     // Set animation source
-    if (game.animationSprites.data.containsKey(config.name)) {
-      animationSource = game.animationSprites.data.getValue(config.name);
+    if (game.animationSprites.data.has(config.name)) {
+      animationSource = game.animationSprites.data.get(config.name);
     }
     else {
       throw new Error(`Unable to load animation source ${config.name}`);
     }
 
     // Create the character data
-    let character = new Character(app.stage, characters.data.size().toString(), config.name);
+    let character = new Character(app.stage, `${characters.data.size}-${config.name}`, config.name);
     character.setAnimationSource(animationSource);
     character.setAnimation(config.defaultAnimationKey);
     character.animationSpeed = config.defaultAnimationSpeed;
 
     // Add to collection
-    characters.data.setValue(config.name, character);
+    characters.data.set(config.name, character);
   }
+   */
 
   return characters;
 }
@@ -227,10 +230,11 @@ export function loadLevels(app: PIXI.Application, game: Game): Levels {
     // Create level object
     //
     let level = new LevelData();
+    level.config = config;
 
     // Set background
-    if (game.backgrounds.data.containsKey(config.background)) {
-      level.background = game.backgrounds.data.getValue(config.background);
+    if (game.backgrounds.data.has(config.background)) {
+      level.background = game.backgrounds.data.get(config.background);
       level.background.init();
     }
     else {
@@ -242,20 +246,47 @@ export function loadLevels(app: PIXI.Application, game: Game): Levels {
 
     for (let j = 0; j < config.characters.length; j++) {
       let levelCharacterConfig: LevelCharacterConfig = config.characters[j];
-      let characterSource: Character;
+      let character: Character;
+      let animationSource : AnimationSprite;
 
-      if (game.characters.data.containsKey(levelCharacterConfig.name)) {
-        characterSource = game.characters.data.getValue(levelCharacterConfig.name);
+      // Set animation source
+      if (game.animationSprites.data.has(levelCharacterConfig.name)) {
+        animationSource = game.animationSprites.data.get(levelCharacterConfig.name);
+      }
+      else {
+        throw new Error(`Unable to load animation source ${config.name}`);
+      }
+
+      // Create the character data
+      character = new Character(app.stage, `${levelCharacterConfig.id}`, config.name);
+      character.animationSpeed = levelCharacterConfig.animationSpeed;
+      character.x = levelCharacterConfig.position.x;
+      character.y = levelCharacterConfig.position.y;
+
+      character.setAnimationSource(animationSource);
+      character.setAnimation(levelCharacterConfig.animationKey);
+
+      
+/**
+      if (game.characters.data.has(levelCharacterConfig.name)) {
+        let characterSource: Character = game.characters.data.get(levelCharacterConfig.name);
+
+        // Create new character
+        character = new Character(app.stage, `level_${i}_character_${level.characters.length}`, levelCharacterConfig.name);
 
         // Set additional character properties
-        characterSource.x = levelCharacterConfig.position.x;
-        characterSource.y = levelCharacterConfig.position.y;
+        character.setAnimationSource(Object.create(characterSource.animationSource));
+        character.setAnimation(characterSource.animationKey, characterSource.autoPlay, characterSource.loop, characterSource.interactive);
+        character.x = levelCharacterConfig.position.x;
+        character.y = levelCharacterConfig.position.y;
+        character.animationSpeed = characterSource.animationSpeed;
       }
       else {
         throw new Error(`Unable to load character ${config.background} for level ${config.name}`);
       }
+       */
 
-      level.characters.push(characterSource);
+      level.characters.push(character);
     }
 
     // Add to collection

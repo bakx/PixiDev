@@ -1,60 +1,75 @@
+import { Point } from "pixi.js";
 import { AnimationSprite } from "./AnimatedSprite";
-import { Dictionary } from 'typescript-collections';
 
 export class Characters {
-    data: Dictionary<string, Character> = new Dictionary<string, Character>();
+    data: Map<string, Character> = new Map<string, Character>();
 }
 
 export class Character {
     id: string;
     name: string;
+
+    animationSource: AnimationSprite;
+    animationKey: string;
+
     private stage: PIXI.Container;
-    private animationSource: AnimationSprite;
-    private animationKey: string;
     private animation: PIXI.AnimatedSprite;
+    private _animationSpeed: number;
+    private position: Point;
+
+    autoPlay: boolean = true;
+    loop: boolean = true;
+    interactive: boolean = true;
 
     constructor(stage: PIXI.Container, id: string, name: string) {
         this.stage = stage;
         this.id = id;
         this.name = name;
+        this.position = new Point();
     }
 
     /** Get X position of character */
-    get x() {
-        return this.animation.x;
+    get x(): number {
+        return this.position.x;
     }
 
     /** Set X position of character */
     set x(x: number) {
-        console.debug(`Setting x to ${x} for character ${this.id}`);
-        this.animation.x = x;
+        //console.debug(`Setting x to ${x} for character ${this.id}`);
+        this.position.x = x;
     }
 
     /** Get Y position of character */
-    get y() {
-        return this.animation.y;
+    get y(): number {
+        return this.position.y;
     }
 
     /** Set Y position of character */
     set y(y: number) {
-        console.debug(`Setting y to ${y} for character ${this.id}`);
-        this.animation.y = y;
+        //console.debug(`Setting y to ${y} for character ${this.id}`);
+        this.position.y = y;
     }
 
     /** Get the animation speed of the character */
-    get animationSpeed() {
-        return this.animation.animationSpeed;
+    get animationSpeed(): number {
+        return this._animationSpeed;
     }
 
     /** Set the animation speed of the character */
     set animationSpeed(speed: number) {
         console.debug(`Setting animation speed to ${speed} for character ${this.id}`);
-        this.animation.animationSpeed = speed;
+
+        this._animationSpeed = speed;
     }
 
     /** Add character to stage */
     addStage() {
-        console.debug(`Adding character ${this.id} to the stage`);
+        console.debug(`Adding character ${this.id} to the stage at position ${this.position.x},${this.position.y}`);
+
+        if (!this.animation) {
+            throw new Error(`Animation object not set for ${this.id}`);
+        }
+
         this.stage.addChild(this.animation);
     }
 
@@ -66,6 +81,11 @@ export class Character {
 
     /** Set the animation for the character */
     setAnimation(key: string, autoPlay: boolean = true, loop: boolean = true, interactive: boolean = true) {
+        // Update local variables
+        this.autoPlay = autoPlay;
+        this.loop = loop;
+        this.interactive = interactive;
+
         // Stop existing play
         if (this.animation) {
             if (this.animation.playing) {
@@ -77,10 +97,18 @@ export class Character {
         this.animationKey = key;
 
         // Assign new animation
-        if (this.animation)
-            this.animation.textures = this.animationSource.getAnimation(this.animationKey).textures;
-        else
-            this.animation = this.animationSource.getAnimation(this.animationKey);
+        let isVisible: boolean = this.animation != null;
+        if (isVisible) {
+            this.stage.removeChild(this.animation);
+        }
+
+        let animationSource = this.animationSource.getAnimation(this.animationKey).textures;
+        this.animation = new PIXI.AnimatedSprite(animationSource);
+        this.animation.animationSpeed = this._animationSpeed;
+
+        if (isVisible) {
+            this.stage.addChild(this.animation);
+        }
 
         // Play?
         if (autoPlay) {
@@ -115,6 +143,8 @@ export class Character {
 
     /** */
     update() {
+        this.animation.x = this.x++;
+        this.animation.y = this.y;
     }
 }
 

@@ -1,8 +1,7 @@
 import { Point } from "pixi.js";
-import { Dictionary } from 'typescript-collections';
 
 export class Backgrounds {
-    data: Dictionary<string, Background> = new Dictionary<string, Background>();
+    data: Map<string, Background> = new Map<string, Background>();
 }
 
 export class Background {

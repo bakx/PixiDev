@@ -1,18 +1,16 @@
-import { Dictionary } from 'typescript-collections';
-
 export class AnimationSprites {
-    data: Dictionary<string, AnimationSprite> = new Dictionary<string, AnimationSprite>();
+    data: Map<string, AnimationSprite> = new Map<string, AnimationSprite>();
 }
 
 export class AnimationSprite {
     id: string;
     animationKeys: string[];
-    animations: Dictionary<string, PIXI.AnimatedSprite>;
+    animations: Map<string, PIXI.AnimatedSprite>;
 
     constructor(id: string) {
         this.id = id;
         this.animationKeys = [];
-        this.animations = new Dictionary<string, PIXI.AnimatedSprite>();
+        this.animations = new Map<string, PIXI.AnimatedSprite>();
     }
 
     /** Add an animation key */
@@ -24,7 +22,7 @@ export class AnimationSprite {
     /** Add an animation */
     addAnimation(key: string, data: PIXI.AnimatedSprite) {
         console.debug(`Adding animation to key ${key} for ${this.id}`);
-        this.animations.setValue(key, data);
+        this.animations.set(key, data);
     }
 
     /** Get all animation keys */
@@ -34,8 +32,8 @@ export class AnimationSprite {
 
     /** Retrieve a specific animation */
     getAnimation(key: string) {
-        if (this.animations.containsKey(key)) {
-            return this.animations.getValue(key);
+        if (this.animations.has(key)) {
+            return this.animations.get(key);
         }
 
         throw new Error(`Unable to find animation ${key} for ${this.id}`);

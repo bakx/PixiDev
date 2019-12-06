@@ -91,7 +91,7 @@ export class Game {
     // Load animation sprites
     if (state === GameLoadingState.CHARACTERS) {
       // Load characters
-      this.characters = loadCharacters(this.app, this);
+      //this.characters = loadCharacters(this.app, this);
 
       // Move to next stage
       state = GameLoadingState.LEVELS;
@@ -148,15 +148,14 @@ export class Game {
     this.level = this.levels.data[this.levelIndex];
 
     // Add all characters to the stage
-    this.level.characters.forEach(char => {
-      // Retrieve the start values of the character
-      let orig = this.characters.data.getValue(char.name);
-      char.x = orig.x;
-      char.y = orig.y;
-      
-      // Add to stage
-      char.addStage();
-    });
+    for (let i = 0; i < this.level.characters.length; i++) {
+      let character = this.level.characters[i];
+
+      character.x = this.level.config.characters[i].position.x;
+      character.y = this.level.config.characters[i].position.y;
+
+      character.addStage();
+    }
 
     // Load background
     this.level.background.show();
@@ -183,14 +182,21 @@ export class Game {
   /** Main game loop that updates all entities */
   update() {
     if (this.gameState === GameState.RUNNING) {
+      // Update the background
       this.level.background.update();
 
-      // Change level?
+      // Update all characters
+      this.level.characters.forEach(char => {
+        char.update();
+      })
+
+      // Temporary debugging code
       if (this.gameFrame % 250 == 0) {
         this.levelIndex++;
         this.loadLevel();
       }
 
+      // Update game frame
       this.gameFrame++;
     }
   }
