@@ -6,6 +6,7 @@ export class AnimationSprite {
     id: string;
     animationKeys: string[];
     animations: Map<string, PIXI.AnimatedSprite>;
+    animationDetails: Map<string, AnimationDetails>;
 
     constructor(id: string) {
         this.id = id;
@@ -38,4 +39,9 @@ export class AnimationSprite {
 
         throw new Error(`Unable to find animation ${key} for ${this.id}`);
     }
+}
+
+export class AnimationDetails {
+    animationSpeed: number;
+    loop: boolean;
 }

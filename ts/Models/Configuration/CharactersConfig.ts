@@ -3,8 +3,18 @@ export interface CharactersConfig {
 }
 
 export interface CharacterConfig {
-    name: string;
-    sprite: string;
+    id: string;
     defaultAnimationKey: string;
     defaultAnimationSpeed: number;
+    animationDetails: CharacterAnimationDetailsConfig[];
+}
+
+export interface CharacterAnimationDetailsConfig {
+    key: string;
+    overrides: CharacterAnimationDetailsDataConfig;
+}
+
+export interface CharacterAnimationDetailsDataConfig {
+    animationSpeed: number;
+    loop: boolean;
 }

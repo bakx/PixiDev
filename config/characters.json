@@ -1,74 +1,52 @@
 {
     "data": [
         {
-            "name": "Samurai.json",
-            "sprite": "samurai.json",
+            "id": "samurai.json",
             "defaultAnimationKey": "2_WALK",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
                 {
-                    "animationKey": "1_IDLE",
-                    "animationSpeed": 0.14
+                    "key": "4_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
                 },
                 {
-                    "animationKey": "2_WALK",
-                    "animationSpeed": 0.14
+                    "key": "5_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
                 },
                 {
-                    "animationKey": "3_RUN",
-                    "animationSpeed": 0.14
-                },
-                {
-                    "animationKey": "4_JUMP",
-                    "animationSpeed": 0.14
-                },
-                {
-                    "animationKey": "5_JUMP",
-                    "animationSpeed": 0.14
-                },
-                {
-                    "animationKey": "6_HURT",
-                    "animationSpeed": 0.14
-                },
-                {
-                    "animationKey": "7_DIE",
-                    "animationSpeed": 0.14
+                    "key": "7_DIE",
+                    "overrides": {
+                        "loop": false
+                    }
                 }
             ]
         },
         {
-            "name": "Samurai2.json",
-            "sprite": "samurai2.json",
+            "id": "samurai2.json",
             "defaultAnimationKey": "22_WALK",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
                 {
-                    "animationKey": "11_IDLE",
-                    "animationSpeed": 0.14
+                    "key": "44_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
                 },
                 {
-                    "animationKey": "22_WALK",
-                    "animationSpeed": 0.14
+                    "key": "55_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
                 },
                 {
-                    "animationKey": "33_RUN",
-                    "animationSpeed": 0.14
-                },
-                {
-                    "animationKey": "44_JUMP",
-                    "animationSpeed": 0.14
-                },
-                {
-                    "animationKey": "55_JUMP",
-                    "animationSpeed": 0.14
-                },
-                {
-                    "animationKey": "66_HURT",
-                    "animationSpeed": 0.14
-                },
-                {
-                    "animationKey": "77_DIE",
-                    "animationSpeed": 0.14
+                    "key": "77_DIE",
+                    "overrides": {
+                        "loop": false
+                    }
                 }
             ]
         }

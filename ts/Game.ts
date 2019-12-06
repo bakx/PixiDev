@@ -91,7 +91,7 @@ export class Game {
     // Load animation sprites
     if (state === GameLoadingState.CHARACTERS) {
       // Load characters
-      //this.characters = loadCharacters(this.app, this);
+      this.characters = loadCharacters(this.app, this);
 
       // Move to next stage
       state = GameLoadingState.LEVELS;
@@ -151,9 +151,11 @@ export class Game {
     for (let i = 0; i < this.level.characters.length; i++) {
       let character = this.level.characters[i];
 
-      character.x = this.level.config.characters[i].position.x;
-      character.y = this.level.config.characters[i].position.y;
+      // Reset the position of the character to the original location as defined in the config
+      character.position.x = this.level.config.characters[i].position.x;
+      character.position.y = this.level.config.characters[i].position.y;
 
+      // Add to stage
       character.addStage();
     }
 
@@ -191,7 +193,7 @@ export class Game {
       })
 
       // Temporary debugging code
-      if (this.gameFrame % 250 == 0) {
+      if (this.gameFrame % 500 == 0) {
         this.levelIndex++;
         this.loadLevel();
       }

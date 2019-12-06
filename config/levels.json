@@ -6,7 +6,7 @@
             "characters": [
                 {
                     "id": "b58db7a6-f8fc-4f31-9162-86fae6282303",
-                    "name": "samurai.json",
+                    "sprite": "samurai.json",
                     "animationKey": "2_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -16,7 +16,7 @@
                 },
                 {
                     "id": "6f577ac4-4119-41fe-b620-ca26f8a5ebbf",
-                    "name": "samurai2.json",
+                    "sprite": "samurai2.json",
                     "animationKey": "22_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -26,7 +26,7 @@
                 },
                 {
                     "id": "1927c78c-ac9c-4fed-a29b-d0cdb9142054",
-                    "name": "samurai.json",
+                    "sprite": "samurai.json",
                     "animationKey": "2_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -36,7 +36,7 @@
                 },
                 {
                     "id": "b58db7a6-f8fc-4f31-9162-86fae6282303",
-                    "name": "samurai.json",
+                    "sprite": "samurai.json",
                     "animationKey": "2_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -46,7 +46,7 @@
                 },
                 {
                     "id": "6f577ac4-4119-41fe-b620-ca26f8a5ebbf",
-                    "name": "samurai2.json",
+                    "sprite": "samurai2.json",
                     "animationKey": "22_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -56,7 +56,7 @@
                 },
                 {
                     "id": "1927c78c-ac9c-4fed-a29b-d0cdb9142054",
-                    "name": "samurai.json",
+                    "sprite": "samurai.json",
                     "animationKey": "2_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -75,7 +75,7 @@
             "characters": [
                 {
                     "id": "f544cf59-6626-462b-bdc8-2c636c20c21c",
-                    "name": "samurai2.json",
+                    "sprite": "samurai2.json",
                     "animationKey": "22_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -94,7 +94,7 @@
             "characters": [
                 {
                     "id": "502727ec-c140-44f1-afdc-f414b5a55ed6",
-                    "name": "samurai.json",
+                    "sprite": "samurai.json",
                     "animationKey": "2_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -104,7 +104,7 @@
                 },
                 {
                     "id": "f2c2f8c4-5ba1-4e25-9438-5db1fd019385",
-                    "name": "samurai2.json",
+                    "sprite": "samurai2.json",
                     "animationKey": "22_WALK",
                     "animationSpeed": 0.14,
                     "position": {
@@ -114,7 +114,7 @@
                 },
                 {
                     "id": "b05ba832-ef3a-48f1-b410-4487f1d77b4e",
-                    "name": "samurai.json",
+                    "sprite": "samurai.json",
                     "animationKey": "2_WALK",
                     "animationSpeed": 0.14,
                     "position": {

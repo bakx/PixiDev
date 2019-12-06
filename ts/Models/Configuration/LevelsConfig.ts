@@ -11,8 +11,8 @@ export interface LevelConfig {
 }
 
 export interface LevelCharacterConfig {
-    id: any;
-    name: string;
+    id: string;
+    sprite: string;
     animationKey: string;
     animationSpeed: number;
     position: Point;
