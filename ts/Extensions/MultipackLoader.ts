@@ -120,6 +120,12 @@ export class MultipackLoader {
         /** When loading is complete, perform callback to inform dependent parts */
         loader.onComplete.add(() => {
             let animationSprite: AnimationSprite = new AnimationSprite(this._id, this._animationKeys, this._animations);
+            
+            // Diagnostics
+            this._animationKeys.forEach(key => {
+                console.debug(`Animation key: ${key} for id: ${this._id}`);
+            });
+            
             callback(this._id, `${this._id} was loaded succesfully`, animationSprite)
         });
     }

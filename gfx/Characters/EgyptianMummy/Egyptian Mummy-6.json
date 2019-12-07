@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Egyptian Mummy/Jump Loop/Jump Loop_005": {
+    "Egyptian Mummy/Jump Loop_005": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Slashing in The Air/Slashing in The Air_001": {
+    "Egyptian Mummy/Slashing in The Air_001": {
       "frame": {
         "x": 0,
         "y": 579,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Throwing in The Air/Throwing in The Air_001": {
+    "Egyptian Mummy/Throwing in The Air_001": {
       "frame": {
         "x": 0,
         "y": 1158,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Jump Loop/Jump Loop_000": {
+    "Egyptian Mummy/Jump Loop_000": {
       "frame": {
         "x": 456,
         "y": 0,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Slashing in The Air/Slashing in The Air_000": {
+    "Egyptian Mummy/Slashing in The Air_000": {
       "frame": {
         "x": 1034,
         "y": 0,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Throwing in The Air/Throwing in The Air_000": {
+    "Egyptian Mummy/Throwing in The Air_000": {
       "frame": {
         "x": 456,
         "y": 456,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Falling Down/Falling Down_001": {
+    "Egyptian Mummy/Falling Down_001": {
       "frame": {
         "x": 456,
         "y": 1034,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Jump Start/Jump Start_005": {
+    "Egyptian Mummy/Jump Start_005": {
       "frame": {
         "x": 912,
         "y": 456,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Dying/Dying_010": {
+    "Egyptian Mummy/Dying_010": {
       "frame": {
         "x": 1368,
         "y": 456,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Kicking/Kicking_003": {
+    "Egyptian Mummy/Kicking_003": {
       "frame": {
         "x": 1368,
         "y": 917,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Hurt/Hurt_004": {
+    "Egyptian Mummy/Hurt_004": {
       "frame": {
         "x": 917,
         "y": 1033,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Kicking/Kicking_010": {
+    "Egyptian Mummy/Kicking_010": {
       "frame": {
         "x": 1368,
         "y": 1376,

@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Anubis/Throwing/Throwing_001": {
+    "Anubis/Throwing_001": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Kicking/Kicking_001": {
+    "Anubis/Kicking_001": {
       "frame": {
         "x": 0,
         "y": 541,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Walking/Walking_010": {
+    "Anubis/Walking_010": {
       "frame": {
         "x": 395,
         "y": 0,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Idle Blinking/Idle Blinking_004": {
+    "Anubis/Idle Blinking_004": {
       "frame": {
         "x": 0,
         "y": 1081,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Walking/Walking_006": {
+    "Anubis/Walking_006": {
       "frame": {
         "x": 0,
         "y": 1620,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Jump Start/Jump Start_001": {
+    "Anubis/Jump Start_001": {
       "frame": {
         "x": 533,
         "y": 1620,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Throwing/Run Throwing_005": {
+    "Anubis/Run Throwing_005": {
       "frame": {
         "x": 1065,
         "y": 1620,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Running/Running_005": {
+    "Anubis/Running_005": {
       "frame": {
         "x": 1595,
         "y": 0,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Walking/Walking_021": {
+    "Anubis/Walking_021": {
       "frame": {
         "x": 1595,
         "y": 530,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Idle Blinking/Idle Blinking_010": {
+    "Anubis/Idle Blinking_010": {
       "frame": {
         "x": 396,
         "y": 1060,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Sliding/Sliding_003": {
+    "Anubis/Sliding_003": {
       "frame": {
         "x": 396,
         "y": 540,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Throwing/Run Throwing_008": {
+    "Anubis/Run Throwing_008": {
       "frame": {
         "x": 792,
         "y": 0,
@@ -288,7 +288,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Sliding/Sliding_004": {
+    "Anubis/Sliding_004": {
       "frame": {
         "x": 934,
         "y": 539,
@@ -312,7 +312,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Running/Running_008": {
+    "Anubis/Running_008": {
       "frame": {
         "x": 1188,
         "y": 0,
@@ -336,7 +336,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Idle Blinking/Idle Blinking_016": {
+    "Anubis/Idle Blinking_016": {
       "frame": {
         "x": 1188,
         "y": 1053,
@@ -360,7 +360,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Walking/Walking_017": {
+    "Anubis/Walking_017": {
       "frame": {
         "x": 792,
         "y": 1054,
@@ -384,7 +384,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Idle Blinking/Idle Blinking_009": {
+    "Anubis/Idle Blinking_009": {
       "frame": {
         "x": 1585,
         "y": 1060,
@@ -408,7 +408,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Idle/Idle_004": {
+    "Anubis/Idle_004": {
       "frame": {
         "x": 0,
         "y": 1081,
@@ -432,7 +432,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Idle/Idle_009": {
+    "Anubis/Idle_009": {
       "frame": {
         "x": 1585,
         "y": 1060,
@@ -456,7 +456,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Idle/Idle_010": {
+    "Anubis/Idle_010": {
       "frame": {
         "x": 396,
         "y": 1060,

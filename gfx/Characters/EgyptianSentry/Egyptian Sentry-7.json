@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Egyptian Sentry/Falling Down/Falling Down_000": {
+    "Egyptian Sentry/Falling Down_000": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Jump Start/Jump Start_004": {
+    "Egyptian Sentry/Jump Start_004": {
       "frame": {
         "x": 0,
         "y": 574,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Run Throwing/Run Throwing_003": {
+    "Egyptian Sentry/Run Throwing_003": {
       "frame": {
         "x": 0,
         "y": 1148,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Run Throwing/Run Throwing_009": {
+    "Egyptian Sentry/Run Throwing_009": {
       "frame": {
         "x": 456,
         "y": 1148,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Running/Running_003": {
+    "Egyptian Sentry/Running_003": {
       "frame": {
         "x": 457,
         "y": 574,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Running/Running_009": {
+    "Egyptian Sentry/Running_009": {
       "frame": {
         "x": 912,
         "y": 0,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Dying/Dying_009": {
+    "Egyptian Sentry/Dying_009": {
       "frame": {
         "x": 461,
         "y": 0,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Kicking/Kicking_002": {
+    "Egyptian Sentry/Kicking_002": {
       "frame": {
         "x": 1368,
         "y": 0,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Run Throwing/Run Throwing_002": {
+    "Egyptian Sentry/Run Throwing_002": {
       "frame": {
         "x": 1368,
         "y": 458,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Running/Running_010": {
+    "Egyptian Sentry/Running_010": {
       "frame": {
         "x": 913,
         "y": 573,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Run Throwing/Run Throwing_008": {
+    "Egyptian Sentry/Run Throwing_008": {
       "frame": {
         "x": 1368,
         "y": 915,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Hurt/Hurt_003": {
+    "Egyptian Sentry/Hurt_003": {
       "frame": {
         "x": 912,
         "y": 1147,
@@ -288,7 +288,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Running/Running_002": {
+    "Egyptian Sentry/Running_002": {
       "frame": {
         "x": 1368,
         "y": 1372,

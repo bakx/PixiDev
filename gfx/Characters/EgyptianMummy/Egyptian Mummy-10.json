@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Egyptian Mummy/Idle Blinking/Idle Blinking_011": {
+    "Egyptian Mummy/Idle Blinking_011": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Throwing/Throwing_009": {
+    "Egyptian Mummy/Throwing_009": {
       "frame": {
         "x": 0,
         "y": 569,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Walking/Walking_002": {
+    "Egyptian Mummy/Walking_002": {
       "frame": {
         "x": 456,
         "y": 0,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Walking/Walking_003": {
+    "Egyptian Mummy/Walking_003": {
       "frame": {
         "x": 0,
         "y": 1137,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Walking/Walking_004": {
+    "Egyptian Mummy/Walking_004": {
       "frame": {
         "x": 459,
         "y": 1137,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Idle Blinking/Idle Blinking_006": {
+    "Egyptian Mummy/Idle Blinking_006": {
       "frame": {
         "x": 462,
         "y": 568,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Jump Start/Jump Start_002": {
+    "Egyptian Mummy/Jump Start_002": {
       "frame": {
         "x": 917,
         "y": 0,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Run Throwing/Run Throwing_011": {
+    "Egyptian Mummy/Run Throwing_011": {
       "frame": {
         "x": 1374,
         "y": 0,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Running/Running_011": {
+    "Egyptian Mummy/Running_011": {
       "frame": {
         "x": 1374,
         "y": 457,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Slashing/Slashing_001": {
+    "Egyptian Mummy/Slashing_001": {
       "frame": {
         "x": 919,
         "y": 568,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Walking/Walking_005": {
+    "Egyptian Mummy/Walking_005": {
       "frame": {
         "x": 1374,
         "y": 914,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Walking/Walking_006": {
+    "Egyptian Mummy/Walking_006": {
       "frame": {
         "x": 917,
         "y": 1136,
@@ -288,7 +288,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Walking/Walking_007": {
+    "Egyptian Mummy/Walking_007": {
       "frame": {
         "x": 1374,
         "y": 1371,
@@ -312,7 +312,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Idle/Idle_006": {
+    "Egyptian Mummy/Idle_006": {
       "frame": {
         "x": 462,
         "y": 568,
@@ -336,7 +336,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Idle/Idle_011": {
+    "Egyptian Mummy/Idle_011": {
       "frame": {
         "x": 0,
         "y": 0,

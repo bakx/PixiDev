@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Anubis/Slashing in The Air/Slashing in The Air_009": {
+    "Anubis/Slashing in The Air_009": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_006": {
+    "Anubis/Slashing in The Air_006": {
       "frame": {
         "x": 602,
         "y": 0,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing/Slashing_003": {
+    "Anubis/Slashing_003": {
       "frame": {
         "x": 0,
         "y": 561,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_005": {
+    "Anubis/Slashing in The Air_005": {
       "frame": {
         "x": 1202,
         "y": 0,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_004": {
+    "Anubis/Slashing in The Air_004": {
       "frame": {
         "x": 600,
         "y": 576,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Dying/Dying_009": {
+    "Anubis/Dying_009": {
       "frame": {
         "x": 0,
         "y": 1120,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Hurt/Hurt_007": {
+    "Anubis/Hurt_007": {
       "frame": {
         "x": 0,
         "y": 1578,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Throwing/Throwing_007": {
+    "Anubis/Throwing_007": {
       "frame": {
         "x": 563,
         "y": 1578,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Throwing in The Air/Throwing in The Air_004": {
+    "Anubis/Throwing in The Air_004": {
       "frame": {
         "x": 596,
         "y": 1155,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Hurt/Hurt_004": {
+    "Anubis/Hurt_004": {
       "frame": {
         "x": 1142,
         "y": 1578,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Throwing in The Air/Throwing in The Air_005": {
+    "Anubis/Throwing in The Air_005": {
       "frame": {
         "x": 1175,
         "y": 1155,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing/Slashing_006": {
+    "Anubis/Slashing_006": {
       "frame": {
         "x": 1197,
         "y": 578,

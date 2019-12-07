@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Egyptian Sentry/Slashing/Slashing_003": {
+    "Egyptian Sentry/Slashing_003": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Slashing in The Air/Slashing in The Air_004": {
+    "Egyptian Sentry/Slashing in The Air_004": {
       "frame": {
         "x": 623,
         "y": 0,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Slashing in The Air/Slashing in The Air_009": {
+    "Egyptian Sentry/Slashing in The Air_009": {
       "frame": {
         "x": 0,
         "y": 565,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Slashing/Slashing_009": {
+    "Egyptian Sentry/Slashing_009": {
       "frame": {
         "x": 1245,
         "y": 0,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Run Slashing/Run Slashing_011": {
+    "Egyptian Sentry/Run Slashing_011": {
       "frame": {
         "x": 1245,
         "y": 568,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Slashing/Slashing_004": {
+    "Egyptian Sentry/Slashing_004": {
       "frame": {
         "x": 615,
         "y": 582,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Slashing/Slashing_005": {
+    "Egyptian Sentry/Slashing_005": {
       "frame": {
         "x": 615,
         "y": 1145,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Slashing/Slashing_008": {
+    "Egyptian Sentry/Slashing_008": {
       "frame": {
         "x": 0,
         "y": 1146,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Slashing/Slashing_006": {
+    "Egyptian Sentry/Slashing_006": {
       "frame": {
         "x": 1213,
         "y": 1136,

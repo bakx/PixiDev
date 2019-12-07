@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Anubis/Run Slashing/Run Slashing_010": {
+    "Anubis/Run Slashing_010": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Slashing/Run Slashing_008": {
+    "Anubis/Run Slashing_008": {
       "frame": {
         "x": 615,
         "y": 0,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing/Slashing_011": {
+    "Anubis/Slashing_011": {
       "frame": {
         "x": 1227,
         "y": 0,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_003": {
+    "Anubis/Slashing in The Air_003": {
       "frame": {
         "x": 1227,
         "y": 538,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_008": {
+    "Anubis/Slashing in The Air_008": {
       "frame": {
         "x": 615,
         "y": 539,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing/Slashing_010": {
+    "Anubis/Slashing_010": {
       "frame": {
         "x": 0,
         "y": 548,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Slashing/Run Slashing_007": {
+    "Anubis/Run Slashing_007": {
       "frame": {
         "x": 0,
         "y": 1104,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Slashing/Run Slashing_006": {
+    "Anubis/Run Slashing_006": {
       "frame": {
         "x": 1224,
         "y": 1104,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Kicking/Kicking_007": {
+    "Anubis/Kicking_007": {
       "frame": {
         "x": 1224,
         "y": 1647,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_007": {
+    "Anubis/Slashing in The Air_007": {
       "frame": {
         "x": 606,
         "y": 1108,

@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Egyptian Sentry/Kicking/Kicking_008": {
+    "Egyptian Sentry/Kicking_008": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Kicking/Kicking_009": {
+    "Egyptian Sentry/Kicking_009": {
       "frame": {
         "x": 0,
         "y": 579,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Jump Loop/Jump Loop_002": {
+    "Egyptian Sentry/Jump Loop_002": {
       "frame": {
         "x": 0,
         "y": 1158,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Throwing in The Air/Throwing in The Air_011": {
+    "Egyptian Sentry/Throwing in The Air_011": {
       "frame": {
         "x": 457,
         "y": 1158,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Jump Loop/Jump Loop_001": {
+    "Egyptian Sentry/Jump Loop_001": {
       "frame": {
         "x": 914,
         "y": 0,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Run Throwing/Run Throwing_010": {
+    "Egyptian Sentry/Run Throwing_010": {
       "frame": {
         "x": 459,
         "y": 0,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Jump Loop/Jump Loop_003": {
+    "Egyptian Sentry/Jump Loop_003": {
       "frame": {
         "x": 459,
         "y": 572,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Sliding/Sliding_000": {
+    "Egyptian Sentry/Sliding_000": {
       "frame": {
         "x": 1493,
         "y": 0,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Falling Down/Falling Down_005": {
+    "Egyptian Sentry/Falling Down_005": {
       "frame": {
         "x": 915,
         "y": 456,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Dying/Dying_007": {
+    "Egyptian Sentry/Dying_007": {
       "frame": {
         "x": 1493,
         "y": 498,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Kicking/Kicking_004": {
+    "Egyptian Sentry/Kicking_004": {
       "frame": {
         "x": 915,
         "y": 917,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Sliding/Sliding_001": {
+    "Egyptian Sentry/Sliding_001": {
       "frame": {
         "x": 1493,
         "y": 996,
@@ -288,7 +288,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Jump Loop/Jump Loop_004": {
+    "Egyptian Sentry/Jump Loop_004": {
       "frame": {
         "x": 914,
         "y": 1376,
@@ -312,7 +312,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Sliding/Sliding_005": {
+    "Egyptian Sentry/Sliding_005": {
       "frame": {
         "x": 1493,
         "y": 1493,

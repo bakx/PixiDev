@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Egyptian Sentry/Running/Running_006": {
+    "Egyptian Sentry/Running_006": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Idle Blinking/Idle Blinking_001": {
+    "Egyptian Sentry/Idle Blinking_001": {
       "frame": {
         "x": 0,
         "y": 563,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Idle Blinking/Idle Blinking_017": {
+    "Egyptian Sentry/Idle Blinking_017": {
       "frame": {
         "x": 0,
         "y": 1126,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Idle/Idle_017": {
+    "Egyptian Sentry/Idle_017": {
       "frame": {
         "x": 457,
         "y": 563,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Running/Running_000": {
+    "Egyptian Sentry/Running_000": {
       "frame": {
         "x": 460,
         "y": 0,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Sentry/Idle/Idle_001": {
+    "Egyptian Sentry/Idle_001": {
       "frame": {
         "x": 0,
         "y": 563,

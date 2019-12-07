@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Anubis/Dying/Dying_005": {
+    "Anubis/Dying_005": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Jump Loop/Jump Loop_001": {
+    "Anubis/Jump Loop_001": {
       "frame": {
         "x": 0,
         "y": 550,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Jump Loop/Jump Loop_005": {
+    "Anubis/Jump Loop_005": {
       "frame": {
         "x": 0,
         "y": 1100,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Throwing/Run Throwing_004": {
+    "Anubis/Run Throwing_004": {
       "frame": {
         "x": 0,
         "y": 1650,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Jump Loop/Jump Loop_004": {
+    "Anubis/Jump Loop_004": {
       "frame": {
         "x": 545,
         "y": 0,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Jump Loop/Jump Loop_002": {
+    "Anubis/Jump Loop_002": {
       "frame": {
         "x": 1094,
         "y": 0,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Throwing/Run Throwing_003": {
+    "Anubis/Run Throwing_003": {
       "frame": {
         "x": 1643,
         "y": 0,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Walking/Walking_003": {
+    "Anubis/Walking_003": {
       "frame": {
         "x": 1094,
         "y": 395,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Throwing/Run Throwing_010": {
+    "Anubis/Run Throwing_010": {
       "frame": {
         "x": 545,
         "y": 396,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Running/Running_010": {
+    "Anubis/Running_010": {
       "frame": {
         "x": 545,
         "y": 793,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Hurt/Hurt_010": {
+    "Anubis/Hurt_010": {
       "frame": {
         "x": 1642,
         "y": 546,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Jump Start/Jump Start_005": {
+    "Anubis/Jump Start_005": {
       "frame": {
         "x": 1093,
         "y": 798,
@@ -288,7 +288,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Jump Loop/Jump Loop_003": {
+    "Anubis/Jump Loop_003": {
       "frame": {
         "x": 545,
         "y": 1190,
@@ -312,7 +312,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Slashing/Run Slashing_000": {
+    "Anubis/Run Slashing_000": {
       "frame": {
         "x": 1641,
         "y": 1091,
@@ -336,7 +336,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Kicking/Kicking_002": {
+    "Anubis/Kicking_002": {
       "frame": {
         "x": 1093,
         "y": 1194,
@@ -360,7 +360,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Walking/Walking_011": {
+    "Anubis/Walking_011": {
       "frame": {
         "x": 1093,
         "y": 1591,
@@ -384,7 +384,7 @@
         "y": 0.5
       }
     },
-    "Anubis/Walking/Walking_016": {
+    "Anubis/Walking_016": {
       "frame": {
         "x": 545,
         "y": 1585,

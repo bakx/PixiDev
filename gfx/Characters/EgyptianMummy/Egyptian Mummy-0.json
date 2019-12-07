@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Egyptian Mummy/Run Slashing/Run Slashing_003": {
+    "Egyptian Mummy/Run Slashing_003": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Run Slashing/Run Slashing_004": {
+    "Egyptian Mummy/Run Slashing_004": {
       "frame": {
         "x": 664,
         "y": 0,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Slashing/Slashing_002": {
+    "Egyptian Mummy/Slashing_002": {
       "frame": {
         "x": 1325,
         "y": 0,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Slashing in The Air/Slashing in The Air_002": {
+    "Egyptian Mummy/Slashing in The Air_002": {
       "frame": {
         "x": 1325,
         "y": 565,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Run Slashing/Run Slashing_009": {
+    "Egyptian Mummy/Run Slashing_009": {
       "frame": {
         "x": 664,
         "y": 571,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Run Slashing/Run Slashing_002": {
+    "Egyptian Mummy/Run Slashing_002": {
       "frame": {
         "x": 0,
         "y": 573,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Run Slashing/Run Slashing_005": {
+    "Egyptian Mummy/Run Slashing_005": {
       "frame": {
         "x": 648,
         "y": 1144,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Run Slashing/Run Slashing_008": {
+    "Egyptian Mummy/Run Slashing_008": {
       "frame": {
         "x": 0,
         "y": 1145,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Egyptian Mummy/Run Slashing/Run Slashing_010": {
+    "Egyptian Mummy/Run Slashing_010": {
       "frame": {
         "x": 1294,
         "y": 1145,

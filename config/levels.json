@@ -7,7 +7,7 @@
                 {
                     "id": "b58db7a6-f8fc-4f31-9162-86fae6282303",
                     "sprite": "anubis",
-                    "animationKey": "Anubis/Idle Blinking/Idle Blinking",
+                    "animationKey": "Anubis/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 100,
@@ -27,11 +27,11 @@
                 {
                     "id": "f544cf59-6626-462b-bdc8-2c636c20c21c",
                     "sprite": "egyptmummy",
-                    "animationKey": "Egyptian Mummy/Kicking/Kicking",
+                    "animationKey": "Egyptian Mummy/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 400,
-                        "y": 575
+                        "y": 600
                     }
                 }
             ],
@@ -46,31 +46,31 @@
                 {
                     "id": "502727ec-c140-44f1-afdc-f414b5a55ed6",
                     "sprite": "anubis",
-                    "animationKey": "Anubis/Throwing/Throwing",
+                    "animationKey": "Anubis/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 100,
-                        "y": 500
+                        "y": 600
                     }
                 },
                 {
                     "id": "f2c2f8c4-5ba1-4e25-9438-5db1fd019385",
                     "sprite": "egyptmummy",
-                    "animationKey": "Egyptian Mummy/Kicking/Kicking",
+                    "animationKey": "Egyptian Mummy/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 400,
-                        "y": 500
+                        "y": 605
                     }
                 },
                 {
                     "id": "b05ba832-ef3a-48f1-b410-4487f1d77b4e",
                     "sprite": "egyptiansentry",
-                    "animationKey": "Egyptian Sentry/Run Slashing/Run Slashing",
+                    "animationKey": "Egyptian Sentry/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 700,
-                        "y": 500
+                        "y": 620
                     }
                 }
             ],

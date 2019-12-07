@@ -251,11 +251,12 @@ export class Game {
 
       // Update all characters
       this.level.characters.forEach(char => {
+        char.position.x += 2;
         char.update();
       })
 
-      // Temporary debugging code
-      if (this.gameFrame % 500 == 0) {
+      // Temporary debugging code. If a character walks out of the screen, move to next level.
+      if (this.level.characters.some(x => x.position.x > this.app.view.width)) {
         this.levelIndex++;
         this.loadLevel();
       }

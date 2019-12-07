@@ -2,7 +2,7 @@
     "data": [
         {
             "id": "anubis",
-            "defaultAnimationKey": "Anubis/Run Slashing/Run Slashing",
+            "defaultAnimationKey": "Anubis/Run Slashing",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
                 {
@@ -21,7 +21,7 @@
         },
         {
             "id": "egyptmummy",
-            "defaultAnimationKey": "Egyptian Mummy/Run Slashing/Run Slashing",
+            "defaultAnimationKey": "Egyptian Mummy/Run Slashing",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
                 {
@@ -46,7 +46,7 @@
         },
         {
             "id": "egyptiansentry",
-            "defaultAnimationKey": "Egyptian Sentry/Run Slashing/Run Slashing",
+            "defaultAnimationKey": "Egyptian Sentry/Run Slashing",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
                 {
