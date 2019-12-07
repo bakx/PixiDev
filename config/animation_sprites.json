@@ -2,10 +2,24 @@
     "data": [
         {
             "id": "anubis",
-            "filename": "gfx/Characters/Anubis/anubis-",
+            "filename": "gfx/Characters/Anubis/Anubis-",
             "startAt" : 0,
             "endAt" : 12,
             "animationSpeed": 0.2
-        }
+        },
+        {
+            "id": "egyptmummy",
+            "filename": "gfx/Characters/EgyptianMummy/Egyptian Mummy-",
+            "startAt" : 0,
+            "endAt" : 15,
+            "animationSpeed": 0.2
+        } ,
+        {
+            "id": "egyptiansentry",
+            "filename": "gfx/Characters/EgyptianSentry/Egyptian Sentry-",
+            "startAt" : 0,
+            "endAt" : 15,
+            "animationSpeed": 0.2
+        }               
     ]
 }

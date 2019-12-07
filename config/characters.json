@@ -2,7 +2,7 @@
     "data": [
         {
             "id": "anubis",
-            "defaultAnimationKey": "Run Slashing",
+            "defaultAnimationKey": "Anubis/Run Slashing/Run Slashing",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
                 {
@@ -20,8 +20,33 @@
             ]
         },
         {
-            "id": "anubis",
-            "defaultAnimationKey": "Run Slashing",
+            "id": "egyptmummy",
+            "defaultAnimationKey": "Egyptian Mummy/Run Slashing/Run Slashing",
+            "defaultAnimationSpeed": 0.10,
+            "animationDetails": [
+                {
+                    "key": "44_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
+                },
+                {
+                    "key": "55_JUMP",
+                    "overrides": {
+                        "loop": false
+                    }
+                },
+                {
+                    "key": "77_DIE",
+                    "overrides": {
+                        "loop": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "egyptiansentry",
+            "defaultAnimationKey": "Egyptian Sentry/Run Slashing/Run Slashing",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
                 {

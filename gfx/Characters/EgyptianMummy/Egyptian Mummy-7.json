@@ -1,19 +1,19 @@
 {
   "frames": {
-    "Idle_015.png": {
+    "Egyptian Mummy/Falling Down/Falling Down_000": {
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 457,
-        "h": 565
+        "w": 461,
+        "h": 574
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 212,
-        "y": 167,
-        "w": 457,
-        "h": 565
+        "x": 260,
+        "y": 119,
+        "w": 461,
+        "h": 574
       },
       "sourceSize": {
         "w": 900,
@@ -24,20 +24,20 @@
         "y": 0.5
       }
     },
-    "Jump Start_001.png": {
+    "Egyptian Mummy/Jump Start/Jump Start_004": {
       "frame": {
         "x": 0,
-        "y": 565,
+        "y": 574,
         "w": 457,
-        "h": 565
+        "h": 574
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 216,
-        "y": 163,
+        "x": 202,
+        "y": 141,
         "w": 457,
-        "h": 565
+        "h": 574
       },
       "sourceSize": {
         "w": 900,
@@ -48,212 +48,20 @@
         "y": 0.5
       }
     },
-    "Throwing_002.png": {
+    "Egyptian Mummy/Run Throwing/Run Throwing_003": {
       "frame": {
         "x": 0,
-        "y": 1130,
-        "w": 457,
-        "h": 565
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 219,
-        "y": 167,
-        "w": 457,
-        "h": 565
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Throwing_005.png": {
-      "frame": {
-        "x": 457,
-        "y": 0,
-        "w": 461,
-        "h": 564
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 289,
-        "y": 169,
-        "w": 461,
-        "h": 564
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Dying_001.png": {
-      "frame": {
-        "x": 1021,
-        "y": 0,
-        "w": 460,
-        "h": 564
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 245,
-        "y": 158,
-        "w": 460,
-        "h": 564
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Hurt_001.png": {
-      "frame": {
-        "x": 1585,
-        "y": 0,
-        "w": 461,
-        "h": 563
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 255,
-        "y": 169,
-        "w": 461,
-        "h": 563
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle Blinking_002.png": {
-      "frame": {
-        "x": 1021,
-        "y": 460,
-        "w": 458,
-        "h": 564
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 221,
-        "y": 168,
-        "w": 458,
-        "h": 564
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle Blinking_016.png": {
-      "frame": {
-        "x": 457,
-        "y": 461,
-        "w": 457,
-        "h": 564
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 215,
-        "y": 168,
-        "w": 457,
-        "h": 564
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Throwing_004.png": {
-      "frame": {
-        "x": 1585,
-        "y": 563,
-        "w": 461,
-        "h": 563
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 286,
-        "y": 169,
-        "w": 461,
-        "h": 563
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle_016.png": {
-      "frame": {
-        "x": 457,
-        "y": 1126,
-        "w": 457,
-        "h": 564
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 215,
-        "y": 168,
-        "w": 457,
-        "h": 564
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Hurt_011.png": {
-      "frame": {
-        "x": 914,
-        "y": 918,
+        "y": 1148,
         "w": 456,
-        "h": 564
+        "h": 573
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 204,
-        "y": 168,
+        "x": 192,
+        "y": 141,
         "w": 456,
-        "h": 564
+        "h": 573
       },
       "sourceSize": {
         "w": 900,
@@ -264,20 +72,92 @@
         "y": 0.5
       }
     },
-    "Hurt_006.png": {
+    "Egyptian Mummy/Run Throwing/Run Throwing_009": {
       "frame": {
-        "x": 1478,
-        "y": 1126,
-        "w": 472,
-        "h": 563
+        "x": 456,
+        "y": 1148,
+        "w": 456,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 193,
+        "y": 142,
+        "w": 456,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Running/Running_003": {
+      "frame": {
+        "x": 457,
+        "y": 574,
+        "w": 456,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 192,
+        "y": 141,
+        "w": 456,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Running/Running_009": {
+      "frame": {
+        "x": 912,
+        "y": 0,
+        "w": 456,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 193,
+        "y": 142,
+        "w": 456,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Dying/Dying_009": {
+      "frame": {
+        "x": 461,
+        "y": 0,
+        "w": 570,
+        "h": 450
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 134,
-        "y": 169,
-        "w": 472,
-        "h": 563
+        "x": 105,
+        "y": 316,
+        "w": 570,
+        "h": 450
       },
       "sourceSize": {
         "w": 900,
@@ -288,44 +168,140 @@
         "y": 0.5
       }
     },
-    "Run Throwing_006.png": {
+    "Egyptian Mummy/Kicking/Kicking_002": {
       "frame": {
-        "x": 914,
-        "y": 1374,
-        "w": 460,
-        "h": 563
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 226,
-        "y": 169,
-        "w": 460,
-        "h": 563
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Idle_002.png": {
-      "frame": {
-        "x": 1021,
-        "y": 460,
+        "x": 1368,
+        "y": 0,
         "w": 458,
-        "h": 564
+        "h": 572
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 221,
-        "y": 168,
+        "x": 209,
+        "y": 160,
         "w": 458,
-        "h": 564
+        "h": 572
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Run Throwing/Run Throwing_002": {
+      "frame": {
+        "x": 1368,
+        "y": 458,
+        "w": 457,
+        "h": 572
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 208,
+        "y": 150,
+        "w": 457,
+        "h": 572
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Running/Running_010": {
+      "frame": {
+        "x": 913,
+        "y": 573,
+        "w": 455,
+        "h": 572
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 194,
+        "y": 150,
+        "w": 455,
+        "h": 572
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Run Throwing/Run Throwing_008": {
+      "frame": {
+        "x": 1368,
+        "y": 915,
+        "w": 457,
+        "h": 572
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 208,
+        "y": 151,
+        "w": 457,
+        "h": 572
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Hurt/Hurt_003": {
+      "frame": {
+        "x": 912,
+        "y": 1147,
+        "w": 456,
+        "h": 570
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 201,
+        "y": 162,
+        "w": 456,
+        "h": 570
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Running/Running_002": {
+      "frame": {
+        "x": 1368,
+        "y": 1372,
+        "w": 457,
+        "h": 572
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 208,
+        "y": 150,
+        "w": 457,
+        "h": 572
       },
       "sourceSize": {
         "w": 900,
@@ -340,11 +316,11 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.0",
-    "image": "egyptmummy-14.png",
+    "image": "Egyptian Mummy-7.png",
     "format": "RGBA8888",
     "size": {
-      "w": 2046,
-      "h": 1834
+      "w": 1940,
+      "h": 1944
     },
     "scale": 1
   }

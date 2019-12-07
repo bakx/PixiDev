@@ -1,42 +1,18 @@
 {
   "frames": {
-    "Slashing_003.png": {
+    "Egyptian Sentry/Slashing in The Air/Slashing in The Air_003": {
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 623,
-        "h": 565
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 253,
-        "y": 168,
-        "w": 623,
-        "h": 565
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Slashing in The Air_004.png": {
-      "frame": {
-        "x": 623,
-        "y": 0,
-        "w": 622,
+        "w": 635,
         "h": 582
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 243,
-        "y": 122,
-        "w": 622,
+        "x": 227,
+        "y": 123,
+        "w": 635,
         "h": 582
       },
       "sourceSize": {
@@ -48,43 +24,43 @@
         "y": 0.5
       }
     },
-    "Slashing in The Air_009.png": {
+    "Egyptian Sentry/Slashing in The Air/Slashing in The Air_008": {
       "frame": {
-        "x": 0,
-        "y": 565,
-        "w": 615,
-        "h": 581
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 221,
-        "y": 124,
-        "w": 615,
-        "h": 581
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Slashing_009.png": {
-      "frame": {
-        "x": 1245,
+        "x": 635,
         "y": 0,
-        "w": 614,
+        "w": 634,
+        "h": 581
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 231,
+        "y": 123,
+        "w": 634,
+        "h": 581
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Run Slashing/Run Slashing_007": {
+      "frame": {
+        "x": 1269,
+        "y": 0,
+        "w": 632,
         "h": 568
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 259,
-        "y": 165,
-        "w": 614,
+        "x": 224,
+        "y": 160,
+        "w": 632,
         "h": 568
       },
       "sourceSize": {
@@ -96,20 +72,20 @@
         "y": 0.5
       }
     },
-    "Run Slashing_011.png": {
+    "Egyptian Sentry/Slashing/Slashing_011": {
       "frame": {
-        "x": 1245,
+        "x": 1269,
         "y": 568,
-        "w": 609,
-        "h": 568
+        "w": 632,
+        "h": 567
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 210,
-        "y": 159,
-        "w": 609,
-        "h": 568
+        "x": 212,
+        "y": 165,
+        "w": 632,
+        "h": 567
       },
       "sourceSize": {
         "w": 900,
@@ -120,19 +96,19 @@
         "y": 0.5
       }
     },
-    "Slashing_004.png": {
+    "Egyptian Sentry/Run Slashing/Run Slashing_006": {
       "frame": {
-        "x": 615,
-        "y": 582,
-        "w": 598,
+        "x": 635,
+        "y": 581,
+        "w": 632,
         "h": 563
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 286,
+        "x": 226,
         "y": 169,
-        "w": 598,
+        "w": 632,
         "h": 563
       },
       "sourceSize": {
@@ -144,44 +120,20 @@
         "y": 0.5
       }
     },
-    "Slashing_005.png": {
-      "frame": {
-        "x": 615,
-        "y": 1145,
-        "w": 594,
-        "h": 564
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 289,
-        "y": 169,
-        "w": 594,
-        "h": 564
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Slashing_008.png": {
+    "Egyptian Sentry/Slashing in The Air/Slashing in The Air_007": {
       "frame": {
         "x": 0,
-        "y": 1146,
-        "w": 592,
-        "h": 566
+        "y": 582,
+        "w": 629,
+        "h": 581
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 287,
-        "y": 167,
-        "w": 592,
-        "h": 566
+        "x": 237,
+        "y": 123,
+        "w": 629,
+        "h": 581
       },
       "sourceSize": {
         "w": 900,
@@ -192,20 +144,68 @@
         "y": 0.5
       }
     },
-    "Slashing_006.png": {
+    "Egyptian Sentry/Slashing in The Air/Slashing in The Air_006": {
       "frame": {
-        "x": 1213,
-        "y": 1136,
-        "w": 589,
-        "h": 565
+        "x": 1267,
+        "y": 1135,
+        "w": 627,
+        "h": 582
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 293,
-        "y": 168,
-        "w": 589,
-        "h": 565
+        "x": 239,
+        "y": 122,
+        "w": 627,
+        "h": 582
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Slashing/Slashing_010": {
+      "frame": {
+        "x": 629,
+        "y": 1144,
+        "w": 627,
+        "h": 567
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 234,
+        "y": 165,
+        "w": 627,
+        "h": 567
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Slashing in The Air/Slashing in The Air_005": {
+      "frame": {
+        "x": 0,
+        "y": 1163,
+        "w": 624,
+        "h": 582
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 241,
+        "y": 122,
+        "w": 624,
+        "h": 582
       },
       "sourceSize": {
         "w": 900,
@@ -220,11 +220,11 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.0",
-    "image": "egyptmummy-2.png",
+    "image": "Egyptian Sentry-1.png",
     "format": "RGBA8888",
     "size": {
-      "w": 1859,
-      "h": 1712
+      "w": 1901,
+      "h": 1745
     },
     "scale": 1
   }

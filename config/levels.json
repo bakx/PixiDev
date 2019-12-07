@@ -7,7 +7,7 @@
                 {
                     "id": "b58db7a6-f8fc-4f31-9162-86fae6282303",
                     "sprite": "anubis",
-                    "animationKey": "Idle",
+                    "animationKey": "Anubis/Idle Blinking/Idle Blinking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 100,
@@ -26,8 +26,8 @@
             "characters": [
                 {
                     "id": "f544cf59-6626-462b-bdc8-2c636c20c21c",
-                    "sprite": "anubis",
-                    "animationKey": "Kicking",
+                    "sprite": "egyptmummy",
+                    "animationKey": "Egyptian Mummy/Kicking/Kicking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 400,
@@ -46,7 +46,7 @@
                 {
                     "id": "502727ec-c140-44f1-afdc-f414b5a55ed6",
                     "sprite": "anubis",
-                    "animationKey": "Idle",
+                    "animationKey": "Anubis/Throwing/Throwing",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 100,
@@ -55,8 +55,8 @@
                 },
                 {
                     "id": "f2c2f8c4-5ba1-4e25-9438-5db1fd019385",
-                    "sprite": "anubis",
-                    "animationKey": "Kicking",
+                    "sprite": "egyptmummy",
+                    "animationKey": "Egyptian Mummy/Kicking/Kicking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 400,
@@ -65,8 +65,8 @@
                 },
                 {
                     "id": "b05ba832-ef3a-48f1-b410-4487f1d77b4e",
-                    "sprite": "anubis",
-                    "animationKey": "Idle",
+                    "sprite": "egyptiansentry",
+                    "animationKey": "Egyptian Sentry/Run Slashing/Run Slashing",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 700,

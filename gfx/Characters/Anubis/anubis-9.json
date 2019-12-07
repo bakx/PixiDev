@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Run Throwing_009": {
+    "Anubis/Run Throwing/Run Throwing_009": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Running_003": {
+    "Anubis/Running/Running_003": {
       "frame": {
         "x": 0,
         "y": 546,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Running_009": {
+    "Anubis/Running/Running_009": {
       "frame": {
         "x": 0,
         "y": 1092,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Run Throwing_000": {
+    "Anubis/Run Throwing/Run Throwing_000": {
       "frame": {
         "x": 0,
         "y": 1638,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Running_000": {
+    "Anubis/Running/Running_000": {
       "frame": {
         "x": 543,
         "y": 1638,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Throwing in The Air_002": {
+    "Anubis/Throwing in The Air/Throwing in The Air_002": {
       "frame": {
         "x": 1086,
         "y": 0,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Run Throwing_006": {
+    "Anubis/Run Throwing/Run Throwing_006": {
       "frame": {
         "x": 1631,
         "y": 0,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Running_004": {
+    "Anubis/Running/Running_004": {
       "frame": {
         "x": 1086,
         "y": 396,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Running_006": {
+    "Anubis/Running/Running_006": {
       "frame": {
         "x": 1631,
         "y": 543,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Throwing in The Air_011": {
+    "Anubis/Throwing in The Air/Throwing in The Air_011": {
       "frame": {
         "x": 1086,
         "y": 791,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Idle Blinking_003": {
+    "Anubis/Idle Blinking/Idle Blinking_003": {
       "frame": {
         "x": 1630,
         "y": 1086,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Kicking_011": {
+    "Anubis/Kicking/Kicking_011": {
       "frame": {
         "x": 1086,
         "y": 1187,
@@ -288,7 +288,7 @@
         "y": 0.5
       }
     },
-    "Walking_004": {
+    "Anubis/Walking/Walking_004": {
       "frame": {
         "x": 1086,
         "y": 1583,
@@ -312,7 +312,7 @@
         "y": 0.5
       }
     },
-    "Jump Start_004": {
+    "Anubis/Jump Start/Jump Start_004": {
       "frame": {
         "x": 395,
         "y": 0,
@@ -336,7 +336,7 @@
         "y": 0.5
       }
     },
-    "Walking_023": {
+    "Anubis/Walking/Walking_023": {
       "frame": {
         "x": 395,
         "y": 395,
@@ -360,7 +360,7 @@
         "y": 0.5
       }
     },
-    "Slashing_001": {
+    "Anubis/Slashing/Slashing_001": {
       "frame": {
         "x": 395,
         "y": 793,
@@ -384,7 +384,7 @@
         "y": 0.5
       }
     },
-    "Idle Blinking_001": {
+    "Anubis/Idle Blinking/Idle Blinking_001": {
       "frame": {
         "x": 395,
         "y": 1188,
@@ -408,7 +408,7 @@
         "y": 0.5
       }
     },
-    "Idle_001": {
+    "Anubis/Idle/Idle_001": {
       "frame": {
         "x": 395,
         "y": 1188,
@@ -432,7 +432,7 @@
         "y": 0.5
       }
     },
-    "Idle_003": {
+    "Anubis/Idle/Idle_003": {
       "frame": {
         "x": 1630,
         "y": 1086,
@@ -460,7 +460,7 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.0",
-    "image": "anubis-9.png",
+    "image": "Anubis-9.png",
     "format": "RGBA8888",
     "size": {
       "w": 2033,

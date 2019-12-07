@@ -1,19 +1,19 @@
 {
   "frames": {
-    "Anubis/Walking/Walking_012": {
+    "Egyptian Sentry/Idle/Idle_015": {
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 405,
-        "h": 552
+        "w": 457,
+        "h": 565
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 262,
-        "y": 187,
-        "w": 405,
-        "h": 552
+        "x": 212,
+        "y": 167,
+        "w": 457,
+        "h": 565
       },
       "sourceSize": {
         "w": 900,
@@ -24,20 +24,20 @@
         "y": 0.5
       }
     },
-    "Anubis/Walking/Walking_015": {
+    "Egyptian Sentry/Jump Start/Jump Start_001": {
       "frame": {
         "x": 0,
-        "y": 552,
-        "w": 404,
-        "h": 552
+        "y": 565,
+        "w": 457,
+        "h": 565
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 257,
-        "y": 185,
-        "w": 404,
-        "h": 552
+        "x": 216,
+        "y": 163,
+        "w": 457,
+        "h": 565
       },
       "sourceSize": {
         "w": 900,
@@ -48,20 +48,20 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_001": {
+    "Egyptian Sentry/Throwing/Throwing_002": {
       "frame": {
         "x": 0,
-        "y": 1104,
-        "w": 395,
-        "h": 552
+        "y": 1130,
+        "w": 457,
+        "h": 565
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 230,
-        "y": 153,
-        "w": 395,
-        "h": 552
+        "x": 219,
+        "y": 167,
+        "w": 457,
+        "h": 565
       },
       "sourceSize": {
         "w": 900,
@@ -72,68 +72,236 @@
         "y": 0.5
       }
     },
-    "Anubis/Throwing in The Air/Throwing in The Air_001": {
+    "Egyptian Sentry/Throwing/Throwing_005": {
       "frame": {
-        "x": 395,
-        "y": 1104,
-        "w": 395,
-        "h": 552
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 230,
-        "y": 153,
-        "w": 395,
-        "h": 552
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Kicking/Kicking_010": {
-      "frame": {
-        "x": 404,
-        "y": 552,
-        "w": 398,
-        "h": 551
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 229,
-        "y": 181,
-        "w": 398,
-        "h": 551
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Jump Loop/Jump Loop_000": {
-      "frame": {
-        "x": 790,
+        "x": 457,
         "y": 0,
-        "w": 396,
-        "h": 551
+        "w": 461,
+        "h": 564
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 289,
+        "y": 169,
+        "w": 461,
+        "h": 564
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Dying/Dying_001": {
+      "frame": {
+        "x": 1021,
+        "y": 0,
+        "w": 460,
+        "h": 564
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 245,
+        "y": 158,
+        "w": 460,
+        "h": 564
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Hurt/Hurt_001": {
+      "frame": {
+        "x": 1585,
+        "y": 0,
+        "w": 461,
+        "h": 563
       },
       "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 255,
+        "y": 169,
+        "w": 461,
+        "h": 563
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Idle Blinking/Idle Blinking_002": {
+      "frame": {
+        "x": 1021,
+        "y": 460,
+        "w": 458,
+        "h": 564
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 221,
+        "y": 168,
+        "w": 458,
+        "h": 564
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Idle Blinking/Idle Blinking_016": {
+      "frame": {
+        "x": 457,
+        "y": 461,
+        "w": 457,
+        "h": 564
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 215,
+        "y": 168,
+        "w": 457,
+        "h": 564
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Throwing/Throwing_004": {
+      "frame": {
+        "x": 1585,
+        "y": 563,
+        "w": 461,
+        "h": 563
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 286,
+        "y": 169,
+        "w": 461,
+        "h": 563
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Idle/Idle_016": {
+      "frame": {
+        "x": 457,
+        "y": 1126,
+        "w": 457,
+        "h": 564
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 215,
+        "y": 168,
+        "w": 457,
+        "h": 564
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Hurt/Hurt_011": {
+      "frame": {
+        "x": 914,
+        "y": 918,
+        "w": 456,
+        "h": 564
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 204,
+        "y": 168,
+        "w": 456,
+        "h": 564
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Hurt/Hurt_006": {
+      "frame": {
+        "x": 1478,
+        "y": 1126,
+        "w": 472,
+        "h": 563
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 134,
+        "y": 169,
+        "w": 472,
+        "h": 563
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Run Throwing/Run Throwing_006": {
+      "frame": {
+        "x": 914,
+        "y": 1374,
+        "w": 460,
+        "h": 563
+      },
+      "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
         "x": 226,
-        "y": 154,
-        "w": 396,
-        "h": 551
+        "y": 169,
+        "w": 460,
+        "h": 563
       },
       "sourceSize": {
         "w": 900,
@@ -144,212 +312,20 @@
         "y": 0.5
       }
     },
-    "Anubis/Throwing in The Air/Throwing in The Air_010": {
+    "Egyptian Sentry/Idle/Idle_002": {
       "frame": {
-        "x": 802,
-        "y": 551,
-        "w": 396,
-        "h": 551
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 240,
-        "y": 154,
-        "w": 396,
-        "h": 551
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Run Throwing/Run Throwing_007": {
-      "frame": {
-        "x": 1186,
-        "y": 0,
-        "w": 405,
-        "h": 550
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 250,
-        "y": 178,
-        "w": 405,
-        "h": 550
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Throwing/Throwing_000": {
-      "frame": {
-        "x": 1591,
-        "y": 0,
-        "w": 407,
-        "h": 542
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 222,
-        "y": 190,
-        "w": 407,
-        "h": 542
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Walking/Walking_000": {
-      "frame": {
-        "x": 1591,
-        "y": 542,
-        "w": 406,
-        "h": 549
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 262,
-        "y": 187,
-        "w": 406,
-        "h": 549
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Running/Running_007": {
-      "frame": {
-        "x": 1591,
-        "y": 1091,
-        "w": 405,
-        "h": 550
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 250,
-        "y": 178,
-        "w": 405,
-        "h": 550
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Run Slashing/Run Slashing_001": {
-      "frame": {
-        "x": 790,
-        "y": 1641,
-        "w": 405,
-        "h": 548
+        "x": 1021,
+        "y": 460,
+        "w": 458,
+        "h": 564
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 249,
-        "y": 178,
-        "w": 405,
-        "h": 548
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Sliding/Sliding_002": {
-      "frame": {
-        "x": 802,
-        "y": 1102,
-        "w": 514,
-        "h": 539
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 78,
-        "y": 238,
-        "w": 514,
-        "h": 539
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Running/Running_001": {
-      "frame": {
-        "x": 1338,
-        "y": 1641,
-        "w": 405,
-        "h": 548
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 249,
-        "y": 178,
-        "w": 405,
-        "h": 548
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Run Throwing/Run Throwing_001": {
-      "frame": {
-        "x": 790,
-        "y": 1641,
-        "w": 405,
-        "h": 548
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 249,
-        "y": 178,
-        "w": 405,
-        "h": 548
+        "x": 221,
+        "y": 168,
+        "w": 458,
+        "h": 564
       },
       "sourceSize": {
         "w": 900,
@@ -364,11 +340,11 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.0",
-    "image": "Anubis-7.png",
+    "image": "Egyptian Sentry-14.png",
     "format": "RGBA8888",
     "size": {
-      "w": 1998,
-      "h": 2046
+      "w": 2046,
+      "h": 1834
     },
     "scale": 1
   }

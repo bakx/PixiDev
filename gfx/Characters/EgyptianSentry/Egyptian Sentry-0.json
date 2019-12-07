@@ -1,19 +1,19 @@
 {
   "frames": {
-    "Anubis/Run Slashing/Run Slashing_010": {
+    "Egyptian Sentry/Run Slashing/Run Slashing_003": {
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 615,
-        "h": 548
+        "w": 664,
+        "h": 573
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 227,
-        "y": 174,
-        "w": 615,
-        "h": 548
+        "x": 192,
+        "y": 141,
+        "w": 664,
+        "h": 573
       },
       "sourceSize": {
         "w": 900,
@@ -24,20 +24,20 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Slashing/Run Slashing_008": {
+    "Egyptian Sentry/Run Slashing/Run Slashing_004": {
       "frame": {
-        "x": 615,
+        "x": 664,
         "y": 0,
-        "w": 612,
-        "h": 539
+        "w": 661,
+        "h": 571
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 237,
-        "y": 184,
-        "w": 612,
-        "h": 539
+        "x": 195,
+        "y": 150,
+        "w": 661,
+        "h": 571
       },
       "sourceSize": {
         "w": 900,
@@ -48,20 +48,20 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing/Slashing_011": {
+    "Egyptian Sentry/Slashing/Slashing_002": {
       "frame": {
-        "x": 1227,
+        "x": 1325,
         "y": 0,
-        "w": 611,
-        "h": 538
+        "w": 657,
+        "h": 565
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 240,
-        "y": 194,
-        "w": 611,
-        "h": 538
+        "x": 219,
+        "y": 167,
+        "w": 657,
+        "h": 565
       },
       "sourceSize": {
         "w": 900,
@@ -72,19 +72,91 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_003": {
+    "Egyptian Sentry/Slashing in The Air/Slashing in The Air_002": {
       "frame": {
-        "x": 1227,
-        "y": 538,
-        "w": 610,
+        "x": 1325,
+        "y": 565,
+        "w": 655,
+        "h": 580
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 207,
+        "y": 125,
+        "w": 655,
+        "h": 580
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Run Slashing/Run Slashing_009": {
+      "frame": {
+        "x": 664,
+        "y": 571,
+        "w": 649,
+        "h": 573
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 193,
+        "y": 142,
+        "w": 649,
+        "h": 573
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Run Slashing/Run Slashing_002": {
+      "frame": {
+        "x": 0,
+        "y": 573,
+        "w": 648,
+        "h": 572
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 208,
+        "y": 150,
+        "w": 648,
+        "h": 572
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Run Slashing/Run Slashing_005": {
+      "frame": {
+        "x": 648,
+        "y": 1144,
+        "w": 646,
         "h": 566
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 252,
-        "y": 139,
-        "w": 610,
+        "x": 211,
+        "y": 160,
+        "w": 646,
         "h": 566
       },
       "sourceSize": {
@@ -96,44 +168,20 @@
         "y": 0.5
       }
     },
-    "Anubis/Slashing in The Air/Slashing in The Air_008": {
-      "frame": {
-        "x": 615,
-        "y": 539,
-        "w": 609,
-        "h": 569
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 255,
-        "y": 135,
-        "w": 609,
-        "h": 569
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Slashing/Slashing_010": {
+    "Egyptian Sentry/Run Slashing/Run Slashing_008": {
       "frame": {
         "x": 0,
-        "y": 548,
-        "w": 606,
-        "h": 556
+        "y": 1145,
+        "w": 644,
+        "h": 572
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 258,
-        "y": 176,
-        "w": 606,
-        "h": 556
+        "x": 208,
+        "y": 151,
+        "w": 644,
+        "h": 572
       },
       "sourceSize": {
         "w": 900,
@@ -144,92 +192,20 @@
         "y": 0.5
       }
     },
-    "Anubis/Run Slashing/Run Slashing_007": {
+    "Egyptian Sentry/Run Slashing/Run Slashing_010": {
       "frame": {
-        "x": 0,
-        "y": 1104,
-        "w": 606,
-        "h": 550
+        "x": 1294,
+        "y": 1145,
+        "w": 639,
+        "h": 572
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 250,
-        "y": 178,
-        "w": 606,
-        "h": 550
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Run Slashing/Run Slashing_006": {
-      "frame": {
-        "x": 1224,
-        "y": 1104,
-        "w": 603,
-        "h": 543
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 253,
-        "y": 189,
-        "w": 603,
-        "h": 543
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Kicking/Kicking_007": {
-      "frame": {
-        "x": 1224,
-        "y": 1647,
-        "w": 401,
-        "h": 558
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 222,
-        "y": 174,
-        "w": 401,
-        "h": 558
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Anubis/Slashing in The Air/Slashing in The Air_007": {
-      "frame": {
-        "x": 606,
-        "y": 1108,
-        "w": 602,
-        "h": 574
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 260,
-        "y": 130,
-        "w": 602,
-        "h": 574
+        "x": 194,
+        "y": 150,
+        "w": 639,
+        "h": 572
       },
       "sourceSize": {
         "w": 900,
@@ -244,11 +220,11 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.0",
-    "image": "Anubis-1.png",
+    "image": "Egyptian Sentry-0.png",
     "format": "RGBA8888",
     "size": {
-      "w": 1838,
-      "h": 2048
+      "w": 1982,
+      "h": 1717
     },
     "scale": 1
   }

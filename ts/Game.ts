@@ -69,7 +69,8 @@ export class Game {
     // Assign animation sprites to the game object
     game.animationSprites.data.set(id, sprite);
 
-    if (game.animationSprites.data.size ==1) {
+    //TODO this is not correct
+    if (game.animationSprites.data.size == 3) {
       game.loadNextState();
     }
   }

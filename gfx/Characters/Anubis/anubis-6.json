@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Throwing_003": {
+    "Anubis/Throwing/Throwing_003": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Kicking_006": {
+    "Anubis/Kicking/Kicking_006": {
       "frame": {
         "x": 0,
         "y": 559,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Kicking_004": {
+    "Anubis/Kicking/Kicking_004": {
       "frame": {
         "x": 0,
         "y": 1118,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Kicking_008": {
+    "Anubis/Kicking/Kicking_008": {
       "frame": {
         "x": 402,
         "y": 559,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Walking_014": {
+    "Anubis/Walking/Walking_014": {
       "frame": {
         "x": 418,
         "y": 0,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Kicking_009": {
+    "Anubis/Kicking/Kicking_009": {
       "frame": {
         "x": 402,
         "y": 1117,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Throwing_010": {
+    "Anubis/Throwing/Throwing_010": {
       "frame": {
         "x": 802,
         "y": 1117,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Walking_002": {
+    "Anubis/Walking/Walking_002": {
       "frame": {
         "x": 803,
         "y": 557,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Walking_013": {
+    "Anubis/Walking/Walking_013": {
       "frame": {
         "x": 828,
         "y": 0,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Hurt_009": {
+    "Anubis/Hurt/Hurt_009": {
       "frame": {
         "x": 1212,
         "y": 554,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Kicking_003": {
+    "Anubis/Kicking/Kicking_003": {
       "frame": {
         "x": 1236,
         "y": 0,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Dying_001": {
+    "Anubis/Dying/Dying_001": {
       "frame": {
         "x": 1636,
         "y": 0,
@@ -288,7 +288,7 @@
         "y": 0.5
       }
     },
-    "Walking_001": {
+    "Anubis/Walking/Walking_001": {
       "frame": {
         "x": 1636,
         "y": 552,
@@ -312,7 +312,7 @@
         "y": 0.5
       }
     },
-    "Throwing in The Air_000": {
+    "Anubis/Throwing in The Air/Throwing in The Air_000": {
       "frame": {
         "x": 1636,
         "y": 1104,
@@ -336,7 +336,7 @@
         "y": 0.5
       }
     },
-    "Slashing_000": {
+    "Anubis/Slashing/Slashing_000": {
       "frame": {
         "x": 1215,
         "y": 1107,
@@ -364,7 +364,7 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.0",
-    "image": "anubis-6.png",
+    "image": "Anubis-6.png",
     "format": "RGBA8888",
     "size": {
       "w": 2048,

@@ -1,19 +1,19 @@
 {
   "frames": {
-    "Falling Down_000.png": {
+    "Egyptian Sentry/Throwing/Throwing_011": {
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 461,
-        "h": 574
+        "w": 457,
+        "h": 567
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 260,
-        "y": 119,
-        "w": 461,
-        "h": 574
+        "x": 212,
+        "y": 165,
+        "w": 457,
+        "h": 567
       },
       "sourceSize": {
         "w": 900,
@@ -24,20 +24,20 @@
         "y": 0.5
       }
     },
-    "Jump Start_004.png": {
+    "Egyptian Sentry/Walking/Walking_020": {
       "frame": {
         "x": 0,
-        "y": 574,
+        "y": 567,
         "w": 457,
-        "h": 574
+        "h": 567
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 202,
-        "y": 141,
+        "x": 213,
+        "y": 166,
         "w": 457,
-        "h": 574
+        "h": 567
       },
       "sourceSize": {
         "w": 900,
@@ -48,20 +48,20 @@
         "y": 0.5
       }
     },
-    "Run Throwing_003.png": {
+    "Egyptian Sentry/Slashing/Slashing_000": {
       "frame": {
         "x": 0,
-        "y": 1148,
+        "y": 1134,
         "w": 456,
-        "h": 573
+        "h": 567
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 192,
-        "y": 141,
+        "x": 188,
+        "y": 165,
         "w": 456,
-        "h": 573
+        "h": 567
       },
       "sourceSize": {
         "w": 900,
@@ -72,20 +72,20 @@
         "y": 0.5
       }
     },
-    "Run Throwing_009.png": {
+    "Egyptian Sentry/Throwing/Throwing_000": {
       "frame": {
         "x": 456,
-        "y": 1148,
+        "y": 1134,
         "w": 456,
-        "h": 573
+        "h": 567
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 193,
-        "y": 142,
+        "x": 188,
+        "y": 165,
         "w": 456,
-        "h": 573
+        "h": 567
       },
       "sourceSize": {
         "w": 900,
@@ -96,20 +96,20 @@
         "y": 0.5
       }
     },
-    "Running_003.png": {
+    "Egyptian Sentry/Walking/Walking_008": {
       "frame": {
         "x": 457,
-        "y": 574,
+        "y": 0,
         "w": 456,
-        "h": 573
+        "h": 567
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 192,
-        "y": 141,
+        "x": 214,
+        "y": 166,
         "w": 456,
-        "h": 573
+        "h": 567
       },
       "sourceSize": {
         "w": 900,
@@ -120,20 +120,20 @@
         "y": 0.5
       }
     },
-    "Running_009.png": {
+    "Egyptian Sentry/Walking/Walking_000": {
       "frame": {
-        "x": 912,
-        "y": 0,
-        "w": 456,
-        "h": 573
+        "x": 457,
+        "y": 567,
+        "w": 460,
+        "h": 566
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 193,
-        "y": 142,
-        "w": 456,
-        "h": 573
+        "x": 237,
+        "y": 170,
+        "w": 460,
+        "h": 566
       },
       "sourceSize": {
         "w": 900,
@@ -144,92 +144,20 @@
         "y": 0.5
       }
     },
-    "Dying_009.png": {
-      "frame": {
-        "x": 461,
-        "y": 0,
-        "w": 570,
-        "h": 450
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 105,
-        "y": 316,
-        "w": 570,
-        "h": 450
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Kicking_002.png": {
-      "frame": {
-        "x": 1368,
-        "y": 0,
-        "w": 458,
-        "h": 572
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 209,
-        "y": 160,
-        "w": 458,
-        "h": 572
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Run Throwing_002.png": {
-      "frame": {
-        "x": 1368,
-        "y": 458,
-        "w": 457,
-        "h": 572
-      },
-      "rotated": true,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 208,
-        "y": 150,
-        "w": 457,
-        "h": 572
-      },
-      "sourceSize": {
-        "w": 900,
-        "h": 900
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Running_010.png": {
+    "Egyptian Sentry/Idle Blinking/Idle Blinking_004": {
       "frame": {
         "x": 913,
-        "y": 573,
-        "w": 455,
-        "h": 572
+        "y": 0,
+        "w": 458,
+        "h": 566
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 194,
-        "y": 150,
-        "w": 455,
-        "h": 572
+        "x": 219,
+        "y": 166,
+        "w": 458,
+        "h": 566
       },
       "sourceSize": {
         "w": 900,
@@ -240,20 +168,20 @@
         "y": 0.5
       }
     },
-    "Run Throwing_008.png": {
+    "Egyptian Sentry/Idle Blinking/Idle Blinking_014": {
       "frame": {
-        "x": 1368,
-        "y": 915,
+        "x": 1371,
+        "y": 0,
         "w": 457,
-        "h": 572
+        "h": 566
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 208,
-        "y": 151,
+        "x": 210,
+        "y": 166,
         "w": 457,
-        "h": 572
+        "h": 566
       },
       "sourceSize": {
         "w": 900,
@@ -264,20 +192,92 @@
         "y": 0.5
       }
     },
-    "Hurt_003.png": {
+    "Egyptian Sentry/Idle/Idle_014": {
+      "frame": {
+        "x": 1371,
+        "y": 457,
+        "w": 457,
+        "h": 566
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 210,
+        "y": 166,
+        "w": 457,
+        "h": 566
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Hurt/Hurt_010": {
+      "frame": {
+        "x": 917,
+        "y": 566,
+        "w": 454,
+        "h": 565
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 190,
+        "y": 167,
+        "w": 454,
+        "h": 565
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Run Throwing/Run Throwing_005": {
+      "frame": {
+        "x": 1371,
+        "y": 914,
+        "w": 457,
+        "h": 566
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 211,
+        "y": 160,
+        "w": 457,
+        "h": 566
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Throwing/Throwing_007": {
       "frame": {
         "x": 912,
-        "y": 1147,
-        "w": 456,
-        "h": 570
+        "y": 1133,
+        "w": 459,
+        "h": 565
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 201,
-        "y": 162,
-        "w": 456,
-        "h": 570
+        "x": 297,
+        "y": 168,
+        "w": 459,
+        "h": 565
       },
       "sourceSize": {
         "w": 900,
@@ -288,20 +288,44 @@
         "y": 0.5
       }
     },
-    "Running_002.png": {
+    "Egyptian Sentry/Running/Running_005": {
       "frame": {
-        "x": 1368,
-        "y": 1372,
+        "x": 1371,
+        "y": 1371,
         "w": 457,
-        "h": 572
+        "h": 566
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 208,
-        "y": 150,
+        "x": 211,
+        "y": 160,
         "w": 457,
-        "h": 572
+        "h": 566
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Sentry/Idle/Idle_004": {
+      "frame": {
+        "x": 913,
+        "y": 0,
+        "w": 458,
+        "h": 566
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 219,
+        "y": 166,
+        "w": 458,
+        "h": 566
       },
       "sourceSize": {
         "w": 900,
@@ -316,11 +340,11 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.0",
-    "image": "egyptmummy-7.png",
+    "image": "Egyptian Sentry-12.png",
     "format": "RGBA8888",
     "size": {
-      "w": 1940,
-      "h": 1944
+      "w": 1937,
+      "h": 1937
     },
     "scale": 1
   }

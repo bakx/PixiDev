@@ -1,6 +1,6 @@
 {
   "frames": {
-    "Run Slashing_003": {
+    "Anubis/Run Slashing/Run Slashing_003": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "Run Slashing_004": {
+    "Anubis/Run Slashing/Run Slashing_004": {
       "frame": {
         "x": 630,
         "y": 0,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "Slashing_002": {
+    "Anubis/Slashing/Slashing_002": {
       "frame": {
         "x": 1257,
         "y": 0,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "Slashing in The Air_002": {
+    "Anubis/Slashing in The Air/Slashing in The Air_002": {
       "frame": {
         "x": 1257,
         "y": 528,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "Run Slashing_009": {
+    "Anubis/Run Slashing/Run Slashing_009": {
       "frame": {
         "x": 630,
         "y": 545,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "Run Slashing_002": {
+    "Anubis/Run Slashing/Run Slashing_002": {
       "frame": {
         "x": 0,
         "y": 546,
@@ -144,7 +144,7 @@
         "y": 0.5
       }
     },
-    "Run Slashing_005": {
+    "Anubis/Run Slashing/Run Slashing_005": {
       "frame": {
         "x": 0,
         "y": 1084,
@@ -168,7 +168,7 @@
         "y": 0.5
       }
     },
-    "Dying_010": {
+    "Anubis/Dying/Dying_010": {
       "frame": {
         "x": 0,
         "y": 1614,
@@ -192,7 +192,7 @@
         "y": 0.5
       }
     },
-    "Throwing_009": {
+    "Anubis/Throwing/Throwing_009": {
       "frame": {
         "x": 582,
         "y": 1614,
@@ -216,7 +216,7 @@
         "y": 0.5
       }
     },
-    "Sliding_000": {
+    "Anubis/Sliding/Sliding_000": {
       "frame": {
         "x": 616,
         "y": 1091,
@@ -240,7 +240,7 @@
         "y": 0.5
       }
     },
-    "Dying_003": {
+    "Anubis/Dying/Dying_003": {
       "frame": {
         "x": 1152,
         "y": 1609,
@@ -264,7 +264,7 @@
         "y": 0.5
       }
     },
-    "Idle Blinking_006": {
+    "Anubis/Idle Blinking/Idle Blinking_006": {
       "frame": {
         "x": 1250,
         "y": 1073,
@@ -288,7 +288,7 @@
         "y": 0.5
       }
     },
-    "Idle Blinking_008": {
+    "Anubis/Idle Blinking/Idle Blinking_008": {
       "frame": {
         "x": 1646,
         "y": 1073,
@@ -312,7 +312,7 @@
         "y": 0.5
       }
     },
-    "Idle_006": {
+    "Anubis/Idle/Idle_006": {
       "frame": {
         "x": 1250,
         "y": 1073,
@@ -336,7 +336,7 @@
         "y": 0.5
       }
     },
-    "Idle_008": {
+    "Anubis/Idle/Idle_008": {
       "frame": {
         "x": 1646,
         "y": 1073,
@@ -364,7 +364,7 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.0",
-    "image": "anubis-0.png",
+    "image": "Anubis-0.png",
     "format": "RGBA8888",
     "size": {
       "w": 2042,
