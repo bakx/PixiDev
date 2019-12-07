@@ -1,5 +1,5 @@
 import { loadAnimationSprites, loadBackgrounds, loadCharacters, loadLevels } from "./Functions";
-import { AnimationSprites } from "./Models/AnimatedSprite";
+import { AnimationSprites, AnimationSprite } from "./Models/AnimatedSprite";
 import { Backgrounds } from "./Models/Background";
 import { Characters } from "./Models/Character";
 import { DrawText } from "./Models/DrawText";
@@ -13,6 +13,7 @@ export class Game {
   designHeight: number;
 
   /** State related variables */
+  gameLoadState: GameLoadingState = GameLoadingState.INIT;
   gameState: GameState = GameState.LOADING;
   gameFrame: number = 0;
 
@@ -60,65 +61,73 @@ export class Game {
     this.animationSprites = new AnimationSprites();
 
     // Start loading resources
-    this.gameLoader(GameLoadingState.BACKGROUNDS);
+    this.loadNextState();
   }
 
   /** Callback function for the loading of animated sprites */
-  setAnimationSprites(game: Game, data: AnimationSprites) {
+  addAnimationSprite(game: Game, id: string, message: string, sprite: AnimationSprite) {
     // Assign animation sprites to the game object
-    game.animationSprites = data;
+    game.animationSprites.data.set(id, sprite);
 
-    // Load characters
-    game.gameLoader(GameLoadingState.CHARACTERS);
+    if (game.animationSprites.data.size ==1) {
+      game.loadNextState();
+    }
   }
 
-  gameLoader(state: GameLoadingState) {
+  /** Callback function for the loading of animated sprites */
+  addAnimationSprites(game: Game, id: string, message: string, sprites: Map<string, AnimationSprite>) {
+    // Assign animation sprites to the game object
+    game.animationSprites.data = sprites;
+  }
+
+  gameLoader() {
     // Load backgrounds
-    if (state === GameLoadingState.BACKGROUNDS) {
-      // Load characters
+    if (this.gameLoadState === GameLoadingState.BACKGROUNDS) {
       this.backgrounds = loadBackgrounds(this.app);
-
-      // Move to next stage
-      state = GameLoadingState.ANIMATIONSPRITES;
+      this.loadNextState();
+      return;
     }
 
     // Load animation sprites
-    if (state === GameLoadingState.ANIMATIONSPRITES) {
-      // Load animated sprites
-      loadAnimationSprites(this, this.setAnimationSprites);
+    if (this.gameLoadState === GameLoadingState.ANIMATIONSPRITES) {
+      loadAnimationSprites(this, this.addAnimationSprite);
+      return;
     }
 
-    // Load animation sprites
-    if (state === GameLoadingState.CHARACTERS) {
-      // Load characters
-      this.characters = loadCharacters(this.app, this);
-
-      // Move to next stage
-      state = GameLoadingState.LEVELS;
+    // Load characters
+    if (this.gameLoadState === GameLoadingState.CHARACTERS) {
+      this.characters = loadCharacters(this);
+      this.loadNextState();
+      return;
     }
 
-    // Level related
-    if (state === GameLoadingState.LEVELS) {
-      // Load level data
+    // Load level data
+    if (this.gameLoadState === GameLoadingState.LEVELS) {
       this.levels = loadLevels(this.app, this);
-
-      // Move to next stage
-      state = GameLoadingState.OVERLAY;
+      this.loadNextState();
+      return;
     }
 
-    if (state === GameLoadingState.OVERLAY) {
+    // Load level data
+    if (this.gameLoadState === GameLoadingState.LOADLEVEL) {
+      this.loadLevel();
+      this.loadNextState();
+      return;
+    }
+
+    if (this.gameLoadState === GameLoadingState.OVERLAY) {
       // Create FPS counter
       this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
 
       // Create Debug text
       this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
 
-      // Move to next stage
-      state = GameLoadingState.DONE;
+      this.loadNextState();
+      return;
     }
 
     // Finished loading
-    if (state === GameLoadingState.DONE) {
+    if (this.gameLoadState === GameLoadingState.DONE) {
       this.loadLevel();
 
       // Start game engine
@@ -127,6 +136,58 @@ export class Game {
   }
 
   /** Loads all resources related to the `levelIndex`  */
+  loadNextState() {
+    if (this.gameLoadState == GameLoadingState.INIT) {
+      console.debug(`Changing gamestate to ${GameLoadingState.BACKGROUNDS}`);
+      this.gameLoadState = GameLoadingState.BACKGROUNDS;
+      this.gameLoader();
+      return;
+    }
+
+    if (this.gameLoadState == GameLoadingState.BACKGROUNDS) {
+      console.debug(`Changing gamestate to ${GameLoadingState.ANIMATIONSPRITES}`);
+      this.gameLoadState = GameLoadingState.ANIMATIONSPRITES;
+      this.gameLoader();
+      return;
+    }
+
+    if (this.gameLoadState == GameLoadingState.ANIMATIONSPRITES) {
+      console.debug(`Changing gamestate to ${GameLoadingState.CHARACTERS}`);
+      this.gameLoadState = GameLoadingState.CHARACTERS;
+      this.gameLoader();
+      return;
+    }
+
+    if (this.gameLoadState == GameLoadingState.CHARACTERS) {
+      console.debug(`Changing gamestate to ${GameLoadingState.LEVELS}`);
+      this.gameLoadState = GameLoadingState.LEVELS;
+      this.gameLoader();
+      return;
+    }
+
+    if (this.gameLoadState == GameLoadingState.LEVELS) {
+      console.debug(`Changing gamestate to ${GameLoadingState.LOADLEVEL}`);
+      this.gameLoadState = GameLoadingState.LOADLEVEL;
+      this.gameLoader();
+      return;
+    }
+
+    if (this.gameLoadState == GameLoadingState.LOADLEVEL) {
+      console.debug(`Changing gamestate to ${GameLoadingState.OVERLAY}`);
+      this.gameLoadState = GameLoadingState.OVERLAY;
+      this.gameLoader();
+      return;
+    }
+
+    if (this.gameLoadState == GameLoadingState.OVERLAY) {
+      console.debug(`Changing gamestate to ${GameLoadingState.DONE}`);
+      this.gameLoadState = GameLoadingState.DONE;
+      this.gameLoader();
+      return;
+    }
+  }
+
+  /** Loads all resources that are defined for the specific level */
   loadLevel() {
     if (this.level) {
       // Remove all characters from the stage
@@ -222,6 +283,7 @@ export class Game {
 }
 
 export enum GameLoadingState {
+  INIT,
   BACKGROUNDS,
   ANIMATIONSPRITES,
   CHARACTERS,

@@ -3,41 +3,39 @@ export class AnimationSprites {
 }
 
 export class AnimationSprite {
-    id: string;
-    animationKeys: string[];
-    animations: Map<string, PIXI.AnimatedSprite>;
-    animationDetails: Map<string, AnimationDetails>;
 
-    constructor(id: string) {
-        this.id = id;
-        this.animationKeys = [];
-        this.animations = new Map<string, PIXI.AnimatedSprite>();
+    /** Constructor of the AnimationSprite class  
+    * @param id the id of the animated sprite 
+    * @param animations all animations of the sprite
+    */
+    constructor(id: string, animationKeys: string[], animations: Map<string, PIXI.AnimatedSprite>) {
+        this._id = id;
+        this._animationKeys = animationKeys;
+        this._animations = animations;
     }
 
-    /** Add an animation key */
-    addKey(key: string) {
-        console.debug(`Adding animation key ${key} to ${this.id}`);
-        this.animationKeys.push(key);
-    }
+    /** ID of this collection of animated sprites */
+    private _id: string;
 
-    /** Add an animation */
-    addAnimation(key: string, data: PIXI.AnimatedSprite) {
-        console.debug(`Adding animation to key ${key} for ${this.id}`);
-        this.animations.set(key, data);
-    }
+    /** All animation keys of this collection */
+    private _animationKeys: string[] = [];
+
+    /** All animations of this collection */
+    private _animations: Map<string, PIXI.AnimatedSprite> = new Map<string, PIXI.AnimatedSprite>();
+
+    /** Get the id of this collection */
+    id(): string { return this._id }
 
     /** Get all animation keys */
-    getKeys() {
-        return this.animationKeys;
-    }
+    animationKeys(): string[] { return this._animationKeys }
 
-    /** Retrieve a specific animation */
+    /** Get animation for key */
     getAnimation(key: string) {
-        if (this.animations.has(key)) {
-            return this.animations.get(key);
+        if (!this._animations.has(key)) {
+            throw new Error(`Animation id: ${this._id} does not contain an animation with key: ${key}`);
         }
 
-        throw new Error(`Unable to find animation ${key} for ${this.id}`);
+        return this._animations.get(key);
     }
 }
 

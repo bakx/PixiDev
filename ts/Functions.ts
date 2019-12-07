@@ -1,12 +1,15 @@
+import { MultipackLoader } from "./Extensions/MultipackLoader";
 import { Game } from "./Game";
-import { AnimationSprite, AnimationSprites, AnimationDetails } from "./Models/AnimatedSprite";
+import { AnimationDetails, AnimationSprite, AnimationSprites } from "./Models/AnimatedSprite";
 import { Background, Backgrounds } from "./Models/Background";
 import { Character, Characters } from "./Models/Character";
 import { AnimationSpriteConfig, AnimationSpritesConfig } from "./Models/Configuration/AnimationSpritesConfig";
 import { BackgroundConfig, BackgroundsConfig, BackgroundSpritesConfig } from "./Models/Configuration/BackgroundsConfig";
-import { CharacterConfig, CharactersConfig, CharacterAnimationDetailsConfig } from "./Models/Configuration/CharactersConfig";
+import { CharacterAnimationDetailsConfig, CharacterConfig, CharactersConfig } from "./Models/Configuration/CharactersConfig";
 import { LevelCharacterConfig, LevelConfig, LevelsConfig } from "./Models/Configuration/LevelsConfig";
 import { LevelData, Levels } from "./Models/Level";
+import { AssertionError } from "assert";
+import { TextStyle } from "pixi.js";
 
 /** Loads the textures configuration file and parses it to a PIXI.Texture[] object */
 export function loadTextures(sourceTemplateStart: number, sourceTemplateEnd: number, padding: number, start: number, end: number): PIXI.Texture[] {
@@ -85,11 +88,8 @@ export function loadBackgrounds(app: PIXI.Application): Backgrounds {
 }
 
 /** Loads the animated sprites configuration file and parses it to a AnimationSprites object */
-export function loadAnimationSprites(caller: object, callback: CallableFunction): void {
-  let animationSprites: AnimationSprites = new AnimationSprites();
+export function loadAnimationSprites(caller: object, callback: CallableFunction) {
   let animationData: AnimationSpritesConfig;
-
-  let animationFiles: string[] = [];
 
   loadJSON('config/animation_sprites.json', function (data: string) {
     animationData = JSON.parse(data) as AnimationSpritesConfig;
@@ -99,79 +99,22 @@ export function loadAnimationSprites(caller: object, callback: CallableFunction)
     throw new Error('Unable to load animation data.');
   }
 
-  // Create Pixi loader
-  const loader = new PIXI.Loader();
-
   for (let i = 0; i < animationData.data.length; i++) {
     let config: AnimationSpriteConfig = animationData.data[i];
 
     // Diagnostics
-    console.info(`Loading ${config.name} ${config.file}`);
+    console.info(`Loading ${config.id} ${config.filename}`);
 
-    // Keep track of all resources
-    animationFiles.push(config.name);
-
-    // Load data
-    loader.add(config.name, config.file, config);
+    // Load file
+    let packLoader: MultipackLoader = new MultipackLoader(config.id);
+    packLoader.loadFile(config.filename, config.startAt, config.endAt, (id: string, message: string, sprite: AnimationSprite) => {
+      callback(caller, config.id, `Loaded ${config.id}`, sprite);
+    });
   }
-
-  /** Callback that processes the loaded resources and adds them to the animatedSprites object */
-  loader.load((loader: any, resources: any) => {
-
-    for (let i = 0; i < animationFiles.length; i++) {
-      let details: string = animationFiles[i];
-      let sheet = resources[details].spritesheet;
-
-      // Create animationSprite object
-      let animationSprite: AnimationSprite = new AnimationSprite(sheet.data.meta.name);
-
-      // Grab animations from sheet
-      for (let j = 0; j < sheet.data.meta.animations.length; j++) {
-        let animationKey = sheet.data.meta.animations[j];
-
-        // Find all matching animation parts
-        let framesIndex = [];
-        for (let sheetKey in sheet._frameKeys) {
-          if (
-            sheet._frameKeys[sheetKey].startsWith(animationKey) &&
-            sheet._frameKeys[sheetKey].length == animationKey.length + 8
-          ) {
-            framesIndex.push(sheet._frameKeys[sheetKey]);
-          }
-        }
-
-        // Grab all frames that match the animation parts
-        let frames = [];
-        for (let frameKey in framesIndex) {
-          frames.push(PIXI.Texture.from(framesIndex[frameKey]));
-        }
-
-        // Add the animation key
-        animationSprite.addKey(animationKey);
-
-        // Create the animated sprites
-        let animatedSprites = new PIXI.AnimatedSprite(frames);
-        animationSprite.addAnimation(animationKey, animatedSprites);
-      }
-
-      // Add the AnimationSprite to the AnimationSprites object
-      animationSprites.data.set(sheet.data.meta.name, animationSprite);
-    }
-  });
-
-  /** Fatal error while loading resources */
-  loader.onError.add((err: string) => {
-    throw new Error(err);
-  });
-
-  /** When loading is complete, perform callback to inform dependent parts */
-  loader.onComplete.add(() => {
-    callback(caller, animationSprites);
-  });
 }
 
 /** Loads the characters */
-export function loadCharacters(app: PIXI.Application, game: Game): Characters {
+export function loadCharacters(game: Game): Characters {
   let characters: Characters = new Characters();
   let characterData: CharactersConfig;
 
@@ -272,7 +215,7 @@ export function loadLevels(app: PIXI.Application, game: Game): Levels {
         character.animationSource = characterSource.animationSource;
         character.animationDetails = characterSource.animationDetails;
         character.animationKey = levelCharacterConfig.animationKey;
-        character.animationSpeed = levelCharacterConfig.animationSpeed;        
+        character.animationSpeed = levelCharacterConfig.animationSpeed;
         character.position.x = levelCharacterConfig.position.x;
         character.position.y = levelCharacterConfig.position.y;
 

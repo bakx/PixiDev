@@ -1,16 +1,10 @@
 {
     "data": [
         {
-            "id": "samurai.json",
-            "defaultAnimationKey": "2_WALK",
+            "id": "anubis",
+            "defaultAnimationKey": "Run Slashing",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
-                {
-                    "key": "4_JUMP",
-                    "overrides": {
-                        "loop": false
-                    }
-                },
                 {
                     "key": "5_JUMP",
                     "overrides": {
@@ -26,8 +20,8 @@
             ]
         },
         {
-            "id": "samurai2.json",
-            "defaultAnimationKey": "22_WALK",
+            "id": "anubis",
+            "defaultAnimationKey": "Run Slashing",
             "defaultAnimationSpeed": 0.10,
             "animationDetails": [
                 {
