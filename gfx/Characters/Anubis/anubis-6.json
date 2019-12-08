@@ -1,0 +1,375 @@
+{
+  "frames": {
+    "Anubis/Throwing_003": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 418,
+        "h": 559
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 276,
+        "y": 174,
+        "w": 418,
+        "h": 559
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Kicking_006": {
+      "frame": {
+        "x": 0,
+        "y": 559,
+        "w": 402,
+        "h": 559
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 222,
+        "y": 173,
+        "w": 402,
+        "h": 559
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Kicking_004": {
+      "frame": {
+        "x": 0,
+        "y": 1118,
+        "w": 402,
+        "h": 558
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 225,
+        "y": 174,
+        "w": 402,
+        "h": 558
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Kicking_008": {
+      "frame": {
+        "x": 402,
+        "y": 559,
+        "w": 401,
+        "h": 558
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 222,
+        "y": 174,
+        "w": 401,
+        "h": 558
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Walking_014": {
+      "frame": {
+        "x": 418,
+        "y": 0,
+        "w": 410,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 262,
+        "y": 181,
+        "w": 410,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Kicking_009": {
+      "frame": {
+        "x": 402,
+        "y": 1117,
+        "w": 400,
+        "h": 557
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 222,
+        "y": 175,
+        "w": 400,
+        "h": 557
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Throwing_010": {
+      "frame": {
+        "x": 802,
+        "y": 1117,
+        "w": 413,
+        "h": 556
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 258,
+        "y": 176,
+        "w": 413,
+        "h": 556
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Walking_002": {
+      "frame": {
+        "x": 803,
+        "y": 557,
+        "w": 409,
+        "h": 554
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 261,
+        "y": 181,
+        "w": 409,
+        "h": 554
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Walking_013": {
+      "frame": {
+        "x": 828,
+        "y": 0,
+        "w": 408,
+        "h": 554
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 262,
+        "y": 184,
+        "w": 408,
+        "h": 554
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Hurt_009": {
+      "frame": {
+        "x": 1212,
+        "y": 554,
+        "w": 420,
+        "h": 553
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 188,
+        "y": 179,
+        "w": 420,
+        "h": 553
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Kicking_003": {
+      "frame": {
+        "x": 1236,
+        "y": 0,
+        "w": 400,
+        "h": 553
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 230,
+        "y": 179,
+        "w": 400,
+        "h": 553
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Dying_001": {
+      "frame": {
+        "x": 1636,
+        "y": 0,
+        "w": 412,
+        "h": 552
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 269,
+        "y": 170,
+        "w": 412,
+        "h": 552
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Walking_001": {
+      "frame": {
+        "x": 1636,
+        "y": 552,
+        "w": 409,
+        "h": 552
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 262,
+        "y": 183,
+        "w": 409,
+        "h": 552
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Throwing in The Air_000": {
+      "frame": {
+        "x": 1636,
+        "y": 1104,
+        "w": 407,
+        "h": 551
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 226,
+        "y": 154,
+        "w": 407,
+        "h": 551
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Slashing_000": {
+      "frame": {
+        "x": 1215,
+        "y": 1107,
+        "w": 420,
+        "h": 542
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 222,
+        "y": 190,
+        "w": 420,
+        "h": 542
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.0",
+    "image": "Anubis-6.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2048,
+      "h": 1676
+    },
+    "scale": 1
+  }
+}

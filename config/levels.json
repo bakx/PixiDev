@@ -6,62 +6,12 @@
             "characters": [
                 {
                     "id": "b58db7a6-f8fc-4f31-9162-86fae6282303",
-                    "sprite": "samurai.json",
-                    "animationKey": "2_WALK",
+                    "sprite": "anubis",
+                    "animationKey": "Anubis/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 100,
-                        "y": 625
-                    }
-                },
-                {
-                    "id": "6f577ac4-4119-41fe-b620-ca26f8a5ebbf",
-                    "sprite": "samurai2.json",
-                    "animationKey": "22_WALK",
-                    "animationSpeed": 0.14,
-                    "position": {
-                        "x": 400,
-                        "y": 625
-                    }
-                },
-                {
-                    "id": "1927c78c-ac9c-4fed-a29b-d0cdb9142054",
-                    "sprite": "samurai.json",
-                    "animationKey": "2_WALK",
-                    "animationSpeed": 0.14,
-                    "position": {
-                        "x": 700,
-                        "y": 625
-                    }
-                },
-                {
-                    "id": "b58db7a6-f8fc-4f31-9162-86fae6282303",
-                    "sprite": "samurai.json",
-                    "animationKey": "2_WALK",
-                    "animationSpeed": 0.14,
-                    "position": {
-                        "x": 100,
-                        "y": 325
-                    }
-                },
-                {
-                    "id": "6f577ac4-4119-41fe-b620-ca26f8a5ebbf",
-                    "sprite": "samurai2.json",
-                    "animationKey": "22_WALK",
-                    "animationSpeed": 0.14,
-                    "position": {
-                        "x": 400,
-                        "y": 325
-                    }
-                },
-                {
-                    "id": "1927c78c-ac9c-4fed-a29b-d0cdb9142054",
-                    "sprite": "samurai.json",
-                    "animationKey": "2_WALK",
-                    "animationSpeed": 0.14,
-                    "position": {
-                        "x": 700,
-                        "y": 325
+                        "y": 525
                     }
                 }
             ],
@@ -75,12 +25,12 @@
             "characters": [
                 {
                     "id": "f544cf59-6626-462b-bdc8-2c636c20c21c",
-                    "sprite": "samurai2.json",
-                    "animationKey": "22_WALK",
+                    "sprite": "egyptmummy",
+                    "animationKey": "Egyptian Mummy/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 400,
-                        "y": 675
+                        "y": 600
                     }
                 }
             ],
@@ -94,32 +44,32 @@
             "characters": [
                 {
                     "id": "502727ec-c140-44f1-afdc-f414b5a55ed6",
-                    "sprite": "samurai.json",
-                    "animationKey": "2_WALK",
+                    "sprite": "anubis",
+                    "animationKey": "Anubis/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 100,
-                        "y": 700
+                        "y": 600
                     }
                 },
                 {
                     "id": "f2c2f8c4-5ba1-4e25-9438-5db1fd019385",
-                    "sprite": "samurai2.json",
-                    "animationKey": "22_WALK",
+                    "sprite": "egyptmummy",
+                    "animationKey": "Egyptian Mummy/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 400,
-                        "y": 700
+                        "y": 605
                     }
                 },
                 {
                     "id": "b05ba832-ef3a-48f1-b410-4487f1d77b4e",
-                    "sprite": "samurai.json",
-                    "animationKey": "2_WALK",
+                    "sprite": "egyptiansentry",
+                    "animationKey": "Egyptian Sentry/Walking",
                     "animationSpeed": 0.14,
                     "position": {
                         "x": 700,
-                        "y": 700
+                        "y": 620
                     }
                 }
             ],

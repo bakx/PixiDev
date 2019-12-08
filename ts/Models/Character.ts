@@ -171,6 +171,8 @@ export class Character {
         this.animation = new PIXI.AnimatedSprite(animationSource);
         this.animation.animationSpeed = this._animationSpeed;
 
+        this.animation.scale = new Point(.55, .55);
+
         if (isVisible) {
             this.stage.addChild(this.animation);
         }
@@ -212,14 +214,25 @@ export class Character {
 
     /** Plays a specific animation */
     playAnimation(char: Character) {
-        // Interactive?
-        let key = char.animationSource.animationKeys[Math.floor(Math.random() * char.animationSource.animationKeys.length)];
+
+        // Temporary interactive code?
+        let key: string;
+        let animationCount = char.animationSource.animationKeys().length;
+        let currentIndex = char.animationSource.animationKeys().indexOf(this._animationKey);
+
+        currentIndex++;
+
+        if (currentIndex >= animationCount) {
+            currentIndex = 0;
+        }
+
+        key = char.animationSource.animationKeys()[currentIndex];
         char.createAnimation(key, true, true);
     }
 
     /** */
     update() {
-        this.animation.x = this.position.x++;
+        this.animation.x = this.position.x;
         this.animation.y = this.position.y;
     }
 }

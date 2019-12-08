@@ -1,42 +1,25 @@
 {
     "data": [
         {
-            "name": "samurai.json",
-            "file": "gfx/Characters/Samurai/samurai.json",
-            "animationSpeed": 0.2,
-            "states": {
-                "name": "Not used yet",
-                "data": [
-                    {
-                        "not": "",
-                        "used": 0,
-                        "yet": null
-                    }
-                ]
-            },
-            "entities": [
-                {}
-            ]
+            "id": "anubis",
+            "filename": "gfx/Characters/Anubis/Anubis-",
+            "startAt": 0,
+            "endAt": 12,
+            "animationSpeed": 0.2
         },
         {
-            "name": "samurai2.json",
-            "file": "gfx/Characters/Samurai/samurai2.json",
-            "animationSpeed": 0.2,
-            "states": {
-                "name": "Not used yet",
-                "data": [
-                    {
-                        "not": "",
-                        "used": 0,
-                        "yet": null
-                    }
-                ]
-            },
-            "entities": [
-                {}
-            ]
+            "id": "egyptmummy",
+            "filename": "gfx/Characters/EgyptianMummy/Egyptian Mummy-",
+            "startAt": 0,
+            "endAt": 15,
+            "animationSpeed": 0.2
+        },
+        {
+            "id": "egyptiansentry",
+            "filename": "gfx/Characters/EgyptianSentry/Egyptian Sentry-",
+            "startAt": 0,
+            "endAt": 15,
+            "animationSpeed": 0.2
         }
     ]
 }
-
-

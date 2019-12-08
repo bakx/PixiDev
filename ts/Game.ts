@@ -13,6 +13,7 @@ export class Game {
   designHeight: number;
 
   /** State related variables */
+  gameLoadState: GameLoadingState = GameLoadingState.INIT;
   gameState: GameState = GameState.LOADING;
   gameFrame: number = 0;
 
@@ -60,73 +61,47 @@ export class Game {
     this.animationSprites = new AnimationSprites();
 
     // Start loading resources
-    this.gameLoader(GameLoadingState.BACKGROUNDS);
+    this.loadGame();
   }
 
-  /** Callback function for the loading of animated sprites */
-  setAnimationSprites(game: Game, data: AnimationSprites) {
-    // Assign animation sprites to the game object
-    game.animationSprites = data;
-
-    // Load characters
-    game.gameLoader(GameLoadingState.CHARACTERS);
-  }
-
-  gameLoader(state: GameLoadingState) {
+  /** Sets up the game  the default game parameters */
+  loadGame() {
     // Load backgrounds
-    if (state === GameLoadingState.BACKGROUNDS) {
-      // Load characters
-      this.backgrounds = loadBackgrounds(this.app);
+    loadBackgrounds(this.app)
+      .then(backgrounds => {
+        this.backgrounds = backgrounds;
 
-      // Move to next stage
-      state = GameLoadingState.ANIMATIONSPRITES;
-    }
+        // Load the animation sprites
+        loadAnimationSprites(this)
+          .then(animationSprites => {
+            this.animationSprites = animationSprites;
 
-    // Load animation sprites
-    if (state === GameLoadingState.ANIMATIONSPRITES) {
-      // Load animated sprites
-      loadAnimationSprites(this, this.setAnimationSprites);
-    }
+            // Load the characters
+            loadCharacters(this)
+              .then(characters => {
+                this.characters = characters
+              })
+              .then(_ => {
+                // Load all levels
+                this.levels = loadLevels(this.app, this);
 
-    // Load animation sprites
-    if (state === GameLoadingState.CHARACTERS) {
-      // Load characters
-      this.characters = loadCharacters(this.app, this);
+                // Create FPS counter
+                this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
 
-      // Move to next stage
-      state = GameLoadingState.LEVELS;
-    }
+                // Create Debug text
+                this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
 
-    // Level related
-    if (state === GameLoadingState.LEVELS) {
-      // Load level data
-      this.levels = loadLevels(this.app, this);
+                // Load level
+                this.loadLevel();
 
-      // Move to next stage
-      state = GameLoadingState.OVERLAY;
-    }
-
-    if (state === GameLoadingState.OVERLAY) {
-      // Create FPS counter
-      this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
-
-      // Create Debug text
-      this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
-
-      // Move to next stage
-      state = GameLoadingState.DONE;
-    }
-
-    // Finished loading
-    if (state === GameLoadingState.DONE) {
-      this.loadLevel();
-
-      // Start game engine
-      this.start();
-    }
+                // Start game engine
+                this.start();
+              })
+          })
+      });
   }
 
-  /** Loads all resources related to the `levelIndex`  */
+  /** Loads all resources that are defined for the specific level */
   loadLevel() {
     if (this.level) {
       // Remove all characters from the stage
@@ -189,11 +164,12 @@ export class Game {
 
       // Update all characters
       this.level.characters.forEach(char => {
+        char.position.x += 2;
         char.update();
       })
 
-      // Temporary debugging code
-      if (this.gameFrame % 500 == 0) {
+      // Temporary debugging code. If a character walks out of the screen, move to next level.
+      if (this.level.characters.some(x => x.position.x > this.app.view.width)) {
         this.levelIndex++;
         this.loadLevel();
       }
@@ -208,20 +184,30 @@ export class Game {
     let width = window.innerWidth || document.body.clientWidth;
     let height = window.innerHeight || document.body.clientHeight;
 
+    // Calculate the ratio
     let ratio = height / this.designHeight;
 
+    // Update the view 
     let view = this.app.renderer.view;
-    view.style.height = this.designHeight * ratio + "px";
 
+    // Calculate the new width ratio
     var newWidth = (width / ratio);
 
+    // Apply view style sizing
+    view.style.height = this.designHeight * ratio + "px";
     view.style.width = width + "px";
 
+    // Resize application
+    this.app.view.width = newWidth;
+    this.app.view.height = height;
+
+    // Resize renderer
     this.app.renderer.resize(newWidth, this.designHeight);
   }
 }
 
 export enum GameLoadingState {
+  INIT,
   BACKGROUNDS,
   ANIMATIONSPRITES,
   CHARACTERS,

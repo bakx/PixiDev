@@ -1,0 +1,351 @@
+{
+  "frames": {
+    "Egyptian Mummy/Running_008": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 457,
+        "h": 572
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 208,
+        "y": 151,
+        "w": 457,
+        "h": 572
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Dying_003": {
+      "frame": {
+        "x": 0,
+        "y": 572,
+        "w": 461,
+        "h": 571
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 301,
+        "y": 134,
+        "w": 461,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Walking_014": {
+      "frame": {
+        "x": 457,
+        "y": 0,
+        "w": 461,
+        "h": 571
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 237,
+        "y": 167,
+        "w": 461,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Walking_015": {
+      "frame": {
+        "x": 0,
+        "y": 1143,
+        "w": 460,
+        "h": 571
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 231,
+        "y": 166,
+        "w": 460,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Walking_016": {
+      "frame": {
+        "x": 460,
+        "y": 1143,
+        "w": 458,
+        "h": 571
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 226,
+        "y": 165,
+        "w": 458,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Idle Blinking_009": {
+      "frame": {
+        "x": 461,
+        "y": 571,
+        "w": 457,
+        "h": 571
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 206,
+        "y": 161,
+        "w": 457,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Jump Start_003": {
+      "frame": {
+        "x": 918,
+        "y": 0,
+        "w": 457,
+        "h": 571
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 206,
+        "y": 148,
+        "w": 457,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Sliding_003": {
+      "frame": {
+        "x": 1489,
+        "y": 0,
+        "w": 496,
+        "h": 536
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 96,
+        "y": 241,
+        "w": 496,
+        "h": 536
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Walking_018": {
+      "frame": {
+        "x": 918,
+        "y": 457,
+        "w": 457,
+        "h": 571
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 215,
+        "y": 163,
+        "w": 457,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Sliding_004": {
+      "frame": {
+        "x": 1489,
+        "y": 496,
+        "w": 496,
+        "h": 536
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 96,
+        "y": 241,
+        "w": 496,
+        "h": 536
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Run Throwing_004": {
+      "frame": {
+        "x": 918,
+        "y": 914,
+        "w": 455,
+        "h": 571
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 195,
+        "y": 150,
+        "w": 455,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Running_004": {
+      "frame": {
+        "x": 918,
+        "y": 1369,
+        "w": 455,
+        "h": 571
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 195,
+        "y": 150,
+        "w": 455,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Dying_007": {
+      "frame": {
+        "x": 1489,
+        "y": 992,
+        "w": 498,
+        "h": 535
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 160,
+        "y": 135,
+        "w": 498,
+        "h": 535
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Egyptian Mummy/Idle_009": {
+      "frame": {
+        "x": 461,
+        "y": 571,
+        "w": 457,
+        "h": 571
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 206,
+        "y": 161,
+        "w": 457,
+        "h": 571
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.0",
+    "image": "Egyptian Mummy-8.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2025,
+      "h": 1824
+    },
+    "scale": 1
+  }
+}

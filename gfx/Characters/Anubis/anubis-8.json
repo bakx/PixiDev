@@ -1,0 +1,423 @@
+{
+  "frames": {
+    "Anubis/Dying_005": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 396,
+        "h": 550
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 262,
+        "y": 123,
+        "w": 396,
+        "h": 550
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Jump Loop_001": {
+      "frame": {
+        "x": 0,
+        "y": 550,
+        "w": 396,
+        "h": 550
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 228,
+        "y": 155,
+        "w": 396,
+        "h": 550
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Jump Loop_005": {
+      "frame": {
+        "x": 0,
+        "y": 1100,
+        "w": 396,
+        "h": 550
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 228,
+        "y": 155,
+        "w": 396,
+        "h": 550
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Run Throwing_004": {
+      "frame": {
+        "x": 0,
+        "y": 1650,
+        "w": 398,
+        "h": 545
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 229,
+        "y": 176,
+        "w": 398,
+        "h": 545
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Jump Loop_004": {
+      "frame": {
+        "x": 545,
+        "y": 0,
+        "w": 396,
+        "h": 549
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 230,
+        "y": 156,
+        "w": 396,
+        "h": 549
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Jump Loop_002": {
+      "frame": {
+        "x": 1094,
+        "y": 0,
+        "w": 395,
+        "h": 549
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 230,
+        "y": 156,
+        "w": 395,
+        "h": 549
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Run Throwing_003": {
+      "frame": {
+        "x": 1643,
+        "y": 0,
+        "w": 405,
+        "h": 546
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 226,
+        "y": 168,
+        "w": 405,
+        "h": 546
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Walking_003": {
+      "frame": {
+        "x": 1094,
+        "y": 395,
+        "w": 403,
+        "h": 548
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 257,
+        "y": 186,
+        "w": 403,
+        "h": 548
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Run Throwing_010": {
+      "frame": {
+        "x": 545,
+        "y": 396,
+        "w": 397,
+        "h": 548
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 227,
+        "y": 174,
+        "w": 397,
+        "h": 548
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Running_010": {
+      "frame": {
+        "x": 545,
+        "y": 793,
+        "w": 397,
+        "h": 548
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 227,
+        "y": 174,
+        "w": 397,
+        "h": 548
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Hurt_010": {
+      "frame": {
+        "x": 1642,
+        "y": 546,
+        "w": 404,
+        "h": 545
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 216,
+        "y": 187,
+        "w": 404,
+        "h": 545
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Jump Start_005": {
+      "frame": {
+        "x": 1093,
+        "y": 798,
+        "w": 396,
+        "h": 548
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 230,
+        "y": 163,
+        "w": 396,
+        "h": 548
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Jump Loop_003": {
+      "frame": {
+        "x": 545,
+        "y": 1190,
+        "w": 395,
+        "h": 548
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 232,
+        "y": 157,
+        "w": 395,
+        "h": 548
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Run Slashing_000": {
+      "frame": {
+        "x": 1641,
+        "y": 1091,
+        "w": 404,
+        "h": 543
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 253,
+        "y": 189,
+        "w": 404,
+        "h": 543
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Kicking_002": {
+      "frame": {
+        "x": 1093,
+        "y": 1194,
+        "w": 397,
+        "h": 547
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 236,
+        "y": 185,
+        "w": 397,
+        "h": 547
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Walking_011": {
+      "frame": {
+        "x": 1093,
+        "y": 1591,
+        "w": 399,
+        "h": 546
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 257,
+        "y": 192,
+        "w": 399,
+        "h": 546
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Anubis/Walking_016": {
+      "frame": {
+        "x": 545,
+        "y": 1585,
+        "w": 397,
+        "h": 546
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 253,
+        "y": 190,
+        "w": 397,
+        "h": 546
+      },
+      "sourceSize": {
+        "w": 900,
+        "h": 900
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.0",
+    "image": "Anubis-8.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2048,
+      "h": 2048
+    },
+    "scale": 1
+  }
+}
