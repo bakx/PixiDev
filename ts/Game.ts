@@ -1,5 +1,5 @@
 import { loadAnimationSprites, loadBackgrounds, loadCharacters, loadLevels } from "./Functions";
-import { AnimationSprites, AnimationSprite } from "./Models/AnimatedSprite";
+import { AnimationSprites } from "./Models/AnimatedSprite";
 import { Backgrounds } from "./Models/Background";
 import { Characters } from "./Models/Character";
 import { DrawText } from "./Models/DrawText";
@@ -61,131 +61,44 @@ export class Game {
     this.animationSprites = new AnimationSprites();
 
     // Start loading resources
-    this.loadNextState();
+    this.loadGame();
   }
 
-  /** Callback function for the loading of animated sprites */
-  addAnimationSprite(game: Game, id: string, message: string, sprite: AnimationSprite) {
-    // Assign animation sprites to the game object
-    game.animationSprites.data.set(id, sprite);
-
-    //TODO this is not correct
-    if (game.animationSprites.data.size == 3) {
-      game.loadNextState();
-    }
-  }
-
-  /** Callback function for the loading of animated sprites */
-  addAnimationSprites(game: Game, id: string, message: string, sprites: Map<string, AnimationSprite>) {
-    // Assign animation sprites to the game object
-    game.animationSprites.data = sprites;
-  }
-
-  gameLoader() {
+  /** Sets up the game  the default game parameters */
+  loadGame() {
     // Load backgrounds
-    if (this.gameLoadState === GameLoadingState.BACKGROUNDS) {
-      this.backgrounds = loadBackgrounds(this.app);
-      this.loadNextState();
-      return;
-    }
+    loadBackgrounds(this.app)
+      .then(backgrounds => {
+        this.backgrounds = backgrounds;
 
-    // Load animation sprites
-    if (this.gameLoadState === GameLoadingState.ANIMATIONSPRITES) {
-      loadAnimationSprites(this, this.addAnimationSprite);
-      return;
-    }
+        // Load the animation sprites
+        loadAnimationSprites(this)
+          .then(animationSprites => {
+            this.animationSprites = animationSprites;
 
-    // Load characters
-    if (this.gameLoadState === GameLoadingState.CHARACTERS) {
-      this.characters = loadCharacters(this);
-      this.loadNextState();
-      return;
-    }
+            // Load the characters
+            loadCharacters(this)
+              .then(characters => {
+                this.characters = characters
+              })
+              .then(_ => {
+                // Load all levels
+                this.levels = loadLevels(this.app, this);
 
-    // Load level data
-    if (this.gameLoadState === GameLoadingState.LEVELS) {
-      this.levels = loadLevels(this.app, this);
-      this.loadNextState();
-      return;
-    }
+                // Create FPS counter
+                this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
 
-    // Load level data
-    if (this.gameLoadState === GameLoadingState.LOADLEVEL) {
-      this.loadLevel();
-      this.loadNextState();
-      return;
-    }
+                // Create Debug text
+                this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
 
-    if (this.gameLoadState === GameLoadingState.OVERLAY) {
-      // Create FPS counter
-      this.fpsCounter = new DrawText(this.app.stage, '', 10, 10);
+                // Load level
+                this.loadLevel();
 
-      // Create Debug text
-      this.debugHelper = new DrawText(this.app.stage, '', 10, 30);
-
-      this.loadNextState();
-      return;
-    }
-
-    // Finished loading
-    if (this.gameLoadState === GameLoadingState.DONE) {
-      this.loadLevel();
-
-      // Start game engine
-      this.start();
-    }
-  }
-
-  /** Loads all resources related to the `levelIndex`  */
-  loadNextState() {
-    if (this.gameLoadState == GameLoadingState.INIT) {
-      console.debug(`Changing gamestate to ${GameLoadingState.BACKGROUNDS}`);
-      this.gameLoadState = GameLoadingState.BACKGROUNDS;
-      this.gameLoader();
-      return;
-    }
-
-    if (this.gameLoadState == GameLoadingState.BACKGROUNDS) {
-      console.debug(`Changing gamestate to ${GameLoadingState.ANIMATIONSPRITES}`);
-      this.gameLoadState = GameLoadingState.ANIMATIONSPRITES;
-      this.gameLoader();
-      return;
-    }
-
-    if (this.gameLoadState == GameLoadingState.ANIMATIONSPRITES) {
-      console.debug(`Changing gamestate to ${GameLoadingState.CHARACTERS}`);
-      this.gameLoadState = GameLoadingState.CHARACTERS;
-      this.gameLoader();
-      return;
-    }
-
-    if (this.gameLoadState == GameLoadingState.CHARACTERS) {
-      console.debug(`Changing gamestate to ${GameLoadingState.LEVELS}`);
-      this.gameLoadState = GameLoadingState.LEVELS;
-      this.gameLoader();
-      return;
-    }
-
-    if (this.gameLoadState == GameLoadingState.LEVELS) {
-      console.debug(`Changing gamestate to ${GameLoadingState.LOADLEVEL}`);
-      this.gameLoadState = GameLoadingState.LOADLEVEL;
-      this.gameLoader();
-      return;
-    }
-
-    if (this.gameLoadState == GameLoadingState.LOADLEVEL) {
-      console.debug(`Changing gamestate to ${GameLoadingState.OVERLAY}`);
-      this.gameLoadState = GameLoadingState.OVERLAY;
-      this.gameLoader();
-      return;
-    }
-
-    if (this.gameLoadState == GameLoadingState.OVERLAY) {
-      console.debug(`Changing gamestate to ${GameLoadingState.DONE}`);
-      this.gameLoadState = GameLoadingState.DONE;
-      this.gameLoader();
-      return;
-    }
+                // Start game engine
+                this.start();
+              })
+          })
+      });
   }
 
   /** Loads all resources that are defined for the specific level */
@@ -271,15 +184,24 @@ export class Game {
     let width = window.innerWidth || document.body.clientWidth;
     let height = window.innerHeight || document.body.clientHeight;
 
+    // Calculate the ratio
     let ratio = height / this.designHeight;
 
+    // Update the view 
     let view = this.app.renderer.view;
-    view.style.height = this.designHeight * ratio + "px";
 
+    // Calculate the new width ratio
     var newWidth = (width / ratio);
 
+    // Apply view style sizing
+    view.style.height = this.designHeight * ratio + "px";
     view.style.width = width + "px";
 
+    // Resize application
+    this.app.view.width = newWidth;
+    this.app.view.height = height;
+
+    // Resize renderer
     this.app.renderer.resize(newWidth, this.designHeight);
   }
 }

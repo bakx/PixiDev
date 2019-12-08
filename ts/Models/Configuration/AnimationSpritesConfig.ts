@@ -5,7 +5,7 @@ export interface AnimationSpritesConfig {
 export interface AnimationSpriteConfig {
     id: string;
     filename: string;
-    startAt : number;
+    startAt: number;
     endAt: number;
     animationSpeed: number;
 }
